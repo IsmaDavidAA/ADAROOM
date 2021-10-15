@@ -1,0 +1,6 @@
+import styled from "styled-components";
+export const Recuadro1 = styled.div`
+ 
+  margin:5rem;
+`;
+//padding:10rem 10rem 10rem 10rem ;
