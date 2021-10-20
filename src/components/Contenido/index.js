@@ -2,18 +2,22 @@
 import React from "react";
 import {Contenido} from "./Contenidos.styles";
 import Secciones  from "../Secciones";
-
+import { Caja } from "../Secciones/Seccions.styles";
 
 const Contenidos = (props) => {
 
  return (
         <div>
+            <>
            <Contenido>
                    <h3>Contenido del curso</h3>
            </Contenido>
-                <ul>
+                
+                <Caja>  
                 <Secciones datos={props.datos}/>
-                </ul>
+                </Caja>
+                
+            </>    
         </div>
  );
     }
