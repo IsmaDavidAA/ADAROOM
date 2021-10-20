@@ -1,18 +1,27 @@
 import React from "react";
-//import './Menu.css';
-import ada from '../../images/logoADAROOM.jpg';
-import {MenuEstilo, ImagenEstilo, InicioEstilo, CursoEstilo } from './Menu.styles';
+import ada from "../../images/logoADAROOM.jpg";
+import {
+  MenuEstilo,
+  ImagenEstilo,
+  InicioEstilo,
+  CursoEstilo,
+} from "./Menu.styles";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+} from "react-router-dom";
+function Menu() {
+  return (
+    <MenuEstilo>
+      <ImagenEstilo src={ada} />
+      <InicioEstilo> INICIO</InicioEstilo>
 
-function Menu(){
-    return (
-      <MenuEstilo>
-    
-        
-          <ImagenEstilo src ={ada}/>
-          <InicioEstilo href=""> INICIO</InicioEstilo>
-          <CursoEstilo  href=""> CURSOS</CursoEstilo>
-          
-      </MenuEstilo>
-    );
+      <CursoEstilo href=""> CURSOS</CursoEstilo>
+    </MenuEstilo>
+  );
 }
 export default Menu;

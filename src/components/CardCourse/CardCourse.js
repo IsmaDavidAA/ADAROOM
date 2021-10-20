@@ -1,5 +1,4 @@
 import React from 'react'
-//import Imagen from '../../images/java.jpg'
 import { StyledCard, CardContainer, ImageC, Course, Institution, Inscribed } from './StyleList'
 
 export default function CardCourse({ codigo, nombreCurso, institucion, imagen, cantInscritos }) {

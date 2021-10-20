@@ -1,15 +1,24 @@
 import React from "react";
-import { Recuadro, ImagenL, AutorL, CantInsL, NombreIL } from "./Lista.styles";
+import { Recuadro, ImagenL, AutorL, CantInsL, NombreIL, Texto } from "./Lista.styles";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+} from "react-router-dom";
 const Lista = (props) => {
   return (
     <Recuadro>
-      <ImagenL src={props.curso[1].imagen} />
-
-      <div>
+      <Link to={`/cursos/${props.curso[0]}`}>
+        <ImagenL src={props.curso[1].imagen} />
+      </Link>
+      <Texto>
         <NombreIL>{props.curso[1].nombreCurso}</NombreIL>
         <AutorL>{props.curso[1].institucion}</AutorL>
         <CantInsL>{props.curso[1].cantInscritos} ya Inscritos </CantInsL>
-      </div>
+      </Texto>
     </Recuadro>
   );
 };
