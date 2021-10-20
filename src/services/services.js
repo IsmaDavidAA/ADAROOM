@@ -18,7 +18,7 @@ export const apiSettings = {
     datos.forEach((doc) => {
       datosJson.push([doc.id, doc.data()]);
     });
-    if (datosJson != []) {
+    if (datosJson === []) {
       datosJson = [{}];
     }
     return await datosJson;
@@ -39,7 +39,7 @@ export const apiSettings = {
       temarioJson.push([doc.id, doc.data()]);
     });
 
-    if (temarioJson != []) {
+    if (temarioJson === []) {
       temarioJson = [{}];
     }
     console.log(temarioJson);
