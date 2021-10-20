@@ -24,15 +24,15 @@ export const NombreIL = styled.h3`
   text-align: left;
   font-weight: bold;
   color: #000000;
-  font-family: Segoe UI;
+  font-family: 'Segoe UI';
 `;
 export const AutorL = styled.p`
   text-align: left;
   color: gray;
-  font-family: Segoe UI;
+  font-family: 'Segoe UI';
 `;
 export const CantInsL = styled.h3`
   text-align: left;
   font-weight: bold;
-  font-family: Segoe UI;
+  font-family: 'Segoe UI';
 `;
