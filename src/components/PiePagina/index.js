@@ -24,7 +24,8 @@ return (
 <Email>E-mail:</Email>
 <DirEmail>adaroom8@gmail.com</DirEmail>
 </Cont>
-<ImagenFacebook href="[google.com](https://www.google.com)" src={facebook} />
+
+<a title="Facebook" href="https://www.facebook.com/Adaroom-101482152322940"><ImagenFacebook src={facebook} alt="Facebook" /></a>
 </WrapperB>
 </PiePagEstilo>
 );

@@ -18,9 +18,8 @@ function Menu() {
   return (
     <MenuEstilo>
       <ImagenEstilo src={ada} />
-      <InicioEstilo> INICIO</InicioEstilo>
-
-      <CursoEstilo href=""> CURSOS</CursoEstilo>
+      <InicioEstilo href="/"> INICIO</InicioEstilo>
+      <CursoEstilo href="cursos"> CURSOS</CursoEstilo>
     </MenuEstilo>
   );
 }

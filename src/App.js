@@ -19,12 +19,15 @@ function App() {
         <Menu />
         <Switch>
           <Route path="/cursos/:cursoId" component={VistaCurso} />
-          <Route path="/cursos">
-            <VistaListaCursos />
-          </Route>
-          <Route path="/">
+          <Route path="/" exact>
             <VistaHome />
           </Route>
+
+          <Route path="/cursos" exact>
+            <VistaListaCursos />
+          </Route>
+          
+
         </Switch>
         <PiePagina />
       </>
