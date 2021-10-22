@@ -8,34 +8,34 @@ export const MenuEstilo = styled.div`
   left: 0;
   right: 0;
   top: 0;
+  height: 88px;
 `;
 
 export const ImagenEstilo = styled.img`
   width: 258px;
   height: 88px;
   margin-left: 50px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-top: 0px;
 `;
 
 export const InicioEstilo = styled.a`
   color: #1e3163;
   font-weight: bold;
-  font-size: 20px;
-  font-family: "Segoe UI";
-  position: relative;
+  font-size: var(--letraMediana);
+  position: absolute;
   bottom: 50px;
-  padding-left: 150px;
+  top: 33px;
+  left: 455px;
   text-decoration: none;
 `;
 
 export const CursoEstilo = styled.a`
-  font-size: 20px;
+  font-size: var(--letraMediana);
   font-weight: bold;
   color: #1e3163;
-  font-family: "Segoe UI";
-  position: relative;
+  position: absolute;
+  top: 33px;
+  left: 560px;
   bottom: 50px;
-  padding-left: 50px;
   text-decoration: none;
 `;

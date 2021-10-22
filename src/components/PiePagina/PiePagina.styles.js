@@ -12,9 +12,9 @@ export const PiePagEstilo = styled.div`
 `;
 
 export const WrapperA = styled.div`
-  margin-left: 80px;
+  margin-left: 50px;
   display: inline;
-  margin-bottom: 17px;
+  margin-bottom: 15px;
 `;
 export const WrapperB = styled.div`
   margin-right: 100px;
@@ -26,32 +26,37 @@ export const Cont = styled.div`
 
 export const NombreAdaroom = styled.p`
   color: #ffffff;
-  font-weight: bold;
-  font-size: 30px;
-  font-family: "Segoe UI";
-  top: 20px;
+  font-weight: semi-bold;
+  font-size: var(--TituloPrimario);
+  margin-top: 20px;
+  margin-bottom: 0px;
 `;
 
 export const DerechosA = styled.p`
-  font-size: 20px;
+  font-size: 18px;
   color: #ffffff;
-  font-family: "Segoe UI";
+  margin-top: 18px;
+  margin-bottom: 13px;
 `;
 export const Email = styled.p`
-  font-size: 20px;
+  font-size: var(--letraPequenia);
   font-weight: bold;
   color: #ffffff;
   font-family: "Segoe UI";
+  margin-top: 16px;
+  margin-bottom: 0px;
   padding-top: 20px;
+  padding-bottom: 10px;
 `;
 export const DirEmail = styled.p`
-  font-size: 20px;
+  font-size: var(--letraPequenia);
   color: #ffffff;
-  font-family: "Segoe UI";
-  margin-left: 30px;
-  padding-top: 20px;
+  margin-left: 25px;
+  margin-top: 35px;
+  margin-bottom: 0px;
 `;
 export const ImagenFacebook = styled.img`
   width: 51px;
   height: 52px;
+  padding-bottom: 5px;
 `;

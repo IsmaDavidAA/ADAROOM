@@ -12,6 +12,7 @@ import VistaHome from "./Vistas/VistaHome/VistaHome";
 import VistaCurso from "./Vistas/VistaCurso/VistaCurso";
 import VistaListaCursos from "./Vistas/VistaListaCursos/VistaListaCursos";
 import PiePagina from "./components/PiePagina";
+import { GlobalStyle } from "./GlobalStyle";
 function App() {
   return (
     <Router>
@@ -26,11 +27,10 @@ function App() {
           <Route path="/cursos" exact>
             <VistaListaCursos />
           </Route>
-          
-
         </Switch>
         <PiePagina />
       </>
+      <GlobalStyle />
     </Router>
   );
 }
