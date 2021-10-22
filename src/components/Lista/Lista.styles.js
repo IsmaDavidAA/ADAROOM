@@ -11,10 +11,13 @@ export const Recuadro = styled.div`
   box-shadow: 0px 2px 5px -6px rgb(95, 95, 95);
   margin-left: 15px;
   margin-bottom: 1rem;
+  margin-top: 2.5rem;
+  font-size: var(--letraEstandar);
 `;
 
 export const Texto = styled.div`
   height: 260px;
+  text-decoration: none;
 `;
 
 export const ImagenL = styled.img`
@@ -25,19 +28,17 @@ export const ImagenL = styled.img`
   float: left;
 `;
 
-export const NombreIL = styled.h3`
+export const NombreIL = styled.div`
   text-align: left;
   font-weight: bold;
   color: #000000;
-  font-family: "Segoe UI";
+  text-decoration: none;
 `;
 export const AutorL = styled.p`
   text-align: left;
-  color: gray;
-  font-family: "Segoe UI";
+  color: var(--plomoAgua);
 `;
-export const CantInsL = styled.h3`
+export const CantInsL = styled.div`
   text-align: left;
   font-weight: bold;
-  font-family: "Segoe UI";
 `;

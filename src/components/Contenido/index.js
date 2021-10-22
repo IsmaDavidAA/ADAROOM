@@ -1,26 +1,20 @@
-
 import React from "react";
-import {Contenido} from "./Contenidos.styles";
-import Secciones  from "../Secciones";
+import { Contenido, Title } from "./Contenidos.styles";
+import Secciones from "../Secciones";
 import { Caja } from "../Secciones/Seccions.styles";
 
 const Contenidos = (props) => {
-
- return (
-        <div>
-            <>
-           <Contenido>
-                   <h3>Contenido del curso</h3>
-           </Contenido>
-                
-                <Caja>  
-                <Secciones datos={props.datos}/>
-                </Caja>
-                
-            </>    
-        </div>
- );
-    }
-    export default Contenidos;
-
-
+  return (
+    <div>
+      <>
+        <Contenido>
+          <Title>Contenido del curso</Title>
+        </Contenido>
+        <Caja>
+          <Secciones datos={props.datos} />
+        </Caja>
+      </>
+    </div>
+  );
+};
+export default Contenidos;

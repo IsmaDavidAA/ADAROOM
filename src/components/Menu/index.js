@@ -17,7 +17,9 @@ import {
 function Menu() {
   return (
     <MenuEstilo>
-      <ImagenEstilo src={ada} />
+      <Link to={`/`}>
+        <ImagenEstilo href="/" src={ada} />
+      </Link>
       <InicioEstilo href="/"> INICIO</InicioEstilo>
       <CursoEstilo href="cursos"> CURSOS</CursoEstilo>
     </MenuEstilo>

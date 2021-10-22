@@ -1,5 +1,12 @@
 import React from "react";
-import { Recuadro, ImagenL, AutorL, CantInsL, NombreIL, Texto } from "./Lista.styles";
+import {
+  Recuadro,
+  ImagenL,
+  AutorL,
+  CantInsL,
+  NombreIL,
+  Texto,
+} from "./Lista.styles";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,7 +22,12 @@ const Lista = (props) => {
         <ImagenL src={props.curso[1].imagen} />
       </Link>
       <Texto>
-        <NombreIL>{props.curso[1].nombreCurso}</NombreIL>
+        <Link
+          to={`/cursos/${props.curso[0]}`}
+          style={{ textDecoration: "none" }}
+        >
+          <NombreIL>{props.curso[1].nombreCurso}</NombreIL>
+        </Link>
         <AutorL>{props.curso[1].institucion}</AutorL>
         <CantInsL>{props.curso[1].cantInscritos} ya Inscritos </CantInsL>
       </Texto>
