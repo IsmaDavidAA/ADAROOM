@@ -6,44 +6,42 @@ export const Recuadro = styled.div`
   border-bottom: #ccd1d1 2px solid;
   border-left: #ccd1d1 2px solid;
   border-right: #ccd1d1 2px solid;
-  width: 25%;
-  height: 550px;
+  width: 345px;
+  height: 485px;
   text-align: left;
   display: flex;
   flex-direction: column;
-  margin: 1rem 1rem 1rem 2rem;
-  position: relative;
+  margin: 1rem 1rem 0rem 2rem;
+  justify-content:space-between;
+  
 `;
 
 export const Texto = styled.div`
-  height: 260px;
+  height: 200px;
+  padding: 0px 3px 10px 3px;
+  font-size:var(letraUltraPequenia);
 `;
 
 export const ImagenL = styled.img`
-  width: 100%;
-  height: 400px;
-  display: block;
-  margin: 0rem 0rem 0rem 0rem;
-  float: left;
+  width: 345px;
+  height: 345px;
   border-bottom: #ccd1d1 2px solid;
 `;
 
-export const NombreIL = styled.h3`
-  text-align: left;
+export const NombreIL = styled.p`
   font-weight: bold;
   color: #000000;
-  font-family: "Segoe UI";
-  margin: 1rem 2rem 0rem 2rem;
+  margin: 12px 0px 0px 0px;
+  
 `;
 export const AutorL = styled.p`
-  text-align: left;
+
   color: gray;
-  font-family: "Segoe UI";
-  margin: 1rem 2rem 0rem 2rem;
+  margin: 5px 0px;
+  
 `;
-export const CantInsL = styled.h3`
-  text-align: left;
+export const CantInsL = styled.p`
+  margin: 5px 0px;
   font-weight: bold;
-  font-family: "Segoe UI";
-  margin: 1rem 2rem 0rem 2rem;
+  
 `;
