@@ -33,13 +33,14 @@ const VistaHome = () => {
     <>
       <Contenedor>
         <Cuerpo />
+        <Coment>100% gratis</Coment>
+        <Coment1>Comienza a aprender con cursos gratis</Coment1>
+        <Mosaico datos={cursos} />
+        <Link to={`/cursos`} style={{ textDecoration: "none" }}>
+          <MasCursos>Explorar todos los cursos -{">"} </MasCursos>
+        </Link> 
       </Contenedor>
-      <Coment>100% gratis</Coment>
-      <Coment1>Comienza a aprender con cursos gratis</Coment1>
-      <Mosaico datos={cursos} />
-      <Link to={`/cursos`} style={{ textDecoration: "none" }}>
-        <MasCursos>Explorar todos los cursos -{">"} </MasCursos>
-      </Link>
+   
     </>
   );
 };

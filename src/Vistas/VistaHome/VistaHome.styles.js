@@ -7,15 +7,15 @@ export const Contenedor = styled.div`
 export const Coment = styled.div`
   font-weight: bold;
   font-size: var(--letraEstandar);
-  margin: 4rem 0 0 9rem;
+  margin: 4rem 0rem 0rem 4rem;
 `;
 export const Coment1 = styled.div`
   font-size: var(--letraEstandar);
-  margin: 1rem 0 0 9rem;
+  margin: 1rem 0rem 0rem 4rem;
 `;
 export const MasCursos = styled.div`
   color: #0061a8;
   font-size: var(--letraEstandar);
-  margin: 1.5rem 0 13rem 9rem;
+  margin: 1.5rem 0rem 10rem 4rem;
   font-weight: bold;
 `;
