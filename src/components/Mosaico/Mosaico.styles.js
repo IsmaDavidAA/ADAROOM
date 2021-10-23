@@ -1,11 +1,9 @@
 import styled from "styled-components";
 export const Contenedor = styled.div`
-  margin: 1.5rem 5rem 0rem 5rem;
+  margin: 1.5rem 3rem 0rem 2rem;
+  width: 90%;
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  justfy-content: space-between;
-  position: relative;
+  justify-content: space-between;
+  aling-items: center;
 `;
-//grid-template-columns:repeat( 3 , 1fr );
-//position: relative ;
+
