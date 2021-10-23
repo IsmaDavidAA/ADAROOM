@@ -11,7 +11,7 @@ export const Recuadro = styled.div`
   text-align: left;
   display: flex;
   flex-direction: column;
-  margin: 1rem 1rem 1rem 4rem;
+  margin: 1rem 1rem 1rem 2rem;
   position: relative;
 `;
 
@@ -21,7 +21,7 @@ export const Texto = styled.div`
 
 export const ImagenL = styled.img`
   width: 100%;
-  height: 500px;
+  height: 400px;
   display: block;
   margin: 0rem 0rem 0rem 0rem;
   float: left;
