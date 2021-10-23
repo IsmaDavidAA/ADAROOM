@@ -18,11 +18,16 @@ function Menu() {
   return (
     <MenuEstilo>
       <Link to={`/`}>
-        <ImagenEstilo href="/" src={ada} />
+        <ImagenEstilo  src={ada} />
       </Link>
-      <InicioEstilo href="/"> INICIO</InicioEstilo>
-      <CursoEstilo href="cursos"> CURSOS</CursoEstilo>
+      <Link to={`/`}>
+      <InicioEstilo > INICIO</InicioEstilo>
+      </Link>
+      <Link to={`/cursos`}>
+      <CursoEstilo > CURSOS</CursoEstilo>
+      </Link>
     </MenuEstilo>
+
   );
 }
 export default Menu;
