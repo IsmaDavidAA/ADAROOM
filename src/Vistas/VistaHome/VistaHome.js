@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Contenedor, Coment, Coment1, MasCursos } from "./VistaHome.styles";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams,
+} from "react-router-dom";
 import Cuerpo from "../../components/Cuerpo";
 import Mosaico from "../../components/Mosaico";
 import { apiSettings } from "../../services/services";
@@ -29,7 +37,9 @@ const VistaHome = () => {
       <Coment>100% gratis</Coment>
       <Coment1>Comienza a aprender con cursos gratis</Coment1>
       <Mosaico datos={cursos} />
-      <MasCursos>Explorar todos los cursos </MasCursos>
+      <Link to={`/cursos`} style={{ textDecoration: "none" }}>
+        <MasCursos>Explorar todos los cursos -{">"} </MasCursos>
+      </Link>
     </>
   );
 };
