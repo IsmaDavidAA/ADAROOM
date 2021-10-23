@@ -18,13 +18,14 @@ export const Recuadro = styled.div`
 export const Texto = styled.div`
   height: 260px;
   text-decoration: none;
+  margin: 0 0 0 2rem;
 `;
 
 export const ImagenL = styled.img`
   width: 300px;
   height: 260px;
   display: block;
-  padding: 0px 15px 0px 0px;
+  padding: 0px 0px 0px 0px;
   float: left;
 `;
 
