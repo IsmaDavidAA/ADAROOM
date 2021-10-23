@@ -5,6 +5,8 @@ import {
   getDocs,
   doc,
   getDoc,
+  orderBy,
+  limit,
 } from "firebase/firestore";
 import db from "./firebase";
 
@@ -44,5 +46,23 @@ export const apiSettings = {
     }
     console.log(temarioJson);
     return await temarioJson;
+  },
+
+  getTopCursos: async () => {
+    const q = query(
+      collection(db, listaCursos),
+      orderBy("cantInscritos"),
+      limit(3)
+    );
+    const querySnapshot = await getDocs(q);
+    let datosJson = [];
+    querySnapshot.forEach((doc) => {
+      datosJson.push([doc.id, doc.data()]);
+    });
+    if (datosJson === []) {
+      datosJson = [{}];
+    }
+    console.log(datosJson);
+    return await datosJson;
   },
 };
