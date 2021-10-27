@@ -16,6 +16,12 @@ export const Coment1 = styled.div`
 export const MasCursos = styled.div`
   color: #0061a8;
   font-size: var(--letraEstandar);
-  margin: 1.5rem 0rem 10rem 4rem;
   font-weight: bold;
+  
+`;
+export const Caja = styled.div`
+   margin: 1.5rem 1rem 10rem 4rem;
+   display: flex;
+   text-align: left;
+  
 `;
