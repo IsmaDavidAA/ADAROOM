@@ -15,7 +15,7 @@ export const Coment1 = styled.div`
 `;
 export const MasCursos = styled.div`
   color: #0061a8;
-  font-size: var(--letraEstandar);
+  font-size: var(--letraUltraPequenia);
   font-weight: bold;
   
 `;
