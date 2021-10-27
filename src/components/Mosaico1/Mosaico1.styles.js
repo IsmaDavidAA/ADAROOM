@@ -20,6 +20,9 @@ export const Texto = styled.div`
   height: 200px;
   padding: 0px 3px 10px 3px;
   font-size:var(letraUltraPequenia);
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
 `;
 
 export const ImagenL = styled.img`
@@ -36,7 +39,7 @@ export const NombreIL = styled.p`
 `;
 export const AutorL = styled.p`
 
-  color: gray;
+  color: var(--plomo);
   margin: 5px 0px;
   
 `;
