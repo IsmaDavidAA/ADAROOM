@@ -51,7 +51,7 @@ export const apiSettings = {
   getTopCursos: async () => {
     const q = query(
       collection(db, listaCursos),
-      orderBy("cantInscritos"),
+      orderBy("cantInscritos", "desc"),
       limit(3)
     );
     const querySnapshot = await getDocs(q);

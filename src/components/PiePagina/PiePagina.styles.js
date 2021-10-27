@@ -58,5 +58,4 @@ export const DirEmail = styled.p`
 export const ImagenFacebook = styled.img`
   width: 51px;
   height: 52px;
-  padding-bottom: 5px;
 `;
