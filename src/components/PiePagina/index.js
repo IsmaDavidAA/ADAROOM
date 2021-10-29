@@ -17,7 +17,7 @@ return (
 <PiePagEstilo>
 <WrapperA>
 <NombreAdaroom>ADAROOM</NombreAdaroom>
-<DerechosA>©Adaroom. Todos los derechos reservados.</DerechosA>
+<DerechosA>© 2021 Adaroom. Todos los derechos reservados.</DerechosA>
 </WrapperA>
 <WrapperB>
 <Cont>
