@@ -11,7 +11,7 @@ function Cuerpo() {
   return (
     <CuerpoEstilo>
       <div>
-        <TituloEstilo> APRENDIZAJE SIN LIMITES</TituloEstilo>
+        <TituloEstilo> APRENDIZAJE SIN LÍMITES</TituloEstilo>
         <TextoEstilo>
           {" "}
           Adquiere habilidades con los cursos en linea que ofrecen las
