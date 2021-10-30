@@ -16,7 +16,7 @@ function Cuerpo() {
           {" "}
           Adquiere habilidades con los cursos en linea que ofrecen las
           universidades y las empresas más importantes del mundo en el área de
-          programación y creacion de páginas web.
+          programación y creación de páginas web.
         </TextoEstilo>
       </div>
       <ImagenEstilo src={imagenPrincipal} />
