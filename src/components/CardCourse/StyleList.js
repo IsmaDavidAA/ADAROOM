@@ -8,9 +8,10 @@ export const StyledCard = styled.div`
 `;
 export const CardContainer = styled.div`
   padding: 0px 15px 15px 15px;
+  min-width: 700px;
 `;
 export const ImageC = styled.img`
-  width: 300px;
+  min-width: 300px;
   height: 260px;
 `;
 export const Course = styled.div`
