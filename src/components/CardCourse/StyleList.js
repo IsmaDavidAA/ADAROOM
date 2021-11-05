@@ -7,8 +7,10 @@ export const StyledCard = styled.div`
   font-size: var(--letraEstandar);
 `;
 export const CardContainer = styled.div`
-  padding: 0px 15px 15px 15px;
+  padding: 0px 15px 0px 15px;
   min-width: 700px;
+  display: flex;
+  flex-direction: column;
 `;
 export const ImageC = styled.img`
   min-width: 300px;
@@ -26,4 +28,19 @@ export const Inscribed = styled.div`
   color: black;
   font-weight: bold;
   padding-bottom: 18px;
+`;
+export const InscribedState = styled.div`
+  color: var(--blueAgua);
+  font-size: var(--letraMediana);
+  align-self: flex-end;
+`;
+
+export const WrapperTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+export const WrapperState = styled.div`
+  display: flex;
+  flex-direction: inline;
+  height: 50%;
 `;
