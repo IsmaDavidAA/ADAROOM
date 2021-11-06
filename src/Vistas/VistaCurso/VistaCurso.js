@@ -6,7 +6,7 @@ import CardCourse from "../../components/CardCourse/CardCourse";
 import Descripcion from "../../components/Descripcion";
 import { Contenedor } from "../../components/Descripcion/Descripcion.styles";
 import { useParams } from "react-router-dom";
-import InscritoLink from "../../components/InscritoLink";
+import InscritoLink from "../../componentsFactory/suscriberLink";
 
 const VistaCurso = () => {
   const { cursoId } = useParams();
@@ -15,7 +15,7 @@ const VistaCurso = () => {
   const [statex, setStatex] = useState(false);
   const [state, setState] = useState(false);
   const [inscrito, setInscrito] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
 
   /*
   const fetchLoggedIn = async ()=>{
@@ -75,6 +75,8 @@ const VistaCurso = () => {
             <InscritoLink
               loggedIn={loggedIn}
               inscrito={inscrito}
+              idCurso={curso[0]}
+              idEst={"1AAA"}
             ></InscritoLink>
           }
         />
