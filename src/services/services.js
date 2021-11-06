@@ -7,8 +7,9 @@ import {
   getDoc,
   orderBy,
   limit,
+  auth
 } from "firebase/firestore";
-import db from "./firebase";
+import {db} from "./firebase";
 
 const listaCursos = "curso";
 const listaTemarios = "temario";
