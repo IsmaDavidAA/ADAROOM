@@ -26,8 +26,8 @@ function Menu() {
       <Link to={`/cursos`}>
       <CursoEstilo > CURSOS</CursoEstilo>
       </Link>
+      
     </MenuEstilo>
-
   );
 }
 export default Menu;
