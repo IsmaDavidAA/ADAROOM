@@ -7,12 +7,14 @@ import {
   getDoc,
   orderBy,
   limit,
+  updateDoc,
+  addDoc,
 } from "firebase/firestore";
-import db from "./firebase";
+import { db } from "./firebase";
 
 const listaCursos = "curso";
 const listaTemarios = "temario";
-
+const listaInscripciones = "inscripcion";
 export const apiSettings = {
   getCursos: async () => {
     const datos = await getDocs(collection(db, listaCursos));
@@ -64,5 +66,23 @@ export const apiSettings = {
     }
     console.log(datosJson);
     return await datosJson;
+  },
+
+  postInscripcion: async (idCurso, idEst) => {
+    const docRef = await addDoc(collection(db, listaInscripciones), {
+      codCurso: idCurso,
+      codEst: idEst,
+      estadoInscripcion: 1,
+    });
+    console.log("Document written with ID: ", docRef.id);
+  },
+
+  putCurso: async (idCurso) => {
+    const docRef = doc(db, listaCursos, idCurso);
+    const curso = await getDoc(docRef);
+    const cant = curso.data().cantInscritos + 1;
+    await updateDoc(docRef, {
+      cantInscritos: cant,
+    });
   },
 };
