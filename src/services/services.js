@@ -15,6 +15,7 @@ import { db } from "./firebase";
 const listaCursos = "curso";
 const listaTemarios = "temario";
 const listaInscripciones = "inscripcion";
+
 export const apiSettings = {
   getCursos: async () => {
     const datos = await getDocs(collection(db, listaCursos));
@@ -85,4 +86,33 @@ export const apiSettings = {
       cantInscritos: cant,
     });
   },
+
+  //--------------------------------------------
+  getInscripciones: async (idEst) => {
+    const q = query(
+      collection(db, "inscripcion"),
+      where("codEst", "==", `${idEst}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let inscripcionesJson = [];
+    querySnapshot.forEach((doc) => {
+       inscripcionesJson.push(doc.data().codCurso);
+    });
+    let insCompletoJson = [];
+    inscripcionesJson.forEach( async (element)=>{
+      
+      const curso = await getDoc(doc(db, listaCursos, `${element}`));
+      insCompletoJson.push([curso.id, curso.data()]);
+    });
+    
+    
+    if (insCompletoJson === []) {
+      insCompletoJson = [{}];
+    }
+    console.log(insCompletoJson);
+    return await insCompletoJson;
+  },
+  
+  
+
 };
