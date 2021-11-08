@@ -23,6 +23,7 @@ const VistaCurso = () => {
 
   const fetchInscrito = async () => {
     console.log(currentUser);
+  
     if (currentUser) {
       const estaInscrito = await apiSettings.getInscrito(
         cursoId,
@@ -35,7 +36,7 @@ const VistaCurso = () => {
 
   useEffect(() => {
     fetchInscrito();
-  }, []);
+  }, [currentUser]);
 
   const fetchCurso = async () => {
     if (!state) {
@@ -87,10 +88,8 @@ const VistaCurso = () => {
           }
         />
         <Modal isOpen={isOpenModal} closeModal={closeModal}>
-          <h3>Modal 1</h3>
-          <p>Hola ese es el contenido de mi modal 1</p>
-          <p>Hola ese es el contenido de mi modal 1</p>
-          <p>Hola ese es el contenido de mi modal 1</p>
+          <h3>FELICIDADES</h3>
+          <p>Usted se registro al curso {curso[1].nombreCurso} correctamente</p>
         </Modal>
         <Descripcion descripcion={curso[1].descripcion} />
         <Contenidos datos={temario} />

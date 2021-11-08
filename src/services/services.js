@@ -27,7 +27,6 @@ export const apiSettings = {
     if (datosJson === []) {
       datosJson = [{}];
     }
-    console.log("ya llegamos perras");
     return await datosJson;
   },
   getCurso: async (idCurso) => {

@@ -38,20 +38,20 @@ const VistaHome = () => {
   }, [cursos]);
 
   const auth = getAuth();
-  signOut(auth)
-    .then(() => {
-      // Sign-out successful.
-    })
-    .catch((error) => {
-      // An error happened.
-    });
+  
   return (
     <>
       <Contenedor>
         <Cuerpo />
         <button
           onClick={() => {
-            signOut(auth);
+            signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+    })
+    .catch((error) => {
+      // An error happened.
+    });
           }}
         >
           {" "}

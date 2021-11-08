@@ -10,10 +10,6 @@ const InscritoLink = ({ inscrito, idCurso, idEst, modAction }) => {
     return (
       <GeneralLink
         content={"Inscribirme"}
-        paramsLink={async () => {
-          await apiSettings.putCurso(idCurso);
-          await apiSettings.postInscripcion(idCurso, idEst);
-        }}
         action={async () => {
           history.push("/login");
         }}
@@ -33,10 +29,9 @@ const InscritoLink = ({ inscrito, idCurso, idEst, modAction }) => {
     return (
       <GeneralLink
         action={async () => {
+          apiSettings.putCurso(idCurso);
+          apiSettings.postInscripcion(idCurso, idEst);
           modAction();
-          await apiSettings.putCurso(idCurso);
-          await apiSettings.postInscripcion(idCurso, idEst);
-          // history.push("/cursos/");
         }}
         content={"Inscribirme"}
         paramsLink={""}
