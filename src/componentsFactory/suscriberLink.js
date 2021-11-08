@@ -1,25 +1,29 @@
 import React from "react";
 import { apiSettings } from "../services/services";
 import GeneralLink from "../components/SuscriberLink";
+import { useHistory } from "react-router-dom";
 
-const InscritoLink = ({ loggedIn, inscrito, idCurso, idEst }) => {
-  if (!loggedIn) {
+const InscritoLink = ({ inscrito, idCurso, idEst, modAction }) => {
+  const history = useHistory();
+  const made = false;
+  if (idEst === "") {
     return (
       <GeneralLink
-        link={`/login`}
         content={"Inscribirme"}
-        paramsLink={() => {
-          apiSettings.putCurso(idCurso);
-          apiSettings.postInscripcion(idCurso, idEst);
-          console.log("en accion");
+        paramsLink={async () => {
+          await apiSettings.putCurso(idCurso);
+          await apiSettings.postInscripcion(idCurso, idEst);
         }}
+        action={async () => {
+          history.push("/login");
+        }}
+        made={made}
       />
     );
   } else if (inscrito) {
     return (
       <GeneralLink
-        link={`/cursos`} //ruta aqui
-        action={() => {
+        action={async () => {
           //consultas aqui
         }}
         content={"Baja"} //texto aqui
@@ -28,13 +32,15 @@ const InscritoLink = ({ loggedIn, inscrito, idCurso, idEst }) => {
   } else {
     return (
       <GeneralLink
-        link={`/cursos`}
-        action={() => {
-          apiSettings.putCurso(idCurso);
-          apiSettings.postInscripcion(idCurso, idEst);
+        action={async () => {
+          modAction();
+          await apiSettings.putCurso(idCurso);
+          await apiSettings.postInscripcion(idCurso, idEst);
+          // history.push("/cursos/");
         }}
         content={"Inscribirme"}
         paramsLink={""}
+        made={made}
       />
     );
   }

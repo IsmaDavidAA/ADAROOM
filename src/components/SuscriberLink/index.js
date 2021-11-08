@@ -1,11 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
-
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 const GeneralLink = ({ link, action, content, paramsLink }) => {
+  const made = false;
   return (
-    <Link to={link} params={paramsLink} onClick={action}>
+    <a params={paramsLink} onClick={action}>
       <p>{content}</p>
-    </Link>
+    </a>
   );
 };
 export default GeneralLink;

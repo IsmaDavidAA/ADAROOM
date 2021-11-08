@@ -9,6 +9,8 @@ import {
   limit,
   updateDoc,
   addDoc,
+  increment,
+  FieldValue,
 } from "firebase/firestore";
 import { db } from "./firebase";
 
@@ -25,6 +27,7 @@ export const apiSettings = {
     if (datosJson === []) {
       datosJson = [{}];
     }
+    console.log("ya llegamos perras");
     return await datosJson;
   },
   getCurso: async (idCurso) => {
@@ -79,10 +82,23 @@ export const apiSettings = {
 
   putCurso: async (idCurso) => {
     const docRef = doc(db, listaCursos, idCurso);
-    const curso = await getDoc(docRef);
-    const cant = curso.data().cantInscritos + 1;
     await updateDoc(docRef, {
-      cantInscritos: cant,
+      cantInscritos: increment(1),
     });
+  },
+
+  getInscrito: async (idCurso, idEst) => {
+    let existe = false;
+    const q = query(
+      collection(db, listaInscripciones),
+      where("codCurso", "==", idCurso),
+      where("codEst", "==", idEst)
+    );
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      existe = true;
+      console.log("oka");
+    });
+    return existe;
   },
 };

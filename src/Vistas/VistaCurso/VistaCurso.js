@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Menu from "../../components/Menu";
 import { apiSettings } from "../../services/services";
 import Contenidos from "../../components/Contenido";
@@ -7,29 +7,36 @@ import Descripcion from "../../components/Descripcion";
 import { Contenedor } from "../../components/Descripcion/Descripcion.styles";
 import { useParams } from "react-router-dom";
 import InscritoLink from "../../componentsFactory/suscriberLink";
-
+import { AuthContext } from "../../Context";
+import { useModal } from "../../hooks/useModal";
+import Modal from "../../components/Modal";
 const VistaCurso = () => {
   const { cursoId } = useParams();
+  const { currentUser } = useContext(AuthContext);
+  const [isOpenModal, openModal, closeModal] = useModal();
   const [curso, setCurso] = useState([]);
   const [temario, setTemario] = useState([]);
   const [statex, setStatex] = useState(false);
   const [state, setState] = useState(false);
   const [inscrito, setInscrito] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [uid, setUid] = useState("");
 
-  /*
-  const fetchLoggedIn = async ()=>{
-    const temp = await apiSettings.getLoggedIn();
-    if(temp){
-      const estaInscrito = await apiSettings.getInscrito(cursoId, userId);
+  const fetchInscrito = async () => {
+    console.log(currentUser);
+    if (currentUser) {
+      const estaInscrito = await apiSettings.getInscrito(
+        cursoId,
+        currentUser.uid
+      );
       setInscrito(estaInscrito);
+      setUid(currentUser.uid);
     }
-  }  
-  
+  };
+
   useEffect(() => {
-    fetchLoggedIn();
-  }, [loggedIn]);
-  */
+    fetchInscrito();
+  }, []);
+
   const fetchCurso = async () => {
     if (!state) {
       const temp = await apiSettings.getCurso(cursoId);
@@ -64,7 +71,6 @@ const VistaCurso = () => {
   if (state && statex) {
     return (
       <Contenedor>
-        <Menu />
         <CardCourse
           codigo={curso[1].codigo}
           nombreCurso={curso[1].nombreCurso}
@@ -73,14 +79,19 @@ const VistaCurso = () => {
           cantInscritos={curso[1].cantInscritos}
           children={
             <InscritoLink
-              loggedIn={loggedIn}
               inscrito={inscrito}
               idCurso={curso[0]}
-              idEst={"1AAA"}
+              idEst={uid}
+              modAction={openModal}
             ></InscritoLink>
           }
         />
-
+        <Modal isOpen={isOpenModal} closeModal={closeModal}>
+          <h3>Modal 1</h3>
+          <p>Hola ese es el contenido de mi modal 1</p>
+          <p>Hola ese es el contenido de mi modal 1</p>
+          <p>Hola ese es el contenido de mi modal 1</p>
+        </Modal>
         <Descripcion descripcion={curso[1].descripcion} />
         <Contenidos datos={temario} />
       </Contenedor>
