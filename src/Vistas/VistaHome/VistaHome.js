@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Contenedor, Coment, Coment1, MasCursos, Caja } from "./VistaHome.styles";
+import {
+  Contenedor,
+  Coment,
+  Coment1,
+  MasCursos,
+  Caja,
+} from "./VistaHome.styles";
+import { getAuth, signOut } from "firebase/auth";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -29,21 +37,35 @@ const VistaHome = () => {
     fetchCursos();
   }, [cursos]);
 
+  const auth = getAuth();
+  
   return (
     <>
       <Contenedor>
         <Cuerpo />
+        <button
+          onClick={() => {
+            signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+          }}
+        >
+          {" "}
+          aqui pos
+        </button>
         <Coment>100% gratis</Coment>
         <Coment1>Comienza a aprender con cursos gratis</Coment1>
         <Mosaico datos={cursos} />
         <Caja>
-        <Link to={`/cursos`} style={{ textDecoration: "none" }}>
-         
-          <MasCursos>Explorar todos los cursos -{">"} </MasCursos>
-          
-        </Link> </Caja>
+          <Link to={`/cursos`} style={{ textDecoration: "none" }}>
+            <MasCursos>Explorar todos los cursos -{">"} </MasCursos>
+          </Link>{" "}
+        </Caja>
       </Contenedor>
-   
     </>
   );
 };
