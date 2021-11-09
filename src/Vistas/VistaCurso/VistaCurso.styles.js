@@ -5,3 +5,8 @@ export const Contenedor = styled.div`
   width: 100%;
   font-size: var(--letraEstandar);
 `;
+
+export const ButtonSuccess = styled.button`
+  background: var(--blueSuave);
+  margin: 40px 0px 0px 0px;
+`;

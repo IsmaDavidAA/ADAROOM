@@ -3,13 +3,21 @@ import { apiSettings } from "../services/services";
 import GeneralLink from "../components/SuscriberLink";
 import { useHistory } from "react-router-dom";
 
-const InscritoLink = ({ inscrito, idCurso, idEst, modAction }) => {
+const InscritoLink = ({
+  inscrito,
+  idCurso,
+  idEst,
+  modActionFirst,
+  modACtionNext,
+  modACtionFirstSuccess,
+  modACtionNextSuccess,
+}) => {
   const history = useHistory();
   const made = false;
   if (idEst === "") {
     return (
       <GeneralLink
-        content={"Inscribirme"}
+        content={"Inscribirme ahora"}
         action={async () => {
           history.push("/login");
         }}
@@ -29,11 +37,13 @@ const InscritoLink = ({ inscrito, idCurso, idEst, modAction }) => {
     return (
       <GeneralLink
         action={async () => {
-          apiSettings.putCurso(idCurso);
-          apiSettings.postInscripcion(idCurso, idEst);
-          modAction();
+          modActionFirst();
+          const donePut = await apiSettings.putCurso(idCurso);
+          const donePost = await apiSettings.postInscripcion(idCurso, idEst);
+          modACtionNext();
+          modACtionFirstSuccess();
         }}
-        content={"Inscribirme"}
+        content={"Inscribirme ahora"}
         paramsLink={""}
         made={made}
       />

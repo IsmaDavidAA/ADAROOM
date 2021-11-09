@@ -22,6 +22,7 @@ export const ModalContainer = styled.div`
   max-height: 600px;
   overflow-y: auto;
   background-color: #fff;
+  text-align: center;
 `;
 
 export const Close = styled.button`

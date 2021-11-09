@@ -30,6 +30,7 @@ function App() {
         </Switch>
         <PiePagina />
       </Router>
+      <GlobalStyle />
     </AuthProvider>
   );
 }

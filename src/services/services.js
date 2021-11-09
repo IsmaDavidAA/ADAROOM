@@ -70,20 +70,20 @@ export const apiSettings = {
     return await datosJson;
   },
 
-  postInscripcion: async (idCurso, idEst) => {
-    const docRef = await addDoc(collection(db, listaInscripciones), {
+  postInscripcion: async(idCurso, idEst) => {
+    await addDoc(collection(db, listaInscripciones), {
       codCurso: idCurso,
       codEst: idEst,
       estadoInscripcion: 1,
     });
-    console.log("Document written with ID: ", docRef.id);
+    return true;
   },
 
-  putCurso: async (idCurso) => {
-    const docRef = doc(db, listaCursos, idCurso);
-    await updateDoc(docRef, {
+  putCurso: async(idCurso) => {
+    await updateDoc(doc(db, listaCursos, idCurso), {
       cantInscritos: increment(1),
     });
+    return true;
   },
 
   getInscrito: async (idCurso, idEst) => {
@@ -98,6 +98,7 @@ export const apiSettings = {
       existe = true;
       console.log("oka");
     });
+
     return existe;
   },
 };

@@ -10,10 +10,12 @@ import InscritoLink from "../../componentsFactory/suscriberLink";
 import { AuthContext } from "../../Context";
 import { useModal } from "../../hooks/useModal";
 import Modal from "../../components/Modal";
+import { ButtonSuccess } from "./VistaCurso.styles";
 const VistaCurso = () => {
   const { cursoId } = useParams();
   const { currentUser } = useContext(AuthContext);
   const [isOpenModal, openModal, closeModal] = useModal();
+  const [isOpenModalNext, openModalNext, closeModalNext] = useModal();
   const [curso, setCurso] = useState([]);
   const [temario, setTemario] = useState([]);
   const [statex, setStatex] = useState(false);
@@ -23,7 +25,7 @@ const VistaCurso = () => {
 
   const fetchInscrito = async () => {
     console.log(currentUser);
-  
+
     if (currentUser) {
       const estaInscrito = await apiSettings.getInscrito(
         cursoId,
@@ -83,13 +85,28 @@ const VistaCurso = () => {
               inscrito={inscrito}
               idCurso={curso[0]}
               idEst={uid}
-              modAction={openModal}
+              modActionFirst={openModal}
+              modACtionNext={closeModal}
+              modACtionFirstSuccess={openModalNext}
             ></InscritoLink>
           }
         />
         <Modal isOpen={isOpenModal} closeModal={closeModal}>
+          <p>Se esta procesando tu solicitud</p>
+        </Modal>
+        <Modal isOpen={isOpenModalNext} closeModal={closeModalNext}>
           <h3>FELICIDADES</h3>
-          <p>Usted se registro al curso {curso[1].nombreCurso} correctamente</p>
+          <p>
+            Usted acaba de inscribirse al curso {curso[1].nombreCurso}{" "}
+            exitosamente
+          </p>
+          <ButtonSuccess
+            onClick={() => {
+              window.location.reload(false);
+            }}
+          >
+            Continuar
+          </ButtonSuccess>
         </Modal>
         <Descripcion descripcion={curso[1].descripcion} />
         <Contenidos datos={temario} />
