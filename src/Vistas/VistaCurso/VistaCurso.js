@@ -10,7 +10,12 @@ import InscritoLink from "../../componentsFactory/suscriberLink";
 import { AuthContext } from "../../Context";
 import { useModal } from "../../hooks/useModal";
 import Modal from "../../components/Modal";
-import { ButtonSuccess } from "./VistaCurso.styles";
+import {
+  ButtonSuccess,
+  CongratulationsText,
+  CongratulationsTitle,
+  ProcesingText,
+} from "./VistaCurso.styles";
 const VistaCurso = () => {
   const { cursoId } = useParams();
   const { currentUser } = useContext(AuthContext);
@@ -92,14 +97,14 @@ const VistaCurso = () => {
           }
         />
         <Modal isOpen={isOpenModal} closeModal={closeModal}>
-          <p>Se esta procesando tu solicitud</p>
+          <ProcesingText>Estamos procesando su solicitud.</ProcesingText>
         </Modal>
         <Modal isOpen={isOpenModalNext} closeModal={closeModalNext}>
-          <h3>FELICIDADES</h3>
-          <p>
-            Usted acaba de inscribirse al curso {curso[1].nombreCurso}{" "}
-            exitosamente
-          </p>
+          <CongratulationsTitle>¡FELICIDADES!</CongratulationsTitle>
+          <CongratulationsText>
+            Usted acaba de inscribirse al curso{" "}
+            <strong>{curso[1].nombreCurso}</strong> exitosamente.
+          </CongratulationsText>
           <ButtonSuccess
             onClick={() => {
               window.location.reload(false);
