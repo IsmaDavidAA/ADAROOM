@@ -40,7 +40,9 @@ export const CursoEstilo = styled.a`
   text-decoration: none;
 `;
 export const IniciaSecion = styled.a`
+
   color: #0061A8;
+
   font-size: var(--letraMediana);
   position: absolute;
   bottom: 50px;
@@ -71,4 +73,6 @@ export const Estudiate = styled.p`
   left: 1100px;
   text-decoration: none;
   
+
 `;
+

@@ -63,7 +63,9 @@ if(currentUser){
       <CursoEstilo > CURSOS</CursoEstilo>
       </Link>
       <Link to={`/login`}>
+
       <IniciaSecion > INICIAR SESION</IniciaSecion>
+
       </Link>
       
       
