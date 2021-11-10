@@ -13,25 +13,22 @@ import VistaCurso from "./Vistas/VistaCurso/VistaCurso";
 import VistaListaCursos from "./Vistas/VistaListaCursos/VistaListaCursos";
 import PiePagina from "./components/PiePagina";
 import { GlobalStyle } from "./GlobalStyle";
+import { AuthProvider } from "./Context";
+import SignIn from "./Vistas/VistaLogin/Login";
 function App() {
   return (
-    <Router>
-      <>
+    <AuthProvider>
+      <Router>
         <Menu />
         <Switch>
-          <Route path="/cursos/:cursoId" component={VistaCurso} />
-          <Route path="/" exact>
-            <VistaHome />
-          </Route>
-
-          <Route path="/cursos" exact>
-            <VistaListaCursos />
-          </Route>
+          <Route path="/login" exact component={SignIn} />
+          <Route path="/" exact component={VistaHome} />
+          <Route path="/cursos" exact component={VistaListaCursos} />
+          <Route path="/cursos/:cursoId" exact component={VistaCurso} />
         </Switch>
         <PiePagina />
-      </>
-      <GlobalStyle />
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 }
 
