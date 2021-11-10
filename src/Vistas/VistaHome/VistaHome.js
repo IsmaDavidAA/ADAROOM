@@ -15,17 +15,16 @@ import {
   Link,
   useRouteMatch,
   useParams,
-  useHistory
+  useHistory,
 } from "react-router-dom";
 import Cuerpo from "../../components/Cuerpo";
 import Mosaico from "../../components/Mosaico";
 import { apiSettings } from "../../services/services";
-import { getAuth, signOut } from "firebase/auth";
 
 const VistaHome = () => {
   const [cursos, setCursos] = useState([]);
   const [state, setState] = useState(false);
-  const history=useHistory();
+  const history = useHistory();
   const fetchCursos = async () => {
     if (!state) {
       const temp = await apiSettings.getTopCursos();
@@ -39,24 +38,21 @@ const VistaHome = () => {
     fetchCursos();
   }, [cursos]);
 
-
   const auth = getAuth();
-  
 
   return (
     <>
       <Contenedor>
         <Cuerpo />
         <button
-
           onClick={() => {
             signOut(auth)
-    .then(() => {
-      // Sign-out successful.
-    })
-    .catch((error) => {
-      // An error happened.
-    });
+              .then(() => {
+                // Sign-out successful.
+              })
+              .catch((error) => {
+                // An error happened.
+              });
           }}
         >
           {" "}
