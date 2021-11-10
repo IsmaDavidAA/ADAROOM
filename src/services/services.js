@@ -15,6 +15,7 @@ import { db } from "./firebase";
 const listaCursos = "curso";
 const listaTemarios = "temario";
 const listaInscripciones = "inscripcion";
+const estudiante = "estudiante";
 export const apiSettings = {
   getCursos: async () => {
     const datos = await getDocs(collection(db, listaCursos));
@@ -64,8 +65,35 @@ export const apiSettings = {
     if (datosJson === []) {
       datosJson = [{}];
     }
-    console.log(datosJson);
+   
     return await datosJson;
+  },
+
+   getNombre: async (iduser) => {
+    const q = query(
+      collection(db, estudiante),
+      where("correo", "==", `${iduser}`)
+
+      
+    );
+    const querySnapshot = await getDocs(q);
+    let datosEst = [];
+    querySnapshot.forEach((doc) => {
+      datosEst.push([doc.id, doc.data()]);
+    });
+
+    if (datosEst === []) {
+      datosEst = [{}];
+    }
+    console.log(datosEst);
+    return await datosEst;
+  },
+
+  getName: async (userId) => {
+    const user = await getDoc(doc(db, estudiante, userId));
+    console.log(user);
+    return [user.id, user.data()];
+  
   },
 
   postInscripcion: async (idCurso, idEst) => {
