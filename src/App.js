@@ -7,6 +7,7 @@ import {
   Link,
   useRouteMatch,
   useParams,
+  Redirect,
 } from "react-router-dom";
 import VistaHome from "./Vistas/VistaHome/VistaHome";
 import VistaCurso from "./Vistas/VistaCurso/VistaCurso";
@@ -30,10 +31,15 @@ function App() {
           <Route path="/" exact component={VistaHome} />
           <Route path="/cursos" exact component={VistaListaCursos} />
           <Route path="/cursos/:cursoId" exact component={VistaCurso} />
+
           <Route path= "/MisCursos" exact component={VistaMisCursos} />
+
+          <Redirect path="/" exact component={VistaHome} />
+
         </Switch>
         <PiePagina />
       </Router>
+      <GlobalStyle />
     </AuthProvider>
     
   );
