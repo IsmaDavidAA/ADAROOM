@@ -16,6 +16,11 @@ import PiePagina from "./components/PiePagina";
 import { GlobalStyle } from "./GlobalStyle";
 import { AuthProvider } from "./Context";
 import SignIn from "./Vistas/VistaLogin/Login";
+
+
+
+import VistaMisCursos from "./Vistas/VistaMisCursos/VistaMisCursos";
+
 function App() {
   return (
     <AuthProvider>
@@ -26,12 +31,17 @@ function App() {
           <Route path="/" exact component={VistaHome} />
           <Route path="/cursos" exact component={VistaListaCursos} />
           <Route path="/cursos/:cursoId" exact component={VistaCurso} />
+
+          <Route path= "/MisCursos" exact component={VistaMisCursos} />
+
           <Redirect path="/" exact component={VistaHome} />
+
         </Switch>
         <PiePagina />
       </Router>
       <GlobalStyle />
     </AuthProvider>
+    
   );
 }
 

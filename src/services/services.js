@@ -103,7 +103,7 @@ export const apiSettings = {
     return existe;
   },
 
-  //--------------------------------------------
+
   getInscripciones: async (idEst) => {
     const q = query(
       collection(db, "inscripcion"),
@@ -128,7 +128,6 @@ export const apiSettings = {
     console.log(insCompletoJson);
     return await insCompletoJson;
   },
-  
-  
+
 
 };
