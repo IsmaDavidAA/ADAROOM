@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
         --blueAgua: #0061A8;
         --plomo: #999999;
         --plomoAgua: #C4C4C4;
+        --blueSuave: #8AB6D6;
         
         --SuperGrande: 70px;
         --TituloPrimario: 30px;
@@ -22,5 +23,3 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     `;
-
-    
