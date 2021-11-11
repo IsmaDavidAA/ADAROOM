@@ -36,9 +36,7 @@ const InscritoLink = ({
           const donePut = await apiSettings.y(idCurso);
           const donePost = await apiSettings.x(idCurso, idEst);
           modACtionNext();
-          modACtionFirstSuccess();
-          alert(idEst)
-          alert(" Te acabas de desuscribir de curso")
+          window.location.reload();      
         }}
         made={made}
       />

@@ -8,6 +8,7 @@ import {
   orderBy,
   limit,
   updateDoc,
+  setDoc,
   addDoc,
   increment,
   FieldValue,
@@ -73,16 +74,17 @@ export const apiSettings = {
   },
 
   postInscripcion: async(idCurso, idEst) => {
-    await addDoc(collection(db, listaInscripciones), {
+    await setDoc(doc(db, listaInscripciones, idEst), {
       codCurso: idCurso,
       codEst: idEst,
       estadoInscripcion: 1,
     });
+    
     return true;
   },
 
   x: async(idCurso, idEst) => {
-    await  deleteDoc(doc(db, listaInscripciones,doc.id
+    await  deleteDoc(doc(db, listaInscripciones, idEst
       ));
    
   },
