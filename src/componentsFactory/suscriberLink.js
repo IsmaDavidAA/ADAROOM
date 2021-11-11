@@ -30,7 +30,17 @@ const InscritoLink = ({
         action={async () => {
           //consultas aqui
         }}
-        content={"Baja"} //texto aqui
+        content={"Darme de baja de este curso"} //texto aqui
+        action={async () => {
+          modActionFirst();
+          const donePut = await apiSettings.y(idCurso);
+          const donePost = await apiSettings.x(idCurso, idEst);
+          modACtionNext();
+          modACtionFirstSuccess();
+          alert(idEst)
+          alert(" Te acabas de desuscribir de curso")
+        }}
+        made={made}
       />
     );
   } else {

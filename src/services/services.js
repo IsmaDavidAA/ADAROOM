@@ -11,6 +11,7 @@ import {
   addDoc,
   increment,
   FieldValue,
+  deleteDoc,
 } from "firebase/firestore";
 import { db } from "./firebase";
 
@@ -80,9 +81,22 @@ export const apiSettings = {
     return true;
   },
 
+  x: async(idCurso, idEst) => {
+    await  deleteDoc(doc(db, listaInscripciones,doc.id
+      ));
+   
+  },
+
   putCurso: async(idCurso) => {
     await updateDoc(doc(db, listaCursos, idCurso), {
       cantInscritos: increment(1),
+    });
+    return true;
+  },
+
+  y: async(idCurso) => {
+    await updateDoc(doc(db, listaCursos, idCurso), {
+      cantInscritos: increment(-1),
     });
     return true;
   },
