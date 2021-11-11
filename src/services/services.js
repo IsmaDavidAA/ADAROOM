@@ -83,7 +83,7 @@ export const apiSettings = {
     return true;
   },
 
-  x: async(idCurso, idEst) => {
+  dropOutCourse: async(idCurso, idEst) => {
     await  deleteDoc(doc(db, listaInscripciones, idEst
       ));
    
@@ -96,7 +96,7 @@ export const apiSettings = {
     return true;
   },
 
-  y: async(idCurso) => {
+  updateCourse: async(idCurso) => {
     await updateDoc(doc(db, listaCursos, idCurso), {
       cantInscritos: increment(-1),
     });

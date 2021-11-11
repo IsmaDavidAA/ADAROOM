@@ -33,8 +33,8 @@ const InscritoLink = ({
         content={"Darme de baja de este curso"} //texto aqui
         action={async () => {
           modActionFirst();
-          const donePut = await apiSettings.y(idCurso);
-          const donePost = await apiSettings.x(idCurso, idEst);
+          const donePut = await apiSettings.updateCourse(idCurso);
+          const donePost = await apiSettings.dropOutCourse(idCurso, idEst);
           modACtionNext();
           window.location.reload();      
         }}
