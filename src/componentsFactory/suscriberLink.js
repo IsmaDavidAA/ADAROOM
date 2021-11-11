@@ -10,7 +10,7 @@ const InscritoLink = ({
   modActionFirst,
   modACtionNext,
   modACtionFirstSuccess,
-  modACtionNextSuccess,
+
 }) => {
   const history = useHistory();
   const made = false;
