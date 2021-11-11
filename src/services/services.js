@@ -9,9 +9,7 @@ import {
   limit,
   updateDoc,
   setDoc,
-  addDoc,
   increment,
-  FieldValue,
   deleteDoc,
 } from "firebase/firestore";
 import { db } from "./firebase";
