@@ -39,3 +39,40 @@ export const CursoEstilo = styled.a`
   bottom: 50px;
   text-decoration: none;
 `;
+export const IniciaSecion = styled.a`
+
+  color: #0061A8;
+
+  font-size: var(--letraMediana);
+  position: absolute;
+  bottom: 50px;
+  top: 33px;
+  left: 1200px;
+  text-decoration: none;
+
+`; 
+  export const MisCuros = styled.a`
+  color: #1e3163;
+  font-weight: bold;
+  font-size: var(--letraMediana);
+  position: absolute;
+  bottom: 50px;
+  top: 33px;
+  left: 680px;
+  text-decoration: none;
+
+`;
+
+export const Estudiate = styled.p`
+  color: #1e3163;
+  font-weight: 400;
+  color: #2978B5;
+  font-size: var(--letraMediana);
+  position: absolute;
+  top: 20px;
+  left: 1100px;
+  text-decoration: none;
+  
+
+`;
+

@@ -8,9 +8,10 @@ export const CuerpoEstilo = styled.div`
 `;
 
 export const TituloEstilo = styled.p`
-  font-size: var(--SuperGrande);
+ 
   color: #0061a8;
   margin: 4rem 13rem 0rem 5rem;
+  font-size: 70px;
 `;
 
 export const TextoEstilo = styled.p`
