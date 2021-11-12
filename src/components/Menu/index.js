@@ -48,7 +48,7 @@ function Menu() {
         <Link to={`/cursos`}>
           <CursoEstilo> CURSOS</CursoEstilo>
         </Link>
-        <Link to={`/misCursos`}>
+        <Link to={`/misCursos`} id="este">
           <MisCuros> MIS CURSOS</MisCuros>
         </Link>
         <Link to={`/`}>
