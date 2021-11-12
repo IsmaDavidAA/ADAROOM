@@ -18,6 +18,9 @@ const listaCursos = "curso";
 const listaTemarios = "temario";
 const listaInscripciones = "inscripcion";
 const estudiante = "estudiante";
+const contenidoSeccion = "contenidoSecion";
+
+
 export const apiSettings = {
   getCursos: async () => {
     const datos = await getDocs(collection(db, listaCursos));
@@ -139,9 +142,23 @@ export const apiSettings = {
     console.log(insCompletoJson);
     return await insCompletoJson;
   },
+
   getName: async (userId) => {
     const user = await getDoc(doc(db, estudiante, userId));
     console.log(user);
     return [user.id, user.data()];
+  },
+
+  getContenido: async (temarioId) => {
+    const q = query(
+      collection(db, contenidoSeccion),
+      where("codSeccion", "==", `${temarioId}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let contenidoJson = [];
+    querySnapshot.forEach((doc) => {
+      contenidoJson.push([doc.id, doc.data()]);
+      console.log(contenidoJson);
+    });
   },
 };
