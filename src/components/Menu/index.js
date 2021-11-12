@@ -1,5 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import ada from "../../images/logoADAROOM.jpg";
+import imgusuario from "../../images/user.png";
+import { getAuth, signOut } from "firebase/auth";
+import { useHistory } from "react-router-dom";
+
+
 import {
   MenuEstilo,
   ImagenEstilo,
@@ -8,6 +13,12 @@ import {
   IniciaSecion,
   MisCuros,
   Estudiate,
+  UsuarioImagen,
+  TrianguloEstilo,
+  CerrarSesion,
+  Mensage,
+  Contenedor,
+  Estilobarra,
 } from "./Menu.styles";
 import {
   BrowserRouter as Router,
@@ -24,6 +35,7 @@ function Menu() {
   const [user, setUser] = useState([]);
   const [nombre, setNombre] = useState("");
   const { currentUser } = useContext(AuthContext);
+  
   const fetchName = async () => {
     if (currentUser) {
       const temp = await apiSettings.getName(currentUser.uid);
@@ -36,6 +48,9 @@ function Menu() {
     fetchName();
   }, [currentUser]);
 
+  const auth = getAuth();
+  const history = useHistory();
+ 
   if (currentUser) {
     return (
       <MenuEstilo>
@@ -54,7 +69,27 @@ function Menu() {
         <Link to={`/`}>
           <Estudiate> {nombre} </Estudiate>
         </Link>
+        <TrianguloEstilo href = "#"> &#x25BC; </TrianguloEstilo>
+        <Link to= {`/`}>
+        <button
+          onClick={() => {
+            signOut(auth)
+              .then(() => {
+                window.location.reload();
+               // history.push("/");
+              })
+              .catch((error) => {
+                // An error happened.
+              });
+          }}
+        >
+          {""}
+          Cerrar Sesion.
+        </button>
+        </Link>
+        <UsuarioImagen src={imgusuario} />
       </MenuEstilo>
+
     );
   } else {
     return (
