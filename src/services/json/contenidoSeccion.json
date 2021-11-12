@@ -1,0 +1,58 @@
+{
+    "1VACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "1ACPSWL",
+      "nombreVideo": "1. Instalación en Windows", 
+      "linkVideo": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a1.%20Instalaci%C3%B3n%20en%20windows.mp4?alt=media&token=f536f6d0-296d-40aa-8a50-7da6ff8835fb",    
+      "tipoInf": "video"
+    },
+    "2VACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "1ACPSWL",
+      "nombreVideo": "2. Instalación en Mac", 
+      "linkVideo": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a2.%20Instalaci%C3%B3n%20en%20Mac.mp4?alt=media&token=eb38474f-acfd-4c7c-b2c6-4b19f361fa23",
+      "tipoInf": "video"
+    },
+    "3CACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "1ACPSWL",
+      "nombreVideo": "Libro Laravel conceptos básicos y ejemplos", 
+      "linkVideo": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a-libro%20laravel%20conceptos%20basicos%20y%20ejemplos.pdf?alt=media&token=f25a2b6c-ca1f-4e15-9881-4a5b70b2f6a0",  
+      "tipoInf": "pdf"    
+  },
+    "4VACPSWL": {
+        "codCurso": "ACPSWL",
+        "codSeccion": "2ACPSWL",
+        "nombreVideo": "3. Integración de una plantilla HTML profesional", 
+        "linkVideo": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a3.%20Integraci%C3%B3n%20de%20una%20plantilla%20HTML%20profesional.mp4?alt=media&token=5e5584b9-c6e1-4fb9-8126-b0228d5f5426",   
+        "tipoInf": "video"
+    },
+    "5VACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "3ACPSWL",
+      "nombreVideo": "4. Activando el formulario de contacto con notificación vía email", 
+      "linkVideo": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a4.%20Activando%20el%20formulario%20de%20contacto%20con%20notificaci%C3%B3n%20v%C3%ADa%20email.mp4?alt=media&token=ae8da2a3-04a4-4aec-bea7-f7b68ad6cbba" ,  
+      "tipoInf": "video"
+    },
+    "6VACPSWL": {
+        "codCurso": "ACPSWL",
+        "codSeccion": "4ACPSWL",
+        "nombreVideo": "5. Deploy en Heroku", 
+        "linkVideo": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a5.%20Deploy%20en%20heroku.mp4?alt=media&token=3ebcf5f5-3beb-4c83-814f-b2703b3c1331",   
+        "tipoInf": "video"
+     },
+    "7VACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "4ACPSWL",
+      "nombreVideo": "6. Laravel en cPanel", 
+      "linkVideo": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a6.%20Laravel%20en%20Cpanel.mp4?alt=media&token=1e7e6c24-2fc5-49fb-91e6-af95565d90e3",   
+      "tipoInf": "video"
+    },
+    "8VACPSWL": {
+        "codCurso": "ACPSWL",
+        "codSeccion": "4ACPSWL",
+        "nombreVideo": "6. Laravel en cPanel", 
+        "linkVideo": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a6.%20Laravel%20en%20Cpanel.mp4?alt=media&token=1e7e6c24-2fc5-49fb-91e6-af95565d90e3",   
+        "tipoInf": "video"
+    }
+}
