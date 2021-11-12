@@ -9,6 +9,8 @@ import {
   limit,
   updateDoc,
   addDoc,
+  increment,
+  FieldValue,
 } from "firebase/firestore";
 import { db } from "./firebase";
 
@@ -65,52 +67,67 @@ export const apiSettings = {
     if (datosJson === []) {
       datosJson = [{}];
     }
-   
+    console.log(datosJson);
     return await datosJson;
   },
 
-   getNombre: async (iduser) => {
-    const q = query(
-      collection(db, estudiante),
-      where("correo", "==", `${iduser}`)
-
-      
-    );
-    const querySnapshot = await getDocs(q);
-    let datosEst = [];
-    querySnapshot.forEach((doc) => {
-      datosEst.push([doc.id, doc.data()]);
-    });
-
-    if (datosEst === []) {
-      datosEst = [{}];
-    }
-    console.log(datosEst);
-    return await datosEst;
-  },
-
-  getName: async (userId) => {
-    const user = await getDoc(doc(db, estudiante, userId));
-    console.log(user);
-    return [user.id, user.data()];
-  
-  },
-
   postInscripcion: async (idCurso, idEst) => {
-    const docRef = await addDoc(collection(db, listaInscripciones), {
+    await addDoc(collection(db, listaInscripciones), {
       codCurso: idCurso,
       codEst: idEst,
       estadoInscripcion: 1,
     });
-    console.log("Document written with ID: ", docRef.id);
+    return true;
   },
 
   putCurso: async (idCurso) => {
-    const docRef = doc(db, listaCursos, idCurso);
-    const curso = await getDoc(docRef);
-    const cant = curso.data().cantInscritos + 1;
-    await updateDoc(docRef, {
-      cantInscritos: cant,
+    await updateDoc(doc(db, listaCursos, idCurso), {
+      cantInscritos: increment(1),
     });
+    return true;
+  },
+
+  getInscrito: async (idCurso, idEst) => {
+    let existe = false;
+    const q = query(
+      collection(db, listaInscripciones),
+      where("codCurso", "==", idCurso),
+      where("codEst", "==", idEst)
+    );
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      existe = true;
+      console.log("oka");
+    });
+
+    return existe;
+  },
+
+  getInscripciones: async (idEst) => {
+    const q = query(
+      collection(db, "inscripcion"),
+      where("codEst", "==", `${idEst}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let inscripcionesJson = [];
+    querySnapshot.forEach((doc) => {
+      inscripcionesJson.push(doc.data().codCurso);
+    });
+    let insCompletoJson = [];
+    inscripcionesJson.forEach(async (element) => {
+      const curso = await getDoc(doc(db, listaCursos, `${element}`));
+      insCompletoJson.push([curso.id, curso.data()]);
+    });
+
+    if (insCompletoJson === []) {
+      insCompletoJson = [{}];
+    }
+    console.log(insCompletoJson);
+    return await insCompletoJson;
+  },
+  getName: async (userId) => {
+    const user = await getDoc(doc(db, estudiante, userId));
+    console.log(user);
+    return [user.id, user.data()];
   },
 };
