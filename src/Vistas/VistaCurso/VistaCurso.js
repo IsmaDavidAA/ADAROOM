@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useContext } from "react";
 import { apiSettings } from "../../services/services";
 import CardCourse from "../../components/CardCourse/CardCourse";
@@ -27,6 +26,7 @@ const VistaCurso = () => {
   const [statex, setStatex] = useState(false);
   const [state, setState] = useState(false);
   const [inscrito, setInscrito] = useState(false);
+  const [inscritoID, setInscritoID] = useState(null);
   const [uid, setUid] = useState("");
 
   const fetchInscrito = async () => {
@@ -37,7 +37,8 @@ const VistaCurso = () => {
         cursoId,
         currentUser.uid
       );
-      setInscrito(estaInscrito);
+      setInscrito(estaInscrito[0]);
+      setInscritoID(estaInscrito[1]);
       setUid(currentUser.uid);
     }
   };
@@ -91,6 +92,7 @@ const VistaCurso = () => {
               inscrito={inscrito}
               idCurso={curso[0]}
               idEst={uid}
+              idIns={inscritoID}
               modActionFirst={openModal}
               modACtionNext={closeModal}
               modACtionFirstSuccess={openModalNext}
@@ -115,8 +117,12 @@ const VistaCurso = () => {
           </ButtonSuccess>
         </Modal>
         <Descripcion descripcion={curso[1].descripcion} />
-        
-        <ContentFactory inscrito={inscrito} idCurso={curso[0]} temas={temario} />
+
+        <ContentFactory
+          inscrito={inscrito}
+          idCurso={curso[0]}
+          temas={temario}
+        />
       </Contenedor>
     );
   } else {
