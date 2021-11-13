@@ -10,10 +10,10 @@ const Index = (props) => {
    
     return (
         <CuadroLogin>
-         <Titulo>¡ Inicia sesión con tu cuenta de AdaRoom!</Titulo>
+         <Titulo>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¡Inicia sesión con tu cuenta de AdaRoom!</Titulo>
          <Titulo2>
-             Por favor llene el siguiente formulario para <br/>
-             Validar su ingreso
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Por favor llene el siguiente formulario para <br/>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validar su ingreso
          </Titulo2>
         
 
@@ -21,7 +21,7 @@ const Index = (props) => {
         <Formulario onSubmit={props.handleLogin}>
           <Div>
              <IconEmail src = {email}/> 
-             <InputCorreo   name="email" type="email" placeholder="Correo electronico" required  maxLength="40"  /> 
+             <InputCorreo   name="email" type="email" placeholder="Correo electrónico" required  maxLength="40"  /> 
           </Div>
         <Div>
         <IconPasswd src = {password}/>

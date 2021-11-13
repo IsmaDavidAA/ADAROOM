@@ -25,15 +25,15 @@ const SignIn = ({history}) => {
         console.log(AuthContext);
         
       } catch (error) {
-      alert('Acceso inválido.Por favor intente de nuevo');
+      alert('Acceso inválido. Por favor intente de nuevo');
         }
     },
     [history]
   );
-   // const {currentUser} = useContext(AuthContext);
-    // if (currentUser){
-    //   return <Redirect to ="/" />;
-    // }
+    const {currentUser} = useContext(AuthContext);
+     if (currentUser){
+       return <Redirect to ="/" />;
+     }
     return (
 
       <Index handleLogin={handleLogin}/>

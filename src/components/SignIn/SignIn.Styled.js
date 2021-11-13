@@ -35,30 +35,30 @@ display: block;
 export const InputCorreo= styled.input`
 background: none;
 display: block;
-margin: 0px 0rem 0rem 35px;
+
 border: none;
-width: 284px;
-height: 45px;
-padding: 0rem 0rem 0rem 0rem;
+width: 325px;
+height: 55px;
+padding: 0px 0rem 0rem 35px;
 font-size: 20px;
+font-family: 'Segoe UI';
 `;
 export const InputContraseña = styled.input`
-padding:0px 0px 0px 0px ;
-margin: 0rem 0rem 0rem 35px;
+padding: 0px 0rem 0rem 35px;
 display: block;
-width: 284px;
-height: 45px;
+width: 325px;
+height: 55px;
 font-size: 20px;
 background: none;
 border: none;
-
+font-family: 'Segoe UI';
 `;
 export const Boton = styled.button`
 text-align: center;
 
 margin: 0px 0rem 0rem 0rem;
-width: 322px;
-height: 45px;
+width: 360px;
+height: 55px;
 background: #0061A8;
 display: block;
 color: #ffffff;
@@ -70,7 +70,7 @@ width:16px;
 height: 16px;
 position: absolute;
 left: 10px;
-top :30px;
+top : 37px;
 
 
 `;
@@ -79,16 +79,15 @@ width:16px;
 height: 16px;
 position: absolute;
 left: 10px;
-top :110px;
+top :125px;
 
 
 `;
 export const Div = styled.div`
 margin: 1rem 0rem 2rem 0rem;
-width: 320px;
-height: 45px;
+width: 360px;
+height: 55px;
 border:1px solid #aaa;
-
 `;
 
 

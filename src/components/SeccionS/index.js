@@ -28,8 +28,8 @@ const Accordion = (props) => {
         `<div style= " display:flex; background: none;  cursor: context-menu; "  >` +
         `${
           element[1].tipoInf === "pdf"
-            ? `<img src=${pdf} style="width:45px; heigth:45px; margin-top: 30px;" />`
-            : `<img src=${video} style="width:45px; heigth:45px;margin-top: 30px;"/>`
+            ? `<img src=${pdf} style="width:45.4px; heigth:45px; margin-top: 30px;" />`
+            : `<img src=${video} style="width:45.4px; heigth:45px;margin-top: 30px;"/>`
         } ` +
         `<a href="${element[1].link}"style="text-decoration:none; color:black; font-size: 20px; font-weight:bold; margin-left:18px; margin-top: 30px;">` +
         element[1].titulo +
