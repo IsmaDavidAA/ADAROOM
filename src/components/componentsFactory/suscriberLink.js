@@ -1,6 +1,6 @@
 import React from "react";
-import { apiSettings } from "../services/services";
-import GeneralLink from "../components/SuscriberLink";
+import { apiSettings } from "../../services/services";
+import GeneralLink from "../SuscriberLink";
 import { useHistory } from "react-router-dom";
 
 const InscritoLink = ({
