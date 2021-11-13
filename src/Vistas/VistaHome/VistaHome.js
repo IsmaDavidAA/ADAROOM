@@ -44,21 +44,6 @@ const VistaHome = () => {
     <>
       <Contenedor>
         <Cuerpo />
-        <button
-          onClick={() => {
-            signOut(auth)
-              .then(() => {
-                // Sign-out successful.
-              })
-              .catch((error) => {
-                // An error happened.
-              });
-          }}
-        >
-          {" "}
-          aqui pos
-        </button>
-
         <Coment>100% gratis</Coment>
         <Coment1>Comienza a aprender con cursos gratis</Coment1>
         <Mosaico datos={cursos} />
