@@ -76,18 +76,17 @@ export const Estudiate = styled.p`
 export const UsuarioImagen = styled.img`
 top: 15px;
 position: absolute;
-left: 1400px;
+left: 1375px;
 width: 55px;
 height: 55px;
 `;
 
 export const Estilobarra = styled.a`
-size: 30px;
 position: absolute;
-left: 1450px;
-top: 35px;
+left: 1435px;
+top: 56px;
 `;
-export const TrianguloEstilo = styled.a`
+export const TrianguloEstilo = styled.div`
 color: #999999;
 position: absolute;
 left: 1465px;

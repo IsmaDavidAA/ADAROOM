@@ -48,9 +48,10 @@ function Menu() {
     fetchName();
   }, [currentUser]);
 
+
   const auth = getAuth();
   const history = useHistory();
- 
+  
   if (currentUser) {
     return (
       <MenuEstilo>
@@ -70,6 +71,7 @@ function Menu() {
           <Estudiate> {nombre} </Estudiate>
         </Link>
         <TrianguloEstilo href = "#"> &#x25BC; </TrianguloEstilo>
+       <Estilobarra>
         <Link to= {`/`}>
         <button
           onClick={() => {
@@ -87,7 +89,8 @@ function Menu() {
           Cerrar Sesion.
         </button>
         </Link>
-        <UsuarioImagen src={imgusuario} />
+        </Estilobarra>
+       <UsuarioImagen src={imgusuario} />
       </MenuEstilo>
 
     );
