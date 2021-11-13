@@ -10,7 +10,7 @@ const InscritoLink = ({
   modActionFirst,
   modACtionNext,
   modACtionFirstSuccess,
-
+  idIns,
 }) => {
   const history = useHistory();
   const made = false;
@@ -34,7 +34,7 @@ const InscritoLink = ({
         action={async () => {
           modActionFirst();
           const donePut = await apiSettings.updateCourse(idCurso);
-          const donePost = await apiSettings.dropOutCourse(idCurso, idEst);
+          const donePost = await apiSettings.dropOutCourse(idIns);
           modACtionNext();
           window.location.reload();      
         }}

@@ -11,6 +11,7 @@ import {
   setDoc,
   increment,
   deleteDoc,
+  addDoc,
 } from "firebase/firestore";
 import { db } from "./firebase";
 
@@ -74,17 +75,17 @@ export const apiSettings = {
   },
 
   postInscripcion: async (idCurso, idEst) => {
-    await setDoc(doc(db, listaInscripciones, idEst), {
+    await addDoc(collection(db, listaInscripciones), {
       codCurso: idCurso,
       codEst: idEst,
       estadoInscripcion: 1,
     });
-
     return true;
   },
 
-  dropOutCourse: async (idCurso, idEst) => {
-    await deleteDoc(doc(db, listaInscripciones, idEst));
+  dropOutCourse: async (idIns) => {
+    await deleteDoc(doc(db, listaInscripciones, idIns));
+    return true;
   },
 
   putCurso: async (idCurso) => {
@@ -109,12 +110,14 @@ export const apiSettings = {
       where("codEst", "==", idEst)
     );
     const querySnapshot = await getDocs(q);
+    let idIns;
     querySnapshot.forEach((doc) => {
       existe = true;
+      idIns = doc.id;
       console.log("oka");
     });
 
-    return existe;
+    return [existe, idIns];
   },
 
   getInscripciones: async (idEst) => {
@@ -159,4 +162,3 @@ export const apiSettings = {
     return contenidoJson;
   },
 };
-
