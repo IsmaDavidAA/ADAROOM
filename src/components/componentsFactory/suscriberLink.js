@@ -1,6 +1,6 @@
 import React from "react";
-import { apiSettings } from "../services/services";
-import GeneralLink from "../components/SuscriberLink";
+import { apiSettings } from "../../services/services";
+import GeneralLink from "../SuscriberLink";
 import { useHistory } from "react-router-dom";
 
 const InscritoLink = ({
@@ -10,7 +10,7 @@ const InscritoLink = ({
   modActionFirst,
   modACtionNext,
   modACtionFirstSuccess,
-  modACtionNextSuccess,
+
 }) => {
   const history = useHistory();
   const made = false;
@@ -30,7 +30,15 @@ const InscritoLink = ({
         action={async () => {
           //consultas aqui
         }}
-        content={"Baja"} //texto aqui
+        content={"Darme de baja de este curso"} //texto aqui
+        action={async () => {
+          modActionFirst();
+          const donePut = await apiSettings.updateCourse(idCurso);
+          const donePost = await apiSettings.dropOutCourse(idCurso, idEst);
+          modACtionNext();
+          window.location.reload();      
+        }}
+        made={made}
       />
     );
   } else {

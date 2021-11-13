@@ -1,12 +1,11 @@
+
 import React, { useEffect, useState, useContext } from "react";
-import Menu from "../../components/Menu";
 import { apiSettings } from "../../services/services";
-import Contenidos from "../../components/Contenido";
 import CardCourse from "../../components/CardCourse/CardCourse";
 import Descripcion from "../../components/Descripcion";
 import { Contenedor } from "../../components/Descripcion/Descripcion.styles";
 import { useParams } from "react-router-dom";
-import InscritoLink from "../../componentsFactory/suscriberLink";
+import InscritoLink from "../../components/componentsFactory/suscriberLink";
 import { AuthContext } from "../../Context";
 import { useModal } from "../../hooks/useModal";
 import Modal from "../../components/Modal";
@@ -16,6 +15,8 @@ import {
   CongratulationsTitle,
   ProcesingText,
 } from "./VistaCurso.styles";
+import ContentFactory from "../../componentsFactory/componentFactory";
+
 const VistaCurso = () => {
   const { cursoId } = useParams();
   const { currentUser } = useContext(AuthContext);
@@ -114,7 +115,8 @@ const VistaCurso = () => {
           </ButtonSuccess>
         </Modal>
         <Descripcion descripcion={curso[1].descripcion} />
-        <Contenidos datos={temario} />
+        
+        <ContentFactory inscrito={inscrito} idCurso={curso[0]} temas={temario} />
       </Contenedor>
     );
   } else {

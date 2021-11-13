@@ -1,13 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
 import ada from "../../images/logoADAROOM.jpg";
-<<<<<<< Updated upstream
-=======
 import imgusuario from "../../images/user.png";
 import { getAuth, signOut } from "firebase/auth";
 import { useHistory } from "react-router-dom";
-import { usePopper } from "react-popper";
 
->>>>>>> Stashed changes
+
 import {
   MenuEstilo,
   ImagenEstilo,
@@ -16,6 +13,12 @@ import {
   IniciaSecion,
   MisCuros,
   Estudiate,
+  UsuarioImagen,
+  TrianguloEstilo,
+  CerrarSesion,
+  Mensage,
+  Contenedor,
+  Estilobarra,
 } from "./Menu.styles";
 import {
   BrowserRouter as Router,
@@ -32,6 +35,7 @@ function Menu() {
   const [user, setUser] = useState([]);
   const [nombre, setNombre] = useState("");
   const { currentUser } = useContext(AuthContext);
+  
   const fetchName = async () => {
     if (currentUser) {
       const temp = await apiSettings.getName(currentUser.uid);
@@ -44,17 +48,10 @@ function Menu() {
     fetchName();
   }, [currentUser]);
 
-<<<<<<< Updated upstream
-=======
+
   const auth = getAuth();
   const history = useHistory();
-//prueba drop con popUs
- 
   
-
- 
-//prueba con popUs
->>>>>>> Stashed changes
   if (currentUser) {
     return (
       <MenuEstilo>
@@ -67,14 +64,12 @@ function Menu() {
         <Link to={`/cursos`}>
           <CursoEstilo> CURSOS</CursoEstilo>
         </Link>
-        <Link to={`/misCursos`}>
+        <Link to={`/misCursos`} id="este">
           <MisCuros> MIS CURSOS</MisCuros>
         </Link>
         <Link to={`/`}>
           <Estudiate> {nombre} </Estudiate>
         </Link>
-<<<<<<< Updated upstream
-=======
         <TrianguloEstilo href = "#"> &#x25BC; </TrianguloEstilo>
        <Estilobarra>
         <Link to= {`/`}>
@@ -95,12 +90,9 @@ function Menu() {
         </button>
         </Link>
         </Estilobarra>
-
-       
-       
-        <UsuarioImagen src={imgusuario} />
->>>>>>> Stashed changes
+       <UsuarioImagen src={imgusuario} />
       </MenuEstilo>
+
     );
   } else {
     return (

@@ -8,9 +8,9 @@ import {
   orderBy,
   limit,
   updateDoc,
-  addDoc,
+  setDoc,
   increment,
-  FieldValue,
+  deleteDoc,
 } from "firebase/firestore";
 import { db } from "./firebase";
 
@@ -18,6 +18,8 @@ const listaCursos = "curso";
 const listaTemarios = "temario";
 const listaInscripciones = "inscripcion";
 const estudiante = "estudiante";
+const contenidoSeccion = "contenidoSeccion";
+
 export const apiSettings = {
   getCursos: async () => {
     const datos = await getDocs(collection(db, listaCursos));
@@ -72,17 +74,29 @@ export const apiSettings = {
   },
 
   postInscripcion: async (idCurso, idEst) => {
-    await addDoc(collection(db, listaInscripciones), {
+    await setDoc(doc(db, listaInscripciones, idEst), {
       codCurso: idCurso,
       codEst: idEst,
       estadoInscripcion: 1,
     });
+
     return true;
+  },
+
+  dropOutCourse: async (idCurso, idEst) => {
+    await deleteDoc(doc(db, listaInscripciones, idEst));
   },
 
   putCurso: async (idCurso) => {
     await updateDoc(doc(db, listaCursos, idCurso), {
       cantInscritos: increment(1),
+    });
+    return true;
+  },
+
+  updateCourse: async (idCurso) => {
+    await updateDoc(doc(db, listaCursos, idCurso), {
+      cantInscritos: increment(-1),
     });
     return true;
   },
@@ -125,9 +139,24 @@ export const apiSettings = {
     console.log(insCompletoJson);
     return await insCompletoJson;
   },
+
   getName: async (userId) => {
     const user = await getDoc(doc(db, estudiante, userId));
     console.log(user);
     return [user.id, user.data()];
   },
+
+  getContenido: async (temarioId) => {
+    const q = query(
+      collection(db, contenidoSeccion),
+      where("codSeccion", "==", `${temarioId}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let contenidoJson = [];
+    querySnapshot.forEach((doc) => {
+      contenidoJson.push([doc.id, doc.data()]);
+    });
+    return contenidoJson;
+  },
 };
+
