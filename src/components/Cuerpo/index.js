@@ -14,7 +14,7 @@ function Cuerpo() {
         <TituloEstilo> APRENDIZAJE SIN LÍMITES</TituloEstilo>
         <TextoEstilo>
           {" "}
-          Adquiere habilidades con los cursos en linea que ofrecen las
+          Adquiere habilidades con los cursos en línea que ofrecen las
           universidades y las empresas más importantes del mundo en el área de
           programación y creación de páginas web.
         </TextoEstilo>
