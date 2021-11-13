@@ -30,10 +30,10 @@ const SignIn = ({history}) => {
     },
     [history]
   );
-   // const {currentUser} = useContext(AuthContext);
-    // if (currentUser){
-    //   return <Redirect to ="/" />;
-    // }
+    const {currentUser} = useContext(AuthContext);
+    if (currentUser){
+      return <Redirect to ="/" />;
+    }
     return (
 
       <Index handleLogin={handleLogin}/>
