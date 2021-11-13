@@ -1,5 +1,13 @@
 import React, { useEffect, useState, useContext } from "react";
 import ada from "../../images/logoADAROOM.jpg";
+<<<<<<< Updated upstream
+=======
+import imgusuario from "../../images/user.png";
+import { getAuth, signOut } from "firebase/auth";
+import { useHistory } from "react-router-dom";
+import { usePopper } from "react-popper";
+
+>>>>>>> Stashed changes
 import {
   MenuEstilo,
   ImagenEstilo,
@@ -36,6 +44,17 @@ function Menu() {
     fetchName();
   }, [currentUser]);
 
+<<<<<<< Updated upstream
+=======
+  const auth = getAuth();
+  const history = useHistory();
+//prueba drop con popUs
+ 
+  
+
+ 
+//prueba con popUs
+>>>>>>> Stashed changes
   if (currentUser) {
     return (
       <MenuEstilo>
@@ -54,6 +73,33 @@ function Menu() {
         <Link to={`/`}>
           <Estudiate> {nombre} </Estudiate>
         </Link>
+<<<<<<< Updated upstream
+=======
+        <TrianguloEstilo href = "#"> &#x25BC; </TrianguloEstilo>
+       <Estilobarra>
+        <Link to= {`/`}>
+        <button
+          onClick={() => {
+            signOut(auth)
+              .then(() => {
+                window.location.reload();
+               // history.push("/");
+              })
+              .catch((error) => {
+                // An error happened.
+              });
+          }}
+        >
+          {""}
+          Cerrar Sesion.
+        </button>
+        </Link>
+        </Estilobarra>
+
+       
+       
+        <UsuarioImagen src={imgusuario} />
+>>>>>>> Stashed changes
       </MenuEstilo>
     );
   } else {

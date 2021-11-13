@@ -75,4 +75,30 @@ export const Estudiate = styled.p`
   
 
 `;
+<<<<<<< Updated upstream
 
+=======
+export const UsuarioImagen = styled.img`
+top: 15px;
+position: absolute;
+left: 1375px;
+width: 55px;
+height: 55px;
+`;
+
+export const Estilobarra = styled.a`
+position: absolute;
+left: 1435px;
+top: 56px;
+`;
+export const TrianguloEstilo = styled.div`
+color: #999999;
+position: absolute;
+left: 1465px;
+top: 35px;
+text-decoration: none;
+`;
+
+
+
+>>>>>>> Stashed changes
