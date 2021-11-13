@@ -6,7 +6,7 @@ import {
   CantInsL,
   NombreIL,
   Texto,
-} from "./Mosaico1.styles";
+} from "./ListaMC.styles";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,14 +15,12 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom";
-//<Link to={`/cursos/${props.curso[0]}`}> imagen </Link>
-const Mosaico1 = (props) => {
+const ListaMC = (props) => {
   return (
     <Recuadro>
       <Link to={`/cursos/${props.curso[0]}`}>
         <ImagenL src={props.curso[1].imagen} />
       </Link>
-
       <Texto>
         <Link
           to={`/cursos/${props.curso[0]}`}
@@ -31,10 +29,12 @@ const Mosaico1 = (props) => {
           <NombreIL>{props.curso[1].nombreCurso}</NombreIL>
         </Link>
         <AutorL>{props.curso[1].institucion}</AutorL>
-        <CantInsL>{props.curso[1].cantInscritos} ya inscritos </CantInsL>
+        <CantInsL>{props.curso[1].cantInscritos} ya Inscritos </CantInsL>
+        <p><br/><br/>
+          EMPEZAR CURSO</p>
       </Texto>
     </Recuadro>
   );
 };
 
-export default Mosaico1;
+export default ListaMC;

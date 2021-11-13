@@ -7,11 +7,19 @@ import {
   getDoc,
   orderBy,
   limit,
+  updateDoc,
+  setDoc,
+  increment,
+  deleteDoc,
+  addDoc,
 } from "firebase/firestore";
-import db from "./firebase";
+import { db } from "./firebase";
 
 const listaCursos = "curso";
 const listaTemarios = "temario";
+const listaInscripciones = "inscripcion";
+const estudiante = "estudiante";
+const contenidoSeccion = "contenidoSeccion";
 
 export const apiSettings = {
   getCursos: async () => {
@@ -64,5 +72,93 @@ export const apiSettings = {
     }
     console.log(datosJson);
     return await datosJson;
+  },
+
+  postInscripcion: async (idCurso, idEst) => {
+    await addDoc(collection(db, listaInscripciones), {
+      codCurso: idCurso,
+      codEst: idEst,
+      estadoInscripcion: 1,
+    });
+    return true;
+  },
+
+  dropOutCourse: async (idIns) => {
+    await deleteDoc(doc(db, listaInscripciones, idIns));
+    return true;
+  },
+
+  putCurso: async (idCurso) => {
+    await updateDoc(doc(db, listaCursos, idCurso), {
+      cantInscritos: increment(1),
+    });
+    return true;
+  },
+
+  updateCourse: async (idCurso) => {
+    await updateDoc(doc(db, listaCursos, idCurso), {
+      cantInscritos: increment(-1),
+    });
+    return true;
+  },
+
+  getInscrito: async (idCurso, idEst) => {
+    let existe = false;
+    const q = query(
+      collection(db, listaInscripciones),
+      where("codCurso", "==", idCurso),
+      where("codEst", "==", idEst)
+    );
+    const querySnapshot = await getDocs(q);
+    let idIns;
+    querySnapshot.forEach((doc) => {
+      existe = true;
+      idIns = doc.id;
+      console.log("oka");
+    });
+
+    return [existe, idIns];
+  },
+
+  getInscripciones: async (idEst) => {
+    const q = query(
+      collection(db, "inscripcion"),
+      where("codEst", "==", `${idEst}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let inscripcionesJson = [];
+    querySnapshot.forEach((doc) => {
+      inscripcionesJson.push(doc.data().codCurso);
+    });
+    let insCompletoJson = [];
+    inscripcionesJson.forEach(async (element) => {
+      const curso = await getDoc(doc(db, listaCursos, `${element}`));
+      insCompletoJson.push([curso.id, curso.data()]);
+    });
+
+    if (insCompletoJson === []) {
+      insCompletoJson = [{}];
+    }
+    console.log(insCompletoJson);
+    return await insCompletoJson;
+  },
+
+  getName: async (userId) => {
+    const user = await getDoc(doc(db, estudiante, userId));
+    console.log(user);
+    return [user.id, user.data()];
+  },
+
+  getContenido: async (temarioId) => {
+    const q = query(
+      collection(db, contenidoSeccion),
+      where("codSeccion", "==", `${temarioId}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let contenidoJson = [];
+    querySnapshot.forEach((doc) => {
+      contenidoJson.push([doc.id, doc.data()]);
+    });
+    return contenidoJson;
   },
 };

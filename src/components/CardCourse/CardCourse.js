@@ -6,25 +6,34 @@ import {
   Course,
   Institution,
   Inscribed,
+  InscribedState,
+  WrapperStateInscripcion,
+  WrapperTitle,
+  WrapperState,
 } from "./StyleList";
 
-export default function CardCourse({
+const CardCourse = ({
   codigo,
   nombreCurso,
   institucion,
   imagen,
   cantInscritos,
-}) {
+  children,
+}) => {
   return (
-    <StyledCard className="d-flex">
-      <ImageC className="p-15px" src={imagen} alt="" srcset="" width="300" />
-      <CardContainer className="p-15px">
-        <Course className="text-bold space">{nombreCurso}</Course>
-        <Institution className="space">{institucion}</Institution>
-        <Inscribed className="text-bold">
-          {cantInscritos} Participantes
-        </Inscribed>
+    <StyledCard>
+      <ImageC src={imagen} alt="" srcset="" />
+      <CardContainer>
+        <WrapperTitle>
+          <Course>{nombreCurso}</Course>
+          <Institution>{institucion}</Institution>
+          <Inscribed>{cantInscritos} ya inscritos</Inscribed>
+        </WrapperTitle>
+        <WrapperState>
+          <InscribedState>{children}</InscribedState>
+        </WrapperState>
       </CardContainer>
     </StyledCard>
   );
-}
+};
+export default CardCourse;

@@ -39,3 +39,57 @@ export const CursoEstilo = styled.a`
   bottom: 50px;
   text-decoration: none;
 `;
+export const IniciaSecion = styled.a`
+
+  color: #0061A8;
+
+  font-size: var(--letraMediana);
+  position: absolute;
+  bottom: 50px;
+  top: 33px;
+  left: 1200px;
+  text-decoration: none;
+
+`; 
+  export const MisCuros = styled.a`
+  color: #1e3163;
+  font-weight: bold;
+  font-size: var(--letraMediana);
+  position: absolute;
+  bottom: 50px;
+  top: 33px;
+  left: 680px;
+  text-decoration: none;
+
+`;
+
+export const Estudiate = styled.p`
+  color: #2978B5;
+  font-size: var(--letraMediana);
+  position: absolute;
+  top: 33px;
+  left: 1265px;
+  text-decoration: none;
+  margin: 0px;
+
+`;
+export const UsuarioImagen = styled.img`
+top: 15px;
+position: absolute;
+left: 1375px;
+width: 55px;
+height: 55px;
+`;
+
+export const Estilobarra = styled.a`
+position: absolute;
+left: 1435px;
+top: 56px;
+`;
+export const TrianguloEstilo = styled.div`
+color: #999999;
+position: absolute;
+left: 1465px;
+top: 35px;
+text-decoration: none;
+`;

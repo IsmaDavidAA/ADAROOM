@@ -7,31 +7,41 @@ import {
   Link,
   useRouteMatch,
   useParams,
+  Redirect,
 } from "react-router-dom";
 import VistaHome from "./Vistas/VistaHome/VistaHome";
 import VistaCurso from "./Vistas/VistaCurso/VistaCurso";
 import VistaListaCursos from "./Vistas/VistaListaCursos/VistaListaCursos";
 import PiePagina from "./components/PiePagina";
 import { GlobalStyle } from "./GlobalStyle";
+import { AuthProvider } from "./Context";
+import SignIn from "./Vistas/VistaLogin/Login";
+
+
+
+import VistaMisCursos from "./Vistas/VistaMisCursos/VistaMisCursos";
+
 function App() {
   return (
-    <Router>
-      <>
+    <AuthProvider>
+      <Router>
         <Menu />
         <Switch>
-          <Route path="/cursos/:cursoId" component={VistaCurso} />
-          <Route path="/" exact>
-            <VistaHome />
-          </Route>
+          <Route path="/login" exact component={SignIn} />
+          <Route path="/" exact component={VistaHome} />
+          <Route path="/cursos" exact component={VistaListaCursos} />
+          <Route path="/cursos/:cursoId" exact component={VistaCurso} />
 
-          <Route path="/cursos" exact>
-            <VistaListaCursos />
-          </Route>
+          <Route path= "/MisCursos" exact component={VistaMisCursos} />
+
+          <Redirect path="/" exact component={VistaHome} />
+
         </Switch>
         <PiePagina />
-      </>
+      </Router>
       <GlobalStyle />
-    </Router>
+    </AuthProvider>
+    
   );
 }
 
