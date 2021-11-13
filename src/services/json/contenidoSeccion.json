@@ -1,0 +1,310 @@
+{
+    "11VACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "1ACPSWL",
+      "titulo": "1. Instalación en Windows", 
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a1.%20Instalaci%C3%B3n%20en%20windows.mp4?alt=media&token=f536f6d0-296d-40aa-8a50-7da6ff8835fb",    
+      "tipoInf": "video"
+    },
+    "12VACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "1ACPSWL",
+      "titulo": "2. Instalación en Mac", 
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a2.%20Instalaci%C3%B3n%20en%20Mac.mp4?alt=media&token=eb38474f-acfd-4c7c-b2c6-4b19f361fa23",
+      "tipoInf": "video"
+    },
+    "13CACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "1ACPSWL",
+      "titulo": "Libro Laravel conceptos básicos y ejemplos", 
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a-libro%20laravel%20conceptos%20basicos%20y%20ejemplos.pdf?alt=media&token=f25a2b6c-ca1f-4e15-9881-4a5b70b2f6a0",  
+      "tipoInf": "pdf"    
+  },
+    "14VACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "2ACPSWL",
+      "titulo": "3. Integración de una plantilla HTML profesional", 
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a3.%20Integraci%C3%B3n%20de%20una%20plantilla%20HTML%20profesional.mp4?alt=media&token=5e5584b9-c6e1-4fb9-8126-b0228d5f5426",   
+      "tipoInf": "video"
+    },
+    "15VACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "3ACPSWL",
+      "titulo": "4. Activando el formulario de contacto con notificación vía email", 
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a4.%20Activando%20el%20formulario%20de%20contacto%20con%20notificaci%C3%B3n%20v%C3%ADa%20email.mp4?alt=media&token=ae8da2a3-04a4-4aec-bea7-f7b68ad6cbba" ,  
+      "tipoInf": "video"
+    },
+    "16VACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "4ACPSWL",
+      "titulo": "5. Deploy en Heroku", 
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a5.%20Deploy%20en%20heroku.mp4?alt=media&token=3ebcf5f5-3beb-4c83-814f-b2703b3c1331",   
+      "tipoInf": "video"
+     },
+    "17VACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "4ACPSWL",
+      "titulo": "6. Laravel en cPanel", 
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a6.%20Laravel%20en%20Cpanel.mp4?alt=media&token=1e7e6c24-2fc5-49fb-91e6-af95565d90e3",   
+      "tipoInf": "video"
+    },
+    "18VACPSWL": {
+      "codCurso": "ACPSWL",
+      "codSeccion": "4ACPSWL",
+      "titulo": "6. Laravel en cPanel", 
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/a6.%20Laravel%20en%20Cpanel.mp4?alt=media&token=1e7e6c24-2fc5-49fb-91e6-af95565d90e3",   
+      "tipoInf": "video"
+    },
+    "a11CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c1AXD",
+      "titulo": "1. Introducción al curso",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c1.%20Introducci%C3%B3n%20al%20curso.mp4?alt=media&token=12f469e7-a372-46c0-bdb4-781d7250d530",
+      "tipoInf": "video"
+    },
+    "a12CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c1AXD",
+      "titulo": "2. Como descargar Adobe Experience Design y primeros pasos",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c2.%20Como%20descargar%20Adobe%20Experience%20Design%20y%20primeros%20pasos.mp4?alt=media&token=6907c28d-277b-4607-9ff6-b2bab821893f",
+      "tipoInf": "video"
+    },
+    "a13CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c2AXD",
+      "titulo": "3. Herramientas de creación de formas",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c3.%20Herramientas%20de%20creaci%C3%B3n%20de%20formas.mp4?alt=media&token=0681c56c-ab9a-4bdd-8311-05ac54bea066",
+      "tipoInf": "video"
+    },
+    "a14CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c2AXD",
+      "titulo": "4. Importando imágenes en nuestros documentos",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c4.%20Importando%20im%C3%A1genes%20en%20nuestros%20documentos.mp4?alt=media&token=847b42cc-bb58-472b-9bd8-04fd092c3335",
+      "tipoInf": "video"
+    },
+    "a15CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c2AXD",
+      "titulo": "5. Herramienta de textos",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c5.%20Herramienta%20de%20textos.mp4?alt=media&token=4426ef5e-8318-4028-9576-944b0644d134",
+      "tipoInf": "video"
+    },
+    "a16CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c2AXD",
+      "titulo": "6. Herramienta de pluma y fusión de capas",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c6.%20Herramienta%20de%20pluma%20y%20fusi%C3%B3n%20de%20capas.mp4?alt=media&token=28be5f3a-785d-46c0-a0b2-ab9bf17b0761",
+      "tipoInf": "video"
+    },
+    "a17CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c2AXD",
+      "titulo": "7. Alineación de elementos y organización de capas",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c7.%20Alineaci%C3%B3n%20de%20elementos%20y%20organizaci%C3%B3n%20de%20capas.mp4?alt=media&token=354fe8b1-571f-45d2-a1c5-a8e8d0907bbc",
+      "tipoInf": "video"
+    },
+    "a18CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c2AXD",
+      "titulo": "8. Herramienta de repetición de elementos",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c8.%20Herramienta%20de%20repetici%C3%B3n%20de%20elementos.mp4?alt=media&token=86b974ad-2c94-4ac1-a76c-1463cfad29a3",
+      "tipoInf": "video"
+    },
+    "a19CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c2AXD",
+      "titulo": "9. Exportando elementos y artboards",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c9.%20Exportando%20elementos%20y%20artboards.mp4?alt=media&token=634e9fa1-3a22-42f7-a436-053b37bd76cb",
+      "tipoInf": "video"
+    },
+    "a20CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c2AXD",
+      "titulo": "10. Símbolos",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c10.%20S%C3%ADmbolos.mp4?alt=media&token=70f8d821-6a07-44ec-9f2f-2557b354d9f0",
+      "tipoInf": "video"
+    },
+    "a21CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c2AXD",
+      "titulo": "11. Actualización Componentes",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c11.%20Actualizaci%C3%B3n%20Componentes.mp4?alt=media&token=d41f4f85-ca99-48f0-9343-41b3c6db109a",
+      "tipoInf": "video"
+    },
+    "a22CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c2AXD",
+      "titulo": "12. Creando un sistema de columnas",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c12.%20Creando%20un%20sistema%20de%20columnas.mp4?alt=media&token=2a8a485d-14d4-4aaa-bdb1-73c060bc34a9",
+      "tipoInf": "video"
+    },
+    "a23CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c3AXD",
+      "titulo": "13. Presentación de la práctica",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c13.%20Presentaci%C3%B3n%20de%20la%20pr%C3%A1ctica.mp4?alt=media&token=9829ccd3-851e-46d2-bced-9c951f83ad03",
+      "tipoInf": "video"
+    },
+    "a24CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c3AXD",
+      "titulo": "14. Creando la página de inicio",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c14.%20Creando%20la%20p%C3%A1gina%20de%20inicio.mp4?alt=media&token=1c310c3f-67fd-440d-addd-cbe6dd6765ce",
+      "tipoInf": "video"
+    },
+    "a25CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c3AXD",
+      "titulo": "15. Creando la página de blog",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c15.%20Creando%20la%20p%C3%A1gina%20de%20blog.mp4?alt=media&token=17cb89cf-7d8c-4bde-a475-1706fd36595d",
+      "tipoInf": "video"
+    },
+    "a26CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c3AXD",
+      "titulo": "16. Haciendo la página de entradas",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c16.%20Haciendo%20la%20p%C3%A1gina%20de%20entradas.mp4?alt=media&token=725a59ed-50d8-40f7-9c04-b7abb42256b7",
+      "tipoInf": "video"
+    },
+    "a27CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c4AXD",
+      "titulo": "17. Elementos Fijos y Overlays",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c17.%20Elementos%20Fijos%20y%20Overlays.mp4?alt=media&token=f4155621-a6c3-49fc-abad-79d05259958c",
+      "tipoInf": "video"
+    },
+    "a28CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c4AXD",
+      "titulo": "18. Como compartir prototipos de Adobe XD",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c18.%20Como%20compartir%20prototipos%20de%20Adobe%20XD.mp4?alt=media&token=301ff0b7-53e9-4e2b-ba08-6c0ed6449aba",
+      "tipoInf": "video"
+    },
+    "a29CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c4AXD",
+      "titulo": "19. Responsive Resize",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c19.%20Responsive%20Resize.mp4?alt=media&token=46de7de2-31ad-4207-b556-cddada0fd45a",
+      "tipoInf": "video"
+    },
+    "a30CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c4AXD",
+      "titulo": "20. Animaciones Automáticas",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c20.%20Animaciones%20Automaticas.mp4?alt=media&token=ac8a9ffe-6ca0-480c-a3c7-6be201912c90",
+      "tipoInf": "video"
+    },
+    "a31CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c4AXD",
+      "titulo": "21. Guías y Nuevos Bordes",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c21.%20Gu%C3%ADas%20y%20Nuevos%20Bordes.mp4?alt=media&token=074b9929-bffe-4fdb-bdc2-75ab1aa67747",
+      "tipoInf": "video"
+    },
+    "a32CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c4AXD",
+      "titulo": "22. Nuevos Efectos_Hover y Active",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c22.%20Nuevos%20Efectos_Hover%20y%20Active.mp4?alt=media&token=a93cd90a-601d-4021-8602-d46d0854cb36",
+      "tipoInf": "video"
+    },
+    "a33CACDXD": {
+      "codCurso": "ACDXD",
+      "codSeccion": "c4AXD",
+      "titulo": "23. Conclusión del curso",
+      "link": "https://firebasestorage.googleapis.com/v0/b/beta-adaroom.appspot.com/o/c23.%20Conclusi%C3%B3n%20del%20curso.mp4?alt=media&token=0d18b6ef-808a-4cc2-be1e-126c595a101a",
+      "tipoInf": "video"
+    },
+    "b11CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b1APCNB",
+      "titulo": "1. ¿Qué es PHP?",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b1.%20%C2%BFQu%C3%A9%20es%20PHP.mp4?alt=media&token=c8bb3911-0115-437a-af0c-991c0d3a50a7",
+      "tipoInf": "video"
+    },
+    "b12CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b1APCNB",
+      "titulo": "Introducción e índice",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b0.%20Introducci%C3%B3n%20e%20indice.pdf?alt=media&token=11a9837e-963a-4343-9520-c5d41cc5edfb",
+      "tipoInf": "pdf"
+    },
+    "b13CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b2APCNB",
+      "titulo": "2. Aprende a instalar XAMPP y Sublime Text",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b2.%20Aprende%20a%20instalar%20XAMPP%20y%20Sublime%20Text.mp4?alt=media&token=b72c83b5-295e-449f-865b-c8be53790067",
+      "tipoInf": "video"
+    },
+    "b14CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b2APCNB",
+      "titulo": "Links de Descarga",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b0.%20Links%20de%20Descarga.pdf?alt=media&token=1e730c1c-d0bd-4178-8e43-98d6e71cf005",
+      "tipoInf": "pdf"
+    },
+    "b15CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b3APCNB",
+      "titulo": "3. Mi primer Hola Mundo en PHP",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b3.%20Mi%20primer%20Hola%20Mundo%20en%20PHP.mp4?alt=media&token=f3bea326-9be5-4ff1-a7b0-3e5778bb09d0",
+      "tipoInf": "video"
+    },
+    "b16CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b3APCNB",
+      "titulo": "4. Variables y Tipos de datos",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b4.%20Variables%20y%20Tipos%20de%20datos.mp4?alt=media&token=c47b4622-6c86-4675-803a-9e854acf65a2",
+      "tipoInf": "video"
+    },
+    "b17CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b3APCNB",
+      "titulo": "5. Constantes",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b5.%20Constantes.mp4?alt=media&token=33319bb7-edd4-4781-a157-5514a99ed1ad",
+      "tipoInf": "video"
+    },
+    "b18CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b3APCNB",
+      "titulo": "6. Operadores Lógicos",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b6.%20Operadores%20Logicos.mp4?alt=media&token=395965a4-a882-410c-914b-201026e5eb29",
+      "tipoInf": "video"
+    },
+    "b19CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b3APCNB",
+      "titulo": "7. Condicionales",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b9.%20Ciclos.mp4?alt=media&token=9a8c2f0b-e087-4da7-9103-c5a1b46fef58",
+      "tipoInf": "video"
+    },
+    "b20CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b3APCNB",
+      "titulo": "8. Switch",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b8.%20Switch.mp4?alt=media&token=6efc14d4-6e26-41bd-9f04-856ecc31a2ff",
+      "tipoInf": "video"
+    },
+    "b21CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b3APCNB",
+      "titulo": "9. Ciclos",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b9.%20Ciclos.mp4?alt=media&token=9a8c2f0b-e087-4da7-9103-c5a1b46fef58",
+      "tipoInf": "video"
+    },
+    "b22CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b3APCNB",
+      "titulo": "10. Arreglos",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b10.%20Arreglos.mp4?alt=media&token=5967ec2e-4db8-43d6-ad7a-899e377e20a2",
+      "tipoInf": "video"
+    },
+    "b23CAPCNB": {
+      "codCurso": "APCNB",
+      "codSeccion": "b4APCNB",
+      "titulo": "11. ¡Felicidades!",
+      "link": "https://firebasestorage.googleapis.com/v0/b/adaroom-3619c.appspot.com/o/b11.%20Felicidades!.mp4?alt=media&token=10c73e7f-cf6c-44da-9e6b-80efe44db4a3",
+      "tipoInf": "video"
+    }  
+}

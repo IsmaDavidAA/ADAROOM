@@ -27,7 +27,7 @@ const CardCourse = ({
         <WrapperTitle>
           <Course>{nombreCurso}</Course>
           <Institution>{institucion}</Institution>
-          <Inscribed>{cantInscritos} Participantes</Inscribed>
+          <Inscribed>{cantInscritos} ya inscritos</Inscribed>
         </WrapperTitle>
         <WrapperState>
           <InscribedState>{children}</InscribedState>
