@@ -18,8 +18,7 @@ const listaCursos = "curso";
 const listaTemarios = "temario";
 const listaInscripciones = "inscripcion";
 const estudiante = "estudiante";
-const contenidoSeccion = "contenidoSecion";
-
+const contenidoSeccion = "contenidoSeccion";
 
 export const apiSettings = {
   getCursos: async () => {
@@ -74,30 +73,28 @@ export const apiSettings = {
     return await datosJson;
   },
 
-  postInscripcion: async(idCurso, idEst) => {
+  postInscripcion: async (idCurso, idEst) => {
     await setDoc(doc(db, listaInscripciones, idEst), {
       codCurso: idCurso,
       codEst: idEst,
       estadoInscripcion: 1,
     });
-    
+
     return true;
   },
 
-  dropOutCourse: async(idCurso, idEst) => {
-    await  deleteDoc(doc(db, listaInscripciones, idEst
-      ));
-   
+  dropOutCourse: async (idCurso, idEst) => {
+    await deleteDoc(doc(db, listaInscripciones, idEst));
   },
 
-  putCurso: async(idCurso) => {
+  putCurso: async (idCurso) => {
     await updateDoc(doc(db, listaCursos, idCurso), {
       cantInscritos: increment(1),
     });
     return true;
   },
 
-  updateCourse: async(idCurso) => {
+  updateCourse: async (idCurso) => {
     await updateDoc(doc(db, listaCursos, idCurso), {
       cantInscritos: increment(-1),
     });
@@ -158,7 +155,8 @@ export const apiSettings = {
     let contenidoJson = [];
     querySnapshot.forEach((doc) => {
       contenidoJson.push([doc.id, doc.data()]);
-      console.log(contenidoJson);
     });
+    return contenidoJson;
   },
 };
+
