@@ -25,7 +25,7 @@ const SignIn = ({history}) => {
         console.log(AuthContext);
         
       } catch (error) {
-      alert('Acceso inválido.Por favor intente de nuevo');
+      alert('Acceso inválido. Por favor intente de nuevo');
         }
     },
     [history]
