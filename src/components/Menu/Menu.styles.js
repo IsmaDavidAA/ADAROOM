@@ -61,31 +61,35 @@ export const MisCuros = styled.a`
 `;
 
 export const Estudiate = styled.p`
-  color: #2978b5;
+  color: #0061A8;
   font-size: var(--letraMediana);
   position: absolute;
   top: 33px;
-  left: 1265px;
+  left: 1070px;
   text-decoration: none;
   margin: 0px;
+  text-aling: left;
 `;
 export const UsuarioImagen = styled.img`
-  top: 15px;
-  position: absolute;
-  left: 1375px;
-  width: 55px;
-  height: 55px;
+top: 15px;
+position: absolute;
+left: 1250px;
+width: 55px;
+height: 55px;
 `;
 
-export const Estilobarra = styled.div`
-  position: absolute;
-  left: 1435px;
-  top: 56px;
+export const Estilobarra = styled.a`
+position: absolute;
+left: 1240px;
+top: 70px;
+color: #1e3163;
+font-size: var(--letraMediana);
+font-family: 'Segoe UI';
 `;
 export const TrianguloEstilo = styled.div`
-  color: #999999;
-  position: absolute;
-  left: 1465px;
-  top: 35px;
-  text-decoration: none;
+color: #999999;
+position: absolute;
+left: 1320px;
+top: 35px;
+text-decoration: none;
 `;
