@@ -4,7 +4,7 @@ import { Seccions, Seccion } from "./Seccions.styles";
 
 const Secciones = (props) => {
   return (
-    <div classname="row">
+    <>
       {props.datos.map((seccionAux) => {
         return (
           <Seccions>
@@ -14,7 +14,7 @@ const Secciones = (props) => {
           </Seccions>
         );
       })}
-    </div>
+    </>
   );
 };
 export default Secciones;
