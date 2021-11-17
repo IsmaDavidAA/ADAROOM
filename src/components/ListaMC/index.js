@@ -29,7 +29,7 @@ const ListaMC = (props) => {
           <NombreIL>{props.curso[1].nombreCurso}</NombreIL>
         </Link>
         <AutorL>{props.curso[1].institucion}</AutorL>
-        <CantInsL>{props.curso[1].cantInscritos} ya Inscritos </CantInsL>
+        <CantInsL>{props.curso[1].cantInscritos} ya inscritos </CantInsL>
         <p><br/><br/>
           EMPEZAR CURSO</p>
       </Texto>

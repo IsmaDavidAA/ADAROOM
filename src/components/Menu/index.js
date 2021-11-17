@@ -19,6 +19,7 @@ import {
   Mensage,
   Contenedor,
   Estilobarra,
+  nombrebutton
 } from "./Menu.styles";
 import {
   BrowserRouter as Router,
@@ -67,9 +68,7 @@ function Menu() {
         <Link to={`/misCursos`} id="este">
           <MisCuros> MIS CURSOS</MisCuros>
         </Link>
-        <Link to={`/`}>
-          <Estudiate> {nombre} </Estudiate>
-        </Link>
+          <Estudiate> {nombre} </Estudiate>        
         <TrianguloEstilo href = "#"> &#x25BC; </TrianguloEstilo>
        <Estilobarra>
         <Link to= {`/`}>
@@ -86,7 +85,8 @@ function Menu() {
           }}
         >
           {""}
-          Cerrar Sesion.
+
+          Cerrar Sesión
         </button>
         </Link>
         </Estilobarra>
@@ -107,7 +107,7 @@ function Menu() {
           <CursoEstilo> CURSOS</CursoEstilo>
         </Link>
         <Link to={`/login`}>
-          <IniciaSecion> INICIAR SESION</IniciaSecion>
+          <IniciaSecion> INICIAR SESIÓN</IniciaSecion>
         </Link>
       </MenuEstilo>
     );
