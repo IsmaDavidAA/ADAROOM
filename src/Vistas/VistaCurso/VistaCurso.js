@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { apiSettings } from "../../services/services";
-import CardCourse from "../../components/CardCourse/CardCourse";
+import CardCourse from "../../components/CardCourse/index";
 import Descripcion from "../../components/Descripcion";
 import { Contenedor } from "../../components/Descripcion/Descripcion.styles";
 import { useParams } from "react-router-dom";
