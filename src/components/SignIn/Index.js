@@ -10,10 +10,10 @@ const Index = (props) => {
    
     return (
         <CuadroLogin>
-         <Titulo>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;¡Inicia sesión con tu cuenta de AdaRoom!</Titulo>
+         <Titulo>¡Inicia sesión con tu cuenta de AdaRoom!</Titulo>
          <Titulo2>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Por favor llene el siguiente formulario para <br/>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;validar su ingreso
+         Por favor llene el siguiente formulario para <br/>
+         validar su ingreso
          </Titulo2>
         
 
