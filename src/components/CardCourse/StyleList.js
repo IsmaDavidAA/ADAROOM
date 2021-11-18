@@ -13,9 +13,10 @@ export const CardContainer = styled.div`
   flex-direction: column;
 `;
 export const ImageC = styled.img`
-  max-width:300px;
+  max-width: 300px;
   min-width: 300px;
   max-height: 260px;
+  mai-width: 260px;
 `;
 export const Course = styled.div`
   font-weight: bold;
