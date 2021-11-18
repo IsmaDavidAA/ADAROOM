@@ -16,6 +16,7 @@ export const ImageC = styled.img`
   max-width:300px;
   min-width: 300px;
   max-height: 260px;
+  min-height: 260px;
 `;
 export const Course = styled.div`
   font-weight: bold;
