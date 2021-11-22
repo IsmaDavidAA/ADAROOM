@@ -4,7 +4,8 @@ export const Contenido = styled.div`
   margin: 0rem 0rem 0rem 6rem;
   display: flex;
   @media only screen and (max-width: 700px) {
-    margin: 0px 0rem 0px 0px;
+    padding: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 0px;
     flex-direction: column;
   }
 `;
