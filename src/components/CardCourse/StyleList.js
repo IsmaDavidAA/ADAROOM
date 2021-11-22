@@ -13,7 +13,7 @@ export const CardContainer = styled.div`
   flex-direction: column;
 `;
 export const ImageC = styled.img`
-  max-width:300px;
+  max-width: 300px;
   min-width: 300px;
   max-height: 260px;
   min-height: 260px;
