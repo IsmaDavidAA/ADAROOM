@@ -7,12 +7,12 @@ export const StyledCard = styled.div`
   font-size: var(--letraEstandar);
 
   @media only screen and (max-width: 700px) and (min-width: 550px) {
-    margin: 8rem 4rem 2rem 4rem;
+    margin: 88px 30px 14px 30px;
     padding: 0rem 0rem 0rem 0rem;
     flex-direction: column;
   }
   @media only screen and (max-width: 550px) {
-    margin: 8rem 0rem 2rem 0rem;
+    margin: 88px 0rem 14px 0rem;
     padding: 0rem 0rem 0rem 0rem;
     flex-direction: column;
   }
