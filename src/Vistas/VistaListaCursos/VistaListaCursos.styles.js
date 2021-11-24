@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const Contenedor = styled.div`
   min-height: 80vh;
+  padding: 88px 10px 14px 10px;
   width: 100%;
-  @media only screen and (max-width: 700px) {
+  @media only screen and (max-width: 750px) {
     padding: 88px 0px 14px 0px;
     flex-direction: column;
     justify-content: center;
