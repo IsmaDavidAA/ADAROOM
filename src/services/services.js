@@ -45,15 +45,25 @@ export const apiSettings = {
     );
     const querySnapshot = await getDocs(q);
     let temarioJson = [];
+    let promise = getCont(doc.id);
+    let promises = [];
     querySnapshot.forEach((doc) => {
-      temarioJson.push([doc.id, doc.data()]);
+      promise = getCont(doc.id);
+      promises.push(promise);
     });
+
+    let responses = await Promise.all(promises)
+    let cont = 0;
+    querySnapshot.forEach((doc)=>{
+      temarioJson.push([doc.id, doc.data(), responses[cont]]);
+      cont++;
+    })
 
     if (temarioJson === []) {
       temarioJson = [{}];
     }
     console.log(temarioJson);
-    return await temarioJson;
+    return temarioJson;
   },
 
   getTopCursos: async () => {
@@ -162,3 +172,16 @@ export const apiSettings = {
     return contenidoJson;
   },
 };
+
+const getCont = async(temarioId)=>{
+  const q = query(
+    collection(db, contenidoSeccion),
+    where("codSeccion", "==", `${temarioId}`)
+  );
+  const querySnapshot = await getDocs(q);
+  let contenidoJson = [];
+  querySnapshot.forEach((doc) => {
+    contenidoJson.push(doc.data());
+  });
+  return contenidoJson;
+}

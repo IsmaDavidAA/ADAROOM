@@ -40,8 +40,7 @@ export const CursoEstilo = styled.a`
   text-decoration: none;
 `;
 export const IniciaSecion = styled.a`
-
-  color: #0061A8;
+  color: #0061a8;
 
   font-size: var(--letraMediana);
   position: absolute;
@@ -49,9 +48,8 @@ export const IniciaSecion = styled.a`
   top: 33px;
   left: 1200px;
   text-decoration: none;
-
-`; 
-  export const MisCuros = styled.a`
+`;
+export const MisCuros = styled.a`
   color: #1e3163;
   font-weight: bold;
   font-size: var(--letraMediana);
@@ -60,36 +58,38 @@ export const IniciaSecion = styled.a`
   top: 33px;
   left: 680px;
   text-decoration: none;
-
 `;
 
 export const Estudiate = styled.p`
-  color: #2978B5;
+  color: #0061A8;
   font-size: var(--letraMediana);
   position: absolute;
   top: 33px;
-  left: 1265px;
+  left: 1070px;
   text-decoration: none;
   margin: 0px;
-
+  text-aling: left;
 `;
 export const UsuarioImagen = styled.img`
 top: 15px;
 position: absolute;
-left: 1375px;
+left: 1250px;
 width: 55px;
 height: 55px;
 `;
 
 export const Estilobarra = styled.a`
 position: absolute;
-left: 1435px;
-top: 56px;
+left: 1240px;
+top: 70px;
+color: #1e3163;
+font-size: var(--letraMediana);
+font-family: 'Segoe UI';
 `;
 export const TrianguloEstilo = styled.div`
 color: #999999;
 position: absolute;
-left: 1465px;
+left: 1320px;
 top: 35px;
 text-decoration: none;
 `;

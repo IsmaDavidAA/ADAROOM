@@ -36,7 +36,7 @@ const InscritoLink = ({
           const donePut = await apiSettings.updateCourse(idCurso);
           const donePost = await apiSettings.dropOutCourse(idIns);
           modACtionNext();
-          window.location.reload();      
+          window.location.reload();
         }}
         made={made}
       />

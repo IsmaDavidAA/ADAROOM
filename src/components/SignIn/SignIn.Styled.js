@@ -4,11 +4,14 @@ import styled from "styled-components";
 export const CuadroLogin = styled.div`
   min-height: 80vh;
   text-align: center;
-  padding: 10rem 0rem 0rem 6rem;
-  position: relative;
+  padding: 10rem 0rem 0rem 0rem;
+  display: flex;
+  justify-content:center;
+  flex-direction:column;
+  align-items:center;
   `;
 export const Titulo = styled.h3`
-  margin:1rem 2rem 1rem 0rem;
+  margin:1rem 0rem 1rem 0rem;
   color: #1E3163;
    text-align: center;
    font-weight: 600;
@@ -16,16 +19,17 @@ export const Titulo = styled.h3`
    font-size: 22px;
 `;
 export const Titulo2 = styled.p`
-   margin:1rem 2rem 1rem 0rem;
+   margin: 1rem 0rem 1rem 0rem;
    text-align: center;
    font-family: 'Segoe UI';
-   font-size: 22px;
-   
+   font-size: 22px; 
 `;
 export const ContFormulario = styled.div`
-position: absolute;
-  top: 20rem;
-  left: 34rem;
+top: 20rem;
+display:flex;
+justify-content:center;
+flex-direction:column;
+align-items:center;
    `;
 export const Formulario = styled.form`
 
@@ -35,30 +39,30 @@ display: block;
 export const InputCorreo= styled.input`
 background: none;
 display: block;
-margin: 0px 0rem 0rem 35px;
+
 border: none;
-width: 284px;
-height: 45px;
-padding: 0rem 0rem 0rem 0rem;
+width: 325px;
+height: 55px;
+padding: 0px 0rem 0rem 15px;
 font-size: 20px;
+font-family: 'Segoe UI';
 `;
 export const InputContraseña = styled.input`
-padding:0px 0px 0px 0px ;
-margin: 0rem 0rem 0rem 35px;
+padding: 0px 0rem 0rem 15px;
 display: block;
-width: 284px;
-height: 45px;
+width: 325px;
+height: 55px;
 font-size: 20px;
+font-family: 'Segoe UI';
 background: none;
 border: none;
-
 `;
 export const Boton = styled.button`
 text-align: center;
 
 margin: 0px 0rem 0rem 0rem;
-width: 322px;
-height: 45px;
+width: 360px;
+height: 55px;
 background: #0061A8;
 display: block;
 color: #ffffff;
@@ -68,28 +72,22 @@ border: none;
 export const IconEmail = styled.img`
 width:16px;
 height: 16px;
-position: absolute;
-left: 10px;
-top :30px;
-
-
+align-self:center;
+justify-self:center;
+padding:0px 0px 0px 10px;
 `;
 export const IconPasswd = styled.img`
 width:16px;
 height: 16px;
-position: absolute;
-left: 10px;
-top :110px;
-
-
+align-self:center;
+justify-self:center;
+padding:0px 0px 0px 10px;
 `;
 export const Div = styled.div`
 margin: 1rem 0rem 2rem 0rem;
-width: 320px;
-height: 45px;
+width: 360px;
+height: 55px;
 border:1px solid #aaa;
-
+display: flex;
 `;
-
-
 
