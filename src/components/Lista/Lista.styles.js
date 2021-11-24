@@ -9,24 +9,38 @@ export const Recuadro = styled.div`
   text-align: left;
   display: flex;
   box-shadow: 0px 2px 5px -6px rgb(95, 95, 95);
-  margin-left: 15px;
-  margin-bottom: 1rem;
-  margin-top: 2.5rem;
   font-size: var(--letraEstandar);
+  @media only screen and (max-width: 700px) {
+    padding: 0px;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+  }
 `;
 
 export const Texto = styled.div`
   height: 260px;
   text-decoration: none;
-  margin: 0 0 0 2rem;
+  @media only screen and (max-width: 700px) {
+    padding: 18px 0px 0px 0px;
+    flex-direction: column;
+    border: none;
+  }
 `;
 
 export const ImagenL = styled.img`
   width: 300px;
   height: 260px;
   display: block;
-  padding: 0px 0px 0px 0px;
   float: left;
+  @media only screen and (max-width: 700px) {
+    padding: 0px;
+    align-self: center;
+    justify-self: center;
+    flex-direction: column;
+    border: none;
+  }
 `;
 
 export const NombreIL = styled.div`
@@ -34,12 +48,21 @@ export const NombreIL = styled.div`
   font-weight: bold;
   color: #000000;
   text-decoration: none;
+  @media only screen and (max-width: 700px) {
+    text-align: center;
+  }
 `;
 export const AutorL = styled.p`
   text-align: left;
   color: var(--plomoAgua);
+  @media only screen and (max-width: 700px) {
+    text-align: center;
+  }
 `;
 export const CantInsL = styled.div`
   text-align: left;
   font-weight: bold;
+  @media only screen and (max-width: 700px) {
+    text-align: center;
+  }
 `;
