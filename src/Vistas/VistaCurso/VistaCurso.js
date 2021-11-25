@@ -66,20 +66,10 @@ const VistaCurso = () => {
         const temp = await apiSettings.getTemario(cursoId);
         setStatex(true);
         setTemario(temp);
-
-        const prueba = await apiSettings.getCantMaterial(cursoId);
-        var cantidad = (prueba[1].cantMaterial);
-        console.log(cantidad);
-
       } else {
         const temp = await apiSettings.getTemario(cursoId); //getTemarioComplejo
         setStatex(true);
         setTemario(temp);
-
-        /*const prueba = await apiSettings.getCantMaterial(cursoId);
-        var cantidad = (prueba[1].cantMaterial);
-        console.log("ggggggggggggggggggggggggggggggggggggg");*/
-
       }
     }
   };
