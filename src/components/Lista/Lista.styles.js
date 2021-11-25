@@ -4,7 +4,6 @@ export const Recuadro = styled.div`
   color: #000000;
   background: #fdfefe;
   border-bottom: #ccd1d1 2px solid;
-  width: 100%;
   height: 260px;
   text-align: left;
   display: flex;
