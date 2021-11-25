@@ -175,13 +175,6 @@ export const apiSettings = {
     });
     return contenidoJson;
   },
-<<<<<<< Updated upstream
-=======
-
-  
-
-
->>>>>>> Stashed changes
 };
 
 const getCont = async(temarioId)=>{
