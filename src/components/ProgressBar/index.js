@@ -17,10 +17,16 @@ const progressBar = ({progress}) => {
 		textAlign: 'right',
 	}
 
+    const progresstext = {
+		fontSize: '18px',
+		color: 'black',
+		fontWeight: 700
+	}
+	
 	return (
-	<div >
-		<div style={Parentdiv}>
-			<span style={Childdiv}>{`${progress}%`}</span>
+	<div style={Parentdiv}>
+		<div style={Childdiv}>
+			<span style={progresstext}>{`${progress}%`}</span>
 		</div>
 	</div>
 	)
