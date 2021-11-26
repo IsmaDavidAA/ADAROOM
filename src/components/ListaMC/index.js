@@ -15,6 +15,9 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom";
+
+import Progressbar from '../../components/ProgressBar'
+
 const ListaMC = (props) => {
   return (
     <Recuadro>
@@ -29,9 +32,9 @@ const ListaMC = (props) => {
           <NombreIL>{props.curso[1].nombreCurso}</NombreIL>
         </Link>
         <AutorL>{props.curso[1].institucion}</AutorL>
-        <CantInsL>{props.curso[1].cantInscritos} ya inscritos </CantInsL>
-        <p><br/><br/>
-          EMPEZAR CURSO</p>
+        <CantInsL>{props.curso[1].cantInscritos} ya inscritos </CantInsL><br/>
+        <Progressbar progress={'30'}/> 
+        <p>EMPEZAR CURSO</p>
       </Texto>
     </Recuadro>
   );

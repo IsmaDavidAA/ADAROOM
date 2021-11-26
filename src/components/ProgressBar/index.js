@@ -10,3 +10,5 @@ const progressBar = ({progress}) => {
 	</div>
 	)
 }
+
+export default progressBar;
