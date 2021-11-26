@@ -10,8 +10,12 @@ import {
   Titulo,
 } from "./ListaMC.styles";
 import {
-  BrowserRouter as 
+  BrowserRouter as Router,
+  Switch,
+  Route,
   Link,
+  useRouteMatch,
+  useParams,
 } from "react-router-dom";
 
 import Progressbar from '../../components/ProgressBar'
