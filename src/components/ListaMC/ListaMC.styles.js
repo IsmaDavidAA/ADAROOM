@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Recuadro = styled.div`
-  color: #000000;
+  color: var(--black);
   background: #fdfefe;
   border-bottom: #ccd1d1 2px solid;
   width: 100%;
@@ -32,7 +32,7 @@ export const ImagenL = styled.img`
 export const NombreIL = styled.div`
   text-align: left;
   font-weight: bold;
-  color: #000000;
+  color: var(--black);
   text-decoration: none;
 `;
 export const AutorL = styled.p`
@@ -42,6 +42,11 @@ export const AutorL = styled.p`
 export const CantInsL = styled.div`
   text-align: left;
   font-weight: bold;
+`;
+export const Titulo = styled.p`
+  text-align: left;
+  margin-bottom: 15px;
+  margin-top: 15px;
 `;
 
 export const BarraEstado = styled.p`

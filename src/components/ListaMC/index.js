@@ -7,6 +7,7 @@ import {
   NombreIL,
   Texto,
   BarraEstado,
+  Titulo,
 } from "./ListaMC.styles";
 import {
   BrowserRouter as 
@@ -32,7 +33,7 @@ const ListaMC = (props) => {
         <CantInsL>{props.curso[1].cantInscritos} ya inscritos </CantInsL>
         <BarraEstado>Mi progreso</BarraEstado>
         <Progressbar progress={'30'}/> 
-        <p>EMPEZAR CURSO</p>
+        <Titulo> EMPEZAR CURSO </Titulo>
       </Texto>
     </Recuadro>
   );
