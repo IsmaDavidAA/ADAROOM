@@ -6,14 +6,11 @@ import {
   CantInsL,
   NombreIL,
   Texto,
+  BarraEstado,
 } from "./ListaMC.styles";
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
+  BrowserRouter as 
   Link,
-  useRouteMatch,
-  useParams,
 } from "react-router-dom";
 
 import Progressbar from '../../components/ProgressBar'
@@ -32,7 +29,8 @@ const ListaMC = (props) => {
           <NombreIL>{props.curso[1].nombreCurso}</NombreIL>
         </Link>
         <AutorL>{props.curso[1].institucion}</AutorL>
-        <CantInsL>{props.curso[1].cantInscritos} ya inscritos </CantInsL><br/>
+        <CantInsL>{props.curso[1].cantInscritos} ya inscritos </CantInsL>
+        <BarraEstado>Mi progreso</BarraEstado>
         <Progressbar progress={'30'}/> 
         <p>EMPEZAR CURSO</p>
       </Texto>

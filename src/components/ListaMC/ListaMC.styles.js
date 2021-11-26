@@ -43,3 +43,11 @@ export const CantInsL = styled.div`
   text-align: left;
   font-weight: bold;
 `;
+
+export const BarraEstado = styled.p`
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 5px;  
+  color: #41D1CC;
+  font-size: 20px;
+`;
