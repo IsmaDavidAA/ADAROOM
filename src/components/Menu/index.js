@@ -106,9 +106,13 @@ function Menu() {
         <Link to={`/cursos`}>
           <CursoEstilo> CURSOS</CursoEstilo>
         </Link>
+       <Link to={`Registro`}>
+          <IniciaSecion> Registrarse</IniciaSecion>
+        </Link> 
         <Link to={`/login`}>
           <IniciaSecion> INICIAR SESIÓN</IniciaSecion>
         </Link>
+        
       </MenuEstilo>
     );
   }
