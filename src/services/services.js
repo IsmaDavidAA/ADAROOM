@@ -136,21 +136,25 @@ export const apiSettings = {
       where("codEst", "==", `${idEst}`)
     );
     const querySnapshot = await getDocs(q);
-    let inscripcionesJson = [];
+    let inscripcionesJson = [];  
     querySnapshot.forEach((doc) => {
       inscripcionesJson.push(doc.data().codCurso);
+    });  
+    let promise = getCont(doc.id);
+    let promises = [];
+    inscripcionesJson.forEach( (element) => {
+      promise =  getDoc(doc(db, listaCursos, `${element}`));
+      promises.push(promise);
     });
-    let insCompletoJson = [];
-    inscripcionesJson.forEach(async (element) => {
-      const curso = await getDoc(doc(db, listaCursos, `${element}`));
-      insCompletoJson.push([curso.id, curso.data()]);
+    let responses = await Promise.all(promises);
+    let cursos=[];
+    responses.forEach(element=>{
+      cursos.push([element.id, element.data()]);
     });
-
-    if (insCompletoJson === []) {
-      insCompletoJson = [{}];
-    }
-    console.log(insCompletoJson);
-    return await insCompletoJson;
+    if (cursos === []) {
+      cursos = [{}];
+    } 
+    return cursos;
   },
 
   getName: async (userId) => {
