@@ -13,8 +13,11 @@ export const Contenedor = styled.div`
   }
 `;
 export const SubTitulo = styled.h1`
-  padding: 4rem 0rem 0rem 0rem;
+  padding: 4rem 0rem 0rem 1rem;
   color: #1e3163;
   font-size: 24px;
   font-family: "Segoe UI";
+  @media only screen and (max-width: 750px) {
+    padding: 4rem 0rem 0rem 0rem;
+  }
 `;
