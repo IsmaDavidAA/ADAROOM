@@ -7,6 +7,7 @@ import { withRouter, Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import ListasMC from "../../components/ListasMC";
 import VistaHome from "../VistaHome/VistaHome";
+import Index from '../../components/Register/index';
 const VistaRegistro = () => {
   const { currentUser } = useContext(AuthContext);
 
@@ -21,10 +22,7 @@ const VistaRegistro = () => {
   }
   else {
     return (
-      <Contenedor>
-        <Texto>Registro</Texto>
-        
-      </Contenedor>
+      <Index/>
     );
   }
 };
