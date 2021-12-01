@@ -21,6 +21,8 @@ import {
 import Progressbar from '../../components/ProgressBar'
 
 const ListaMC = (props) => {
+  const cantidad = props.curso[1].cantMaterial;
+
   return (
     <Recuadro>
       <Link to={`/cursos/${props.curso[0]}`}>
@@ -36,7 +38,7 @@ const ListaMC = (props) => {
         <AutorL>{props.curso[1].institucion}</AutorL>
         <CantInsL>{props.curso[1].cantInscritos} ya inscritos </CantInsL>
         <BarraEstado>Mi progreso</BarraEstado>
-        <Progressbar progress={'30'}/> 
+        <Progressbar progress={cantidad}/> 
         <Titulo> EMPEZAR CURSO </Titulo>
       </Texto>
     </Recuadro>
