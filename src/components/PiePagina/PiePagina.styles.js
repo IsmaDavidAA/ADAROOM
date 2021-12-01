@@ -54,7 +54,11 @@ export const DerechosA = styled.p`
   color: #ffffff;
   margin-top: 18px;
   margin-bottom: 13px;
+  @media only screen and (max-width: 850px) {
+    text-align: center;
+  }
 `;
+
 export const Email = styled.p`
   font-size: var(--letraPequenia);
   font-weight: bold;

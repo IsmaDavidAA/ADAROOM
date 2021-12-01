@@ -19,7 +19,8 @@ import {
   Mensage,
   Contenedor,
   Estilobarra,
-  nombrebutton
+  nombrebutton,
+  Registro
 } from "./Menu.styles";
 import {
   BrowserRouter as Router,
@@ -106,9 +107,14 @@ function Menu() {
         <Link to={`/cursos`}>
           <CursoEstilo> CURSOS</CursoEstilo>
         </Link>
+        <Link to={`/Registro`}>
+          <Registro>REGISTRARSE</Registro>
+        </Link>
+        
         <Link to={`/login`}>
           <IniciaSecion> INICIAR SESIÓN</IniciaSecion>
         </Link>
+        
       </MenuEstilo>
     );
   }
