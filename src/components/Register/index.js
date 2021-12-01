@@ -11,7 +11,7 @@ const Index = (props) => {
    
     return (
         <CuadroRegister>
-         <Titulo>¡Inscribéte y comienza a aprender!</Titulo>
+         <Titulo>¡Regístrate y comienza a aprender!</Titulo>
          <Titulo2>
          Por favor llene el siguiente formulario</Titulo2>
         
