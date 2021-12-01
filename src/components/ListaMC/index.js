@@ -44,5 +44,4 @@ const ListaMC = (props) => {
     </Recuadro>
   );
 };
-
 export default ListaMC;
