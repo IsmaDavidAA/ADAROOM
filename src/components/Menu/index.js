@@ -21,6 +21,7 @@ import {
   Contenedor,
   Estilobarra,
   nombrebutton,
+  Registro,
   Container,
   Wrapper,
   Menun,
@@ -103,6 +104,7 @@ function Menu() {
     );
   } else {
     return (
+
       <Container>
         <Wrapper>
           <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
@@ -130,6 +132,15 @@ function Menu() {
                 >
                   <Link to={`/cursos`}>
                     <CursoEstilo> CURSOS</CursoEstilo>
+                  </Link>
+                </MenuItemLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuItemLink
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <Link to={`/Registro`}>
+                    <Registro>REGISTRARSE</Registro>
                   </Link>
                 </MenuItemLink>
               </MenuItem>

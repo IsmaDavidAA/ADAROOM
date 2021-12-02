@@ -26,6 +26,7 @@ export const InicioEstilo = styled.a`
   text-decoration: none;
 `;
 
+
 export const CursoEstilo = styled.a`
   font-size: var(--letraMediana);
   font-weight: bold;
@@ -37,6 +38,17 @@ export const IniciaSecion = styled.a`
   font-size: var(--letraMediana);
   text-decoration: none;
 `;
+export const Registro = styled.a`
+  color: #0061a8;
+  font-size: var(--letraMediana);
+  position: absolute;
+  bottom: 50px;
+  top: 33px;
+  left: 1000px;
+  rigth: 50%;
+  text-decoration: none;
+`;
+
 export const MisCuros = styled.a`
   color: #1e3163;
   font-weight: bold;
