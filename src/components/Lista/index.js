@@ -7,14 +7,7 @@ import {
   NombreIL,
   Texto,
 } from "./Lista.styles";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 const Lista = (props) => {
   return (
     <Recuadro>

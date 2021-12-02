@@ -1,13 +1,16 @@
 import React from "react";
 import Lista from "../Lista";
-import { Recuadro1 } from "./Listas.styles";
-//import Imagen1 from './imagen1.png';
-//[[ID, {atributo: valor, atributo: valor, atributo: valor,}]]
+import { Recuadro1, Space } from "./Listas.styles";
 const Listas = (props) => {
   return (
     <Recuadro1>
       {props.datos.map((cursoTemp) => {
-        return <Lista curso={cursoTemp} />;
+        return (
+          <div key={cursoTemp[0]}>
+            <Lista curso={cursoTemp} />
+            <Space></Space>
+          </div>
+        );
       })}
     </Recuadro1>
   );

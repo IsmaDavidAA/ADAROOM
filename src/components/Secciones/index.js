@@ -1,6 +1,5 @@
 import React from "react";
 import { Seccions, Seccion } from "./Seccions.styles";
-// import Seccion from "../Seccion";
 
 const Secciones = (props) => {
   return (

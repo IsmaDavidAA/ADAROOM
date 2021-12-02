@@ -21,12 +21,14 @@ import {
   Contenedor,
   Estilobarra,
   nombrebutton,
+
   Container,
   Wrapper,
   Menun,
   MenuItem,
   MenuItemLink,
   MobileIcon,
+
 } from "./Menu.styles";
 import {
   BrowserRouter as Router,
@@ -103,6 +105,7 @@ function Menu() {
     );
   } else {
     return (
+
       <Container>
         <Wrapper>
           <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
@@ -146,6 +149,7 @@ function Menu() {
           </IconContext.Provider>
         </Wrapper>
       </Container>
+
     );
   }
 }
