@@ -4,6 +4,7 @@ import imgusuario from "../../images/user.png";
 import { getAuth, signOut } from "firebase/auth";
 import { useHistory } from "react-router-dom";
 
+import { FaBars, FaTimes } from "react-icons/fa";
 
 import {
   MenuEstilo,
@@ -20,7 +21,13 @@ import {
   Contenedor,
   Estilobarra,
   nombrebutton,
-  Registro
+  Registro,
+  Container,
+  Wrapper,
+  Menun,
+  MenuItem,
+  MenuItemLink,
+  MobileIcon,
 } from "./Menu.styles";
 import {
   BrowserRouter as Router,
@@ -33,11 +40,13 @@ import {
 import { AuthContext } from "../../Context";
 import { apiSettings } from "../../services/services";
 
+import { IconContext } from "react-icons";
+
 function Menu() {
   const [user, setUser] = useState([]);
   const [nombre, setNombre] = useState("");
   const { currentUser } = useContext(AuthContext);
-  
+
   const fetchName = async () => {
     if (currentUser) {
       const temp = await apiSettings.getName(currentUser.uid);
@@ -50,10 +59,10 @@ function Menu() {
     fetchName();
   }, [currentUser]);
 
-
   const auth = getAuth();
-  const history = useHistory();
-  
+
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
+
   if (currentUser) {
     return (
       <MenuEstilo>
@@ -69,53 +78,85 @@ function Menu() {
         <Link to={`/misCursos`} id="este">
           <MisCuros> MIS CURSOS</MisCuros>
         </Link>
-          <Estudiate> {nombre} </Estudiate>        
-        <TrianguloEstilo href = "#"> &#x25BC; </TrianguloEstilo>
-       <Estilobarra>
-        <Link to= {`/`}>
-        <button
-          onClick={() => {
-            signOut(auth)
-              .then(() => {
-                window.location.reload();
-               // history.push("/");
-              })
-              .catch((error) => {
-                // An error happened.
-              });
-          }}
-        >
-          {""}
-
-          Cerrar Sesión
-        </button>
-        </Link>
+        <Estudiate> {nombre} </Estudiate>
+        <TrianguloEstilo href="#"> &#x25BC; </TrianguloEstilo>
+        <Estilobarra>
+          <Link to={`/`}>
+            <button
+              onClick={() => {
+                signOut(auth)
+                  .then(() => {
+                    window.location.reload();
+                    // history.push("/");
+                  })
+                  .catch((error) => {
+                    // An error happened.
+                  });
+              }}
+            >
+              {""}
+              Cerrar Sesión
+            </button>
+          </Link>
         </Estilobarra>
-       <UsuarioImagen src={imgusuario} />
+        <UsuarioImagen src={imgusuario} />
       </MenuEstilo>
-
     );
   } else {
     return (
-      <MenuEstilo>
-        <Link to={`/`}>
-          <ImagenEstilo src={ada} />
-        </Link>
-        <Link to={`/`}>
-          <InicioEstilo> INICIO</InicioEstilo>
-        </Link>
-        <Link to={`/cursos`}>
-          <CursoEstilo> CURSOS</CursoEstilo>
-        </Link>
-        <Link to={`/Registro`}>
-          <Registro>REGISTRARSE</Registro>
-        </Link>
-        
-        <Link to={`/login`}>
-          <IniciaSecion> INICIAR SESIÓN</IniciaSecion>
-        </Link>
-        
-      </MenuEstilo>
+
+      <Container>
+        <Wrapper>
+          <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
+            <Link to={`/`}>
+              <ImagenEstilo src={ada} />
+            </Link>
+
+            <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
+              {showMobileMenu ? <FaTimes /> : <FaBars />}
+            </MobileIcon>
+
+            <Menun open={showMobileMenu}>
+              <MenuItem>
+                <MenuItemLink
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <Link to={`/`}>
+                    <InicioEstilo> INICIO</InicioEstilo>
+                  </Link>
+                </MenuItemLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuItemLink
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <Link to={`/cursos`}>
+                    <CursoEstilo> CURSOS</CursoEstilo>
+                  </Link>
+                </MenuItemLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuItemLink
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <Link to={`/Registro`}>
+                    <Registro>REGISTRARSE</Registro>
+                  </Link>
+                </MenuItemLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuItemLink
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <Link to={`/login`}>
+                    <IniciaSecion> INICIAR SESIÓN</IniciaSecion>
+                  </Link>
+                </MenuItemLink>
+              </MenuItem>
+            </Menun>
+          </IconContext.Provider>
+        </Wrapper>
+      </Container>
     );
   }
 }
