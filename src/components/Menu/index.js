@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import ada from "../../images/logoADAROOM.jpg";
 import imgusuario from "../../images/user.png";
 import { getAuth, signOut } from "firebase/auth";
 import { useHistory } from "react-router-dom";
 
 import { FaBars, FaTimes } from "react-icons/fa";
+
 
 import {
   MenuEstilo,
@@ -145,8 +146,18 @@ function Menu() {
                       Cerrar Sesión
                     </CSesion>
                   </Link>
-                </MenuItemLink>
+                </MenuItemLink>                
               </AMenuItemCS>
+              <MenuItem>
+              
+                <div className="container">
+                  <div className="menu-container">
+                    <button onClick={''} className="menu-trigger"> ▼ </button>
+
+                  </div>
+                </div>           
+              
+              </MenuItem>
             </Menun>
           </IconContext.Provider>
         </Wrapper>
