@@ -1,59 +1,42 @@
+import React, {useCallback, useContext} from 'react';
 
-import React, { useContext, useEffect, useState ,useCallback} from "react";
-
-import Listas from "../../components/Listas";
+//import { FirebaseAuth } from "react-firebaseui";
+import { apiSettings } from '../../services/services';
+import  {auth} from "../../services/firebase"
 import { AuthContext } from "../../Context";
-import { apiSettings } from "../../services/services";
-import { Contenedor, Texto } from "./VistaRegistro.styles";
 import { withRouter, Redirect } from "react-router-dom";
-import { useHistory } from "react-router-dom";
-import ListasMC from "../../components/ListasMC";
-
-import  {auth} from "../../services/firebase";
-import {createUserWithEmailAndPassword} from "@firebase/auth";
-import VistaHome from "../VistaHome/VistaHome";
+import {signInWithEmailAndPassword, createUserWithEmailAndPassword} from "@firebase/auth";
 import Index from '../../components/Register/index';
 
-const VistaRegistro = ({history}) => {
-  const { currentUser } = useContext(AuthContext);
 
-  const [loading, setLoading] = useState(false);
-  const handleRegister = useCallback(
+const SignIn = ({history}) => {
+  //Obtenemos el estado del user en el context
+   const handleLogin = useCallback(
     async event => {
       event.preventDefault();
-      const { email, password } = event.target.elements;
-
-      console.log(email.value)
-      console.log(password.value)
+      const { email, password ,username} = event.target.elements;
 
       try {
-        await 
-        createUserWithEmailAndPassword(auth,email.value, password.value);
+      const newUser =  await createUserWithEmailAndPassword(auth,email.value, password.value);
+          apiSettings.setUser(username.value,email.value,password.value,newUser.user.uid);
         history.push("/");
         console.log(AuthContext);
         
       } catch (error) {
-       alert('Acceso inválido. Por favor intente de nuevo');
+      alert('Acceso inválido. Por favor intente de nuevo');
         }
     },
     [history]
   );
-
-
-
-  if (loading) {
-    return <Contenedor></Contenedor>;
-  }
-
-  if(currentUser){
-
-    return <Redirect path="/" exact component={VistaHome} />;
-  }
-  else {
+    const {currentUser} = useContext(AuthContext);
+    if (currentUser){
+      return <Redirect to ="/" />;
+    }
     return (
 
-      <Index handleRegister={handleRegister}/>
-    );
-  }
+      <Index handleLogin={handleLogin}/>
+     
+  );
 };
-export default VistaRegistro;
+
+export default SignIn;
