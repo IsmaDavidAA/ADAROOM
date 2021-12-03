@@ -5,7 +5,7 @@ import { getAuth, signOut } from "firebase/auth";
 import { useHistory } from "react-router-dom";
 
 import { FaBars, FaTimes } from "react-icons/fa";
-
+import "./styles.css";
 
 import {
   MenuEstilo,
@@ -153,6 +153,11 @@ function Menu() {
                 <div className="container">
                   <div className="menu-container">
                     <button onClick={''} className="menu-trigger"> ▼ </button>
+                    <nav                      
+                      className={"menu"}
+                    >
+                      
+                    </nav>                    
 
                   </div>
                 </div>           

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+  }
+
 .menu-container {
     display: flex;
     justify-content: center;
@@ -16,6 +20,19 @@
     padding: 4px 6px;
     border: 0px;
     vertical-align: middle;
-    transition: box-shadow 0.4s ease;
     margin-left: auto; /* Strictly for positioning */
+  }
+   
+  .menu {
+    background: #F8F8F8;
+    border-radius: 8px;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 300px;
+    box-shadow: 0 1px 8px solid;
+    opacity: 0;
+    visibility: hidden;
+    height: 70px;
+    width: 199px;
   }
