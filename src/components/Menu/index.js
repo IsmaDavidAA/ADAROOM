@@ -154,14 +154,13 @@ function Menu() {
                 </MenuItemLink>                
               </AMenuItemCS>
               <MenuItem>
-              
-                <div className="container">
                   <div className="menu-container">
                     <button onClick={onClick} className="menu-trigger"> ▼ </button>
                     <nav
                       ref={dropdownRef}
                       className={`menu ${isActive ? "active" : "inactive"}`}
                     >
+                        <li>
                           <a href="#" onClick={() => {
                             signOut(auth)
                               .then(() => {
@@ -172,9 +171,9 @@ function Menu() {
                                 // An error happened.
                               });
                           }}>Cerrar sesión</a>
+                        </li>
                     </nav>
-                  </div>
-                </div>           
+                  </div>          
               
               </MenuItem>
             </Menun>
