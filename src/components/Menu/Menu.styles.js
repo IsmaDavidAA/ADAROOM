@@ -26,7 +26,6 @@ export const InicioEstilo = styled.a`
   text-decoration: none;
 `;
 
-
 export const CursoEstilo = styled.a`
   font-size: var(--letraMediana);
   font-weight: bold;
@@ -38,14 +37,16 @@ export const IniciaSecion = styled.a`
   font-size: var(--letraMediana);
   text-decoration: none;
 `;
+
+export const CSesion = styled.a`
+  color: #0061a8;
+  font-size: var(--letraMediana);
+  text-decoration: none;
+`;
+
 export const Registro = styled.a`
   color: #0061a8;
   font-size: var(--letraMediana);
-  position: absolute;
-  bottom: 50px;
-  top: 33px;
-  left: 1000px;
-  rigth: 50%;
   text-decoration: none;
 `;
 
@@ -63,7 +64,6 @@ export const MisCuros = styled.a`
 export const Estudiate = styled.p`
   color: #0061a8;
   font-size: var(--letraMediana);
-  position: absolute;
   top: 33px;
   left: 1070px;
   text-decoration: none;
@@ -71,21 +71,10 @@ export const Estudiate = styled.p`
   text-aling: left;
 `;
 export const UsuarioImagen = styled.img`
-  top: 15px;
-  position: absolute;
-  left: 1250px;
   width: 55px;
   height: 55px;
 `;
 
-export const Estilobarra = styled.a`
-  position: absolute;
-  left: 1240px;
-  top: 70px;
-  color: #1e3163;
-  font-size: var(--letraMediana);
-  font-family: "Segoe UI";
-`;
 export const TrianguloEstilo = styled.div`
   color: #999999;
   position: absolute;
@@ -111,7 +100,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  justify-content: space-between;
+  @media screen and (max-width: 960px) {
+    justify-content: space-between;
+  }
 `;
 
 export const Menun = styled.ul`
@@ -142,6 +133,39 @@ export const MenuItem = styled.li`
   height: 100%;
   color: #1e3163;
   @media screen and (max-width: 960px) {
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const AMenuItem = styled.li`
+  height: 100%;
+  color: #1e3163;
+  right: 0px;
+  position: absolute;
+  @media screen and (max-width: 960px) {
+    position: relative;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const AAMenuItem = styled.li`
+  height: 100%;
+  color: #1e3163;
+  right: 159px;
+  position: absolute;
+  @media screen and (max-width: 960px) {
+    position: relative;
+    right: 0;
     width: 100%;
     height: 70px;
     display: flex;
@@ -155,7 +179,7 @@ export const MenuItemLink = styled.a`
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: 0 2.5rem;
+  padding: 0 0.8rem;
   color: #64b2ff;
   font-family: "Segoe UI";
   font-size: var(--letraMediana);
