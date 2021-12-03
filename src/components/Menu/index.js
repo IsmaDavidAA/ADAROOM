@@ -4,6 +4,7 @@ import imgusuario from "../../images/user.png";
 import { getAuth, signOut } from "firebase/auth";
 import { useHistory } from "react-router-dom";
 
+
 import { FaBars, FaTimes } from "react-icons/fa";
 
 import {
