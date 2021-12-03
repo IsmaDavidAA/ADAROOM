@@ -158,6 +158,57 @@ export const AMenuItem = styled.li`
   }
 `;
 
+export const AMenuItemCS = styled.li`
+  left: 455;
+  height: 100%;
+  color: #1e3163;
+  right: 0px;
+  position: absolute;
+  @media screen and (max-width: 960px) {
+    position: relative;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const AMenuItemIM = styled.li`
+  left: 455;
+  height: 100%;
+  color: #1e3163;
+  right: 137px;
+  position: absolute;
+  @media screen and (max-width: 960px) {
+    position: relative;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+export const AAMenuItemUser = styled.li`
+  left: 455;
+  height: 100%;
+  color: #1e3163;
+  right: 217px;
+  position: absolute;
+  @media screen and (max-width: 960px) {
+    position: relative;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
 export const AAMenuItem = styled.li`
   height: 100%;
   color: #1e3163;
