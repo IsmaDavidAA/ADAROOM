@@ -17,7 +17,7 @@ const Index = (props) => {
         
 
          <ContFormulario>
-        <FormularioR onSubmit={props.handleLogin}>
+        <FormularioR onSubmit={props.handleRegister}>
         <Div>
             <IconUser src = {user}/>
             <InputUser name="username" type= "text" placeholder="Nombre Completo" required maxLength= "40"/>
