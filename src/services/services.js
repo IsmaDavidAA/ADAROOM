@@ -92,6 +92,17 @@ export const apiSettings = {
     });
     return true;
   },
+//--------------------------------
+   
+
+  setUser: async ( nombre,email,password,uid) => {
+    setDoc(doc(db, estudiante,uid), {
+      contrasenia: password,
+      correo: email,
+      nombreCompleto: nombre,
+    });
+    return true;
+  },
 
   dropOutCourse: async (idIns) => {
     await deleteDoc(doc(db, listaInscripciones, idIns));
