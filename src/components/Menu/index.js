@@ -10,6 +10,7 @@ import {
   MenuEstilo,
   ImagenEstilo,
   InicioEstilo,
+  CSesion,
   CursoEstilo,
   IniciaSecion,
   MisCuros,
@@ -26,6 +27,8 @@ import {
   Wrapper,
   Menun,
   MenuItem,
+  AMenuItem,
+  AAMenuItem,
   MenuItemLink,
   MobileIcon,
 } from "./Menu.styles";
@@ -65,46 +68,89 @@ function Menu() {
 
   if (currentUser) {
     return (
-      <MenuEstilo>
-        <Link to={`/`}>
-          <ImagenEstilo src={ada} />
-        </Link>
-        <Link to={`/`}>
-          <InicioEstilo> INICIO</InicioEstilo>
-        </Link>
-        <Link to={`/cursos`}>
-          <CursoEstilo> CURSOS</CursoEstilo>
-        </Link>
-        <Link to={`/misCursos`} id="este">
-          <MisCuros> MIS CURSOS</MisCuros>
-        </Link>
-        <Estudiate> {nombre} </Estudiate>
-        <TrianguloEstilo href="#"> &#x25BC; </TrianguloEstilo>
-        <Estilobarra>
-          <Link to={`/`}>
-            <button
-              onClick={() => {
-                signOut(auth)
-                  .then(() => {
-                    window.location.reload();
-                    // history.push("/");
-                  })
-                  .catch((error) => {
-                    // An error happened.
-                  });
-              }}
-            >
-              {""}
-              Cerrar Sesión
-            </button>
-          </Link>
-        </Estilobarra>
-        <UsuarioImagen src={imgusuario} />
-      </MenuEstilo>
+      <Container>
+        <Wrapper>
+          <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
+            <Link to={`/`}>
+              <ImagenEstilo src={ada} />
+            </Link>
+
+            <MobileIcon onClick={() => setShowMobileMenu(!showMobileMenu)}>
+              {showMobileMenu ? <FaTimes /> : <FaBars />}
+            </MobileIcon>
+
+            <Menun open={showMobileMenu}>
+              <MenuItem>
+                <MenuItemLink
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <UsuarioImagen src={imgusuario} />
+                </MenuItemLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuItemLink
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <Estudiate> {nombre} </Estudiate>
+                </MenuItemLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuItemLink
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <Link to={`/`}>
+                    <InicioEstilo> INICIO</InicioEstilo>
+                  </Link>
+                </MenuItemLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuItemLink
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <Link to={`/cursos`}>
+                    <CursoEstilo> CURSOS</CursoEstilo>
+                  </Link>
+                </MenuItemLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuItemLink
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <Link to={`/misCursos`} id="este">
+                    <CursoEstilo> Mis CURSOS</CursoEstilo>
+                  </Link>
+                </MenuItemLink>
+              </MenuItem>
+              <MenuItem>
+                <MenuItemLink
+                  onClick={() => setShowMobileMenu(!showMobileMenu)}
+                >
+                  <Link to={`/`}>
+                    <CSesion
+                      onClick={() => {
+                        signOut(auth)
+                          .then(() => {
+                            window.location.reload();
+                            // history.push("/");
+                          })
+                          .catch((error) => {
+                            // An error happened.
+                          });
+                      }}
+                    >
+                      {""}
+                      Cerrar Sesión
+                    </CSesion>
+                  </Link>
+                </MenuItemLink>
+              </MenuItem>
+            </Menun>
+          </IconContext.Provider>
+        </Wrapper>
+      </Container>
     );
   } else {
     return (
-
       <Container>
         <Wrapper>
           <IconContext.Provider value={{ style: { fontSize: "2em" } }}>
@@ -135,7 +181,7 @@ function Menu() {
                   </Link>
                 </MenuItemLink>
               </MenuItem>
-              <MenuItem>
+              <AAMenuItem>
                 <MenuItemLink
                   onClick={() => setShowMobileMenu(!showMobileMenu)}
                 >
@@ -143,8 +189,8 @@ function Menu() {
                     <Registro>REGISTRARSE</Registro>
                   </Link>
                 </MenuItemLink>
-              </MenuItem>
-              <MenuItem>
+              </AAMenuItem>
+              <AMenuItem>
                 <MenuItemLink
                   onClick={() => setShowMobileMenu(!showMobileMenu)}
                 >
@@ -152,7 +198,7 @@ function Menu() {
                     <IniciaSecion> INICIAR SESIÓN</IniciaSecion>
                   </Link>
                 </MenuItemLink>
-              </MenuItem>
+              </AMenuItem>
             </Menun>
           </IconContext.Provider>
         </Wrapper>
