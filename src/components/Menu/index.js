@@ -29,6 +29,9 @@ import {
   MenuItem,
   AMenuItem,
   AAMenuItem,
+  AAMenuItemUser,
+  AMenuItemCS,
+  AMenuItemIM,
   MenuItemLink,
   MobileIcon,
 } from "./Menu.styles";
@@ -80,20 +83,20 @@ function Menu() {
             </MobileIcon>
 
             <Menun open={showMobileMenu}>
-              <MenuItem>
+              <AMenuItemIM>
                 <MenuItemLink
                   onClick={() => setShowMobileMenu(!showMobileMenu)}
                 >
                   <UsuarioImagen src={imgusuario} />
                 </MenuItemLink>
-              </MenuItem>
-              <MenuItem>
+              </AMenuItemIM>
+              <AAMenuItemUser>
                 <MenuItemLink
                   onClick={() => setShowMobileMenu(!showMobileMenu)}
                 >
                   <Estudiate> {nombre} </Estudiate>
                 </MenuItemLink>
-              </MenuItem>
+              </AAMenuItemUser>
               <MenuItem>
                 <MenuItemLink
                   onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -117,11 +120,11 @@ function Menu() {
                   onClick={() => setShowMobileMenu(!showMobileMenu)}
                 >
                   <Link to={`/misCursos`} id="este">
-                    <CursoEstilo> Mis CURSOS</CursoEstilo>
+                    <CursoEstilo> MIS CURSOS</CursoEstilo>
                   </Link>
                 </MenuItemLink>
               </MenuItem>
-              <MenuItem>
+              <AMenuItemCS>
                 <MenuItemLink
                   onClick={() => setShowMobileMenu(!showMobileMenu)}
                 >
@@ -143,7 +146,7 @@ function Menu() {
                     </CSesion>
                   </Link>
                 </MenuItemLink>
-              </MenuItem>
+              </AMenuItemCS>
             </Menun>
           </IconContext.Provider>
         </Wrapper>
