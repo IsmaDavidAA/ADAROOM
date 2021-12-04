@@ -1,61 +1,61 @@
 .menu-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: 98%;
-    top: 30px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 5px;
+  top: 30px;
+}
 
-  .menu-trigger {
-    color: #999999 ;
-    font-size: 20px;
-    background: #F8F8F8;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 4px 6px;
-    border: 0px;
-    vertical-align: middle;
-    transition: box-shadow 0.2s ease;
-    margin-left: auto; /* Strictly for positioning */
-  }
-   
-  .menu {
-    background: #F8F8F8;
-    border-radius: 8px;
-    position: absolute;
-    top: 30px;
-    width: 300px;    
-    right: 20%; 
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    height: 70px;
-    width: 190px;
-    transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
-  }
+.menu-trigger {
+  color: #999999;
+  font-size: 20px;
+  background: #f8f8f8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px 6px;
+  border: 0px;
+  vertical-align: middle;
+  transition: box-shadow 0.2s ease;
+  margin-left: auto; /* Strictly for positioning */
+}
 
-  .menu.active {
-    opacity: 1;
-    visibility: visible;
-    background: #F8F8F8;
-    transform: translateY(0);
-  }
- 
-  .menu li {
-    border: 1px solid #C4C4C4;
-    border-radius: 8px;
-    height: 70px;
-    width: 190px;
-  }
-  
-  .menu li a {
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 500;
-    color: #1E3163;
-    padding: 0px;
-    margin: 20px;
-    display: block;
-  } 
+.menu {
+  background: #f8f8f8;
+  border-radius: 8px;
+  position: absolute;
+  top: 30px;
+  width: 300px;
+  right: 20%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  height: 70px;
+  width: 190px;
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+}
+
+.menu.active {
+  opacity: 1;
+  visibility: visible;
+  background: #f8f8f8;
+  transform: translateY(0);
+}
+
+.menu li {
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+  height: 70px;
+  width: 190px;
+}
+
+.menu li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: #1e3163;
+  padding: 0px;
+  margin: 20px;
+  display: block;
+}

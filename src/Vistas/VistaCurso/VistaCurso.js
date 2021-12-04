@@ -122,6 +122,7 @@ const VistaCurso = () => {
           inscrito={inscrito}
           idCurso={curso[0]}
           temas={temario}
+          user={currentUser}
         />
       </Contenedor>
     );
