@@ -164,6 +164,7 @@ export const AMenuItemCS = styled.li`
   color: #1e3163;
   right: 0px;
   position: absolute;
+  display: none;
   @media screen and (max-width: 960px) {
     position: relative;
     right: 0;
@@ -175,11 +176,20 @@ export const AMenuItemCS = styled.li`
   }
 `;
 
+export const AMenuItemCSDrop = styled.li`
+  left: 455;
+  height: 100%;
+  color: #1e3163;
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+`;
+
 export const AMenuItemIM = styled.li`
   left: 455;
   height: 100%;
   color: #1e3163;
-  right: 137px;
+  right: 52px;
   position: absolute;
   @media screen and (max-width: 960px) {
     position: relative;
@@ -196,7 +206,7 @@ export const AAMenuItemUser = styled.li`
   left: 455;
   height: 100%;
   color: #1e3163;
-  right: 217px;
+  right: 133px;
   position: absolute;
   @media screen and (max-width: 960px) {
     position: relative;
