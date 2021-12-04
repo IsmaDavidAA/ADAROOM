@@ -14,7 +14,7 @@ const Cajas = (props) => {
       props.elements[0].codSeccion
     );
     [...response].map((element) => {
-      setCheckList(checkList.set(element, true));
+      setCheckList(checkList.set(element[0], true));
     });
     return response;
   };
@@ -70,7 +70,14 @@ const Cajas = (props) => {
               onChange={(e) => {
                 handleCheck(element.codSeccion, e);
               }}
+              checked={checkList.get(
+                props.user.uid +
+                  element.codCurso +
+                  element.codSeccion +
+                  [...props.elements].indexOf(element)
+              )}
             />
+
             <Titulo href={element.link}>{element.titulo}</Titulo>
           </EstiloCaja>
         );
