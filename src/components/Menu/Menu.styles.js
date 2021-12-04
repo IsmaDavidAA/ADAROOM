@@ -170,7 +170,7 @@ export const AMenuItemCS = styled.li`
 `;
 
 export const AMenuItemIM = styled.li`
-  left: 1155px;
+  left: 1175px;
   height: 100%;
   color: #1e3163;
   right: 0px;
@@ -187,13 +187,12 @@ export const AMenuItemIM = styled.li`
 `;
 
 export const AAMenuItemUser = styled.li`
-  left: 950px;
-  height: 80px;
+  left: 970px;
+  height: 85px;
   width: 250px;
   color: #1e3163;
   right: 0px;
   position: absolute;
-  text-aling: right;
   @media screen and (max-width: 960px) {
     position: relative;
     left: 0;
