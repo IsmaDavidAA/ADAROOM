@@ -31,7 +31,10 @@ const Index = (props) => {
         <IconPasswd src = {password}/>
             <InputContraseñaR name="password"  type="password" placeholder="Contraseña" required  maxLength="40" />
         </Div>
-       
+        <Div>
+        <IconPasswd src = {password}/>
+            <InputContraseñaR name="confirmacionPassword"  type="password" placeholder="Confirmacion de contraseña" required  maxLength="40" />
+        </Div>
 
           <Botom type="submit"> Registrarse </Botom>
 
