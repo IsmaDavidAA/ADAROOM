@@ -15,8 +15,6 @@ export const MenuEstilo = styled.div`
 export const ImagenEstilo = styled.img`
   width: 258px;
   height: 88px;
-  margin-left: 50px;
-  margin-top: 0px;
 `;
 
 export const InicioEstilo = styled.a`
@@ -95,7 +93,6 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
-  max-width: 1300px;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
