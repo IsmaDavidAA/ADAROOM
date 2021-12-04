@@ -1,10 +1,12 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, useRef } from "react";
 import ada from "../../images/logoADAROOM.jpg";
 import imgusuario from "../../images/user.png";
 import { getAuth, signOut } from "firebase/auth";
 import { useHistory } from "react-router-dom";
 
 import { FaBars, FaTimes } from "react-icons/fa";
+import "./styles.css";
+import { useDetectOutsideClick } from "./useDetectOutsideClick";
 
 import {
   MenuEstilo,
@@ -31,6 +33,7 @@ import {
   AAMenuItem,
   AAMenuItemUser,
   AMenuItemCS,
+  AMenuItemCSDrop,
   AMenuItemIM,
   MenuItemLink,
   MobileIcon,
@@ -52,6 +55,10 @@ function Menu() {
   const [user, setUser] = useState([]);
   const [nombre, setNombre] = useState("");
   const { currentUser } = useContext(AuthContext);
+
+  const dropdownRef = useRef(null);
+  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false);
+  const onClick = () => setIsActive(!isActive);
 
   const fetchName = async () => {
     if (currentUser) {
@@ -147,6 +154,36 @@ function Menu() {
                   </Link>
                 </MenuItemLink>
               </AMenuItemCS>
+              <AMenuItemCSDrop>
+                <div className="menu-container">
+                  <button onClick={onClick} className="menu-trigger">
+                    {" "}
+                    ▼{" "}
+                  </button>
+                  <nav
+                    ref={dropdownRef}
+                    className={`menu ${isActive ? "active" : "inactive"}`}
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        onClick={() => {
+                          signOut(auth)
+                            .then(() => {
+                              window.location.reload();
+                              // history.push("/");
+                            })
+                            .catch((error) => {
+                              // An error happened.
+                            });
+                        }}
+                      >
+                        Cerrar sesión
+                      </a>
+                    </li>
+                  </nav>
+                </div>
+              </AMenuItemCSDrop>
             </Menun>
           </IconContext.Provider>
         </Wrapper>
