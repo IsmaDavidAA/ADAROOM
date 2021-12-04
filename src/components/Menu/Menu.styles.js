@@ -15,6 +15,7 @@ export const MenuEstilo = styled.div`
 export const ImagenEstilo = styled.img`
   width: 258px;
   height: 88px;
+  margin-right: 70px;
 `;
 
 export const InicioEstilo = styled.a`
@@ -40,6 +41,7 @@ export const CSesion = styled.a`
   color: #0061a8;
   font-size: var(--letraMediana);
   text-decoration: none;
+  margin-left: 30px;
 `;
 
 export const Registro = styled.a`
@@ -62,15 +64,13 @@ export const MisCuros = styled.a`
 export const Estudiate = styled.p`
   color: #0061a8;
   font-size: var(--letraMediana);
-  top: 33px;
-  left: 1070px;
-  text-decoration: none;
-  margin: 0px;
-  text-aling: left;
+  margin: 0 0 0 30px ;
+  
 `;
 export const UsuarioImagen = styled.img`
   width: 55px;
   height: 55px;
+  margin-left: 30px;
 `;
 
 export const TrianguloEstilo = styled.div`
@@ -153,13 +153,13 @@ export const AMenuItem = styled.li`
 `;
 
 export const AMenuItemCS = styled.li`
-  left: 455;
+  left: -1000px;
   height: 100%;
   color: #1e3163;
-  right: 0px;
   position: absolute;
   @media screen and (max-width: 960px) {
     position: relative;
+    left: 0;
     right: 0;
     width: 100%;
     height: 70px;
@@ -170,14 +170,14 @@ export const AMenuItemCS = styled.li`
 `;
 
 export const AMenuItemIM = styled.li`
-  left: 455;
+  left: 1155px;
   height: 100%;
   color: #1e3163;
-  right: 137px;
+  right: 0px;
   position: absolute;
   @media screen and (max-width: 960px) {
     position: relative;
-    right: 0;
+    left: 0;
     width: 100%;
     height: 70px;
     display: flex;
@@ -187,19 +187,97 @@ export const AMenuItemIM = styled.li`
 `;
 
 export const AAMenuItemUser = styled.li`
-  left: 455;
-  height: 100%;
+  left: 950px;
+  height: 80px;
+  width: 250px;
   color: #1e3163;
-  right: 217px;
+  right: 0px;
   position: absolute;
+  text-aling: right;
   @media screen and (max-width: 960px) {
     position: relative;
+    left: 0;
     right: 0;
     width: 100%;
     height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+`;
+
+export const MenuItemLink2 = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: "Segoe UI";
+  font-size: var(--letraMediana);
+  cursor: pointer;
+  transition: 0.5s all ease;
+  a {
+    text-decoration: none;
+  }
+  &:hover {
+    transition: 0.5s all ease;
+    div {
+      svg {
+        fill: #23394d;
+      }
+    }
+  }
+  div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    svg {
+      display: none;
+      fill: #e0792a;
+      margin-right: 0.5rem;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    right: 0px;
+    width: 100%;
+    div {
+      width: 30%;
+      justify-content: left;
+      svg {
+        display: flex;
+      }
+    }
+  }
+  @media screen and (max-width: 880px) {
+    right: 0px;
+    div {
+      width: 40%;
+      justify-content: left;
+      svg {
+        display: flex;
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    right: 0px;
+    div {
+      width: 60%;
+      justify-content: left;
+      svg {
+        display: flex;
+      }
+    }
+  }
+  @media screen and (max-width: 260px) {
+    right: 0px;
+    div {
+      width: 100%;
+      justify-content: left;
+      svg {
+        display: flex;
+      }
+    }
   }
 `;
 
@@ -252,7 +330,7 @@ export const MenuItemLink = styled.a`
     }
   }
   @media screen and (max-width: 960px) {
-    position: relative;
+    right: 0px;
     width: 100%;
     div {
       width: 30%;
@@ -263,7 +341,7 @@ export const MenuItemLink = styled.a`
     }
   }
   @media screen and (max-width: 880px) {
-    position: relative;
+    right: 0px;
     div {
       width: 40%;
       justify-content: left;
@@ -273,7 +351,7 @@ export const MenuItemLink = styled.a`
     }
   }
   @media screen and (max-width: 500px) {
-    position: relative;
+    right: 0px;
     div {
       width: 60%;
       justify-content: left;
@@ -283,7 +361,7 @@ export const MenuItemLink = styled.a`
     }
   }
   @media screen and (max-width: 260px) {
-    position: relative;
+    right: 0px;
     div {
       width: 100%;
       justify-content: left;

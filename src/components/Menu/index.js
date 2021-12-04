@@ -36,6 +36,7 @@ import {
   AMenuItemCS,
   AMenuItemIM,
   MenuItemLink,
+  MenuItemLink2,
   MobileIcon,
 } from "./Menu.styles";
 import {
@@ -91,18 +92,18 @@ function Menu() {
 
             <Menun open={showMobileMenu}>
               <AMenuItemIM>
-                <MenuItemLink
+                <MenuItemLink2
                   onClick={() => setShowMobileMenu(!showMobileMenu)}
                 >
                   <UsuarioImagen src={imgusuario} />
-                </MenuItemLink>
+                </MenuItemLink2>
               </AMenuItemIM>
               <AAMenuItemUser>
-                <MenuItemLink
+                <MenuItemLink2
                   onClick={() => setShowMobileMenu(!showMobileMenu)}
                 >
                   <Estudiate> {nombre} </Estudiate>
-                </MenuItemLink>
+                </MenuItemLink2>
               </AAMenuItemUser>
               <MenuItem>
                 <MenuItemLink
@@ -132,7 +133,7 @@ function Menu() {
                 </MenuItemLink>
               </MenuItem>
               <AMenuItemCS>
-                <MenuItemLink
+                <MenuItemLink2
                   onClick={() => setShowMobileMenu(!showMobileMenu)}
                 >
                   <Link to={`/`}>
@@ -152,7 +153,7 @@ function Menu() {
                       Cerrar Sesión
                     </CSesion>
                   </Link>
-                </MenuItemLink>                
+                </MenuItemLink2>                
               </AMenuItemCS>
               <MenuItem>
                   <div className="menu-container">
