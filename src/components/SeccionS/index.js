@@ -1,17 +1,15 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Chevron from "./Chevron";
 import "./Accordion.css";
-import Caja from "../Caja";
+import Cajas from "../Cajas";
 
 const Accordion = (props) => {
   const [setActive, setActiveState] = useState("");
   const [setHeight, setHeightState] = useState("0px");
   const [setRotate, setRotateState] = useState("accordion__icon");
   const [activated, setActivated] = useState(false);
-  
-  const content = useRef(null);
 
-  
+  const content = useRef(null);
 
   function toggleAccordion() {
     setActiveState(setActive === "" ? "active" : "");
@@ -37,9 +35,9 @@ const Accordion = (props) => {
         style={{ maxHeight: `${setHeight}` }}
         className="accordion__content"
       >
-        <div  className="accordion__text">
-          {<Caja elements = {props.elementos}/>}
-       </div>
+        <div className="accordion__text">
+          {<Cajas elements={props.elementos} user={props.user} />}
+        </div>
       </div>
     </div>
   );

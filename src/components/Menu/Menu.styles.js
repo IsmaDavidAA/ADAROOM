@@ -92,7 +92,6 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
-  max-width: 1300px;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -157,6 +156,7 @@ export const AMenuItemCS = styled.li`
   height: 100%;
   color: #1e3163;
   position: absolute;
+  display: none;
   @media screen and (max-width: 960px) {
     position: relative;
     left: 0;
@@ -166,6 +166,15 @@ export const AMenuItemCS = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+`;
+
+export const AMenuItemCSDrop = styled.li`
+  left: 455;
+  height: 100%;
+  color: #1e3163;
+  @media screen and (max-width: 960px) {
+    display: none;
   }
 `;
 

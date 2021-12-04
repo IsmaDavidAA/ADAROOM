@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext, useRef } from "react";
 import ada from "../../images/logoADAROOM.jpg";
 import imgusuario from "../../images/user.png";
 import { getAuth, signOut } from "firebase/auth";
-import { useHistory } from "react-router-dom";
 
 
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -10,21 +9,13 @@ import "./styles.css";
 import { useDetectOutsideClick } from "./useDetectOutsideClick";
 
 import {
-  MenuEstilo,
   ImagenEstilo,
   InicioEstilo,
   CSesion,
   CursoEstilo,
   IniciaSecion,
-  MisCuros,
   Estudiate,
   UsuarioImagen,
-  TrianguloEstilo,
-  CerrarSesion,
-  Mensage,
-  Contenedor,
-  Estilobarra,
-  nombrebutton,
   Registro,
   Container,
   Wrapper,
@@ -34,6 +25,7 @@ import {
   AAMenuItem,
   AAMenuItemUser,
   AMenuItemCS,
+  AMenuItemCSDrop,
   AMenuItemIM,
   MenuItemLink,
   MenuItemLink2,
@@ -41,11 +33,7 @@ import {
 } from "./Menu.styles";
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
   Link,
-  useRouteMatch,
-  useParams,
 } from "react-router-dom";
 import { AuthContext } from "../../Context";
 import { apiSettings } from "../../services/services";
@@ -155,29 +143,36 @@ function Menu() {
                   </Link>
                 </MenuItemLink2>                
               </AMenuItemCS>
-              <MenuItem>
-                  <div className="menu-container">
-                    <button onClick={onClick} className="menu-trigger"> ▼ </button>
-                    <nav
-                      ref={dropdownRef}
-                      className={`menu ${isActive ? "active" : "inactive"}`}
-                    >
-                        <li>
-                          <a href="#" onClick={() => {
-                            signOut(auth)
-                              .then(() => {
-                                window.location.reload();
-                                // history.push("/");
-                              })
-                              .catch((error) => {
-                                // An error happened.
-                              });
-                          }}>Cerrar sesión</a>
-                        </li>
-                    </nav>
-                  </div>          
-              
-              </MenuItem>
+              <AMenuItemCSDrop>
+                <div className="menu-container">
+                  <button onClick={onClick} className="menu-trigger">
+                    {" "}
+                    ▼{" "}
+                  </button>
+                  <nav
+                    ref={dropdownRef}
+                    className={`menu ${isActive ? "active" : "inactive"}`}
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        onClick={() => {
+                          signOut(auth)
+                            .then(() => {
+                              window.location.reload();
+                              // history.push("/");
+                            })
+                            .catch((error) => {
+                              // An error happened.
+                            });
+                        }}
+                      >
+                        Cerrar sesión
+                      </a>
+                    </li>
+                  </nav>
+                </div>
+              </AMenuItemCSDrop>
             </Menun>
           </IconContext.Provider>
         </Wrapper>
