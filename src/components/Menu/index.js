@@ -33,6 +33,7 @@ import {
   AAMenuItem,
   AAMenuItemUser,
   AMenuItemCS,
+  AMenuItemCSDrop,
   AMenuItemIM,
   MenuItemLink,
   MobileIcon,
@@ -153,29 +154,36 @@ function Menu() {
                   </Link>
                 </MenuItemLink>                
               </AMenuItemCS>
-              <MenuItem>
-                  <div className="menu-container">
-                    <button onClick={onClick} className="menu-trigger"> ▼ </button>
-                    <nav
-                      ref={dropdownRef}
-                      className={`menu ${isActive ? "active" : "inactive"}`}
-                    >
-                        <li>
-                          <a href="#" onClick={() => {
-                            signOut(auth)
-                              .then(() => {
-                                window.location.reload();
-                                // history.push("/");
-                              })
-                              .catch((error) => {
-                                // An error happened.
-                              });
-                          }}>Cerrar sesión</a>
-                        </li>
-                    </nav>
-                  </div>          
-              
-              </MenuItem>
+              <AMenuItemCSDrop>
+                <div className="menu-container">
+                  <button onClick={onClick} className="menu-trigger">
+                    {" "}
+                    ▼{" "}
+                  </button>
+                  <nav
+                    ref={dropdownRef}
+                    className={`menu ${isActive ? "active" : "inactive"}`}
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        onClick={() => {
+                          signOut(auth)
+                            .then(() => {
+                              window.location.reload();
+                              // history.push("/");
+                            })
+                            .catch((error) => {
+                              // An error happened.
+                            });
+                        }}
+                      >
+                        Cerrar sesión
+                      </a>
+                    </li>
+                  </nav>
+                </div>
+              </AMenuItemCSDrop>
             </Menun>
           </IconContext.Provider>
         </Wrapper>
