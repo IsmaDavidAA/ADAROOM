@@ -2,13 +2,14 @@ import styled from "styled-components";
 export const PiePagEstilo = styled.div`
   background-color: #1e3163;
   display: flex;
-  position: relative;
+  position: absolute;
   margin: 0;
   justify-content: space-between;
   align-items: center;
   left: 0;
   right: 0;
   bottom: 0;
+  aling-self: flex-end;
   @media only screen and (max-width: 850px) {
     flex-direction: column;
   }
