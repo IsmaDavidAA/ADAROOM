@@ -15,22 +15,20 @@ export const MenuEstilo = styled.div`
 export const ImagenEstilo = styled.img`
   width: 258px;
   height: 88px;
-  margin-left: 50px;
-  margin-top: 0px;
 `;
 
 export const InicioEstilo = styled.a`
   color: #1e3163;
   font-weight: bold;
   font-size: var(--letraMediana);
-  text-decoration: none;
+  margin-left: 30px;
 `;
 
 export const CursoEstilo = styled.a`
   font-size: var(--letraMediana);
   font-weight: bold;
   color: #1e3163;
-  text-decoration: none;
+  margin-left: 30px;
 `;
 export const IniciaSecion = styled.a`
   color: #0061a8;
@@ -85,7 +83,6 @@ export const TrianguloEstilo = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  height: 88px;
   box-shadow: 0px 0px 10px 0 #999999;
   background-color: #f8f8f8f8;
   position: fixed;
@@ -112,7 +109,6 @@ export const Menun = styled.ul`
   top: 0px;
   height: 88px;
   list-style: none;
-  color: #1e3163;
   @media screen and (max-width: 960px) {
     background-color: #f8f8f8f8;
     position: absolute;
@@ -129,9 +125,6 @@ export const Menun = styled.ul`
 `;
 
 export const MenuItem = styled.li`
-  left: 455;
-  height: 100%;
-  color: #1e3163;
   @media screen and (max-width: 960px) {
     justify-content: space-between;
     width: 100%;
@@ -139,6 +132,7 @@ export const MenuItem = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }
 `;
 
@@ -230,20 +224,14 @@ export const MenuItemLink = styled.a`
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: 0 0.8rem;
-  color: #64b2ff;
   font-family: "Segoe UI";
   font-size: var(--letraMediana);
-  font-weight: bold;
-  font-weight: 300;
   cursor: pointer;
   transition: 0.5s all ease;
   a {
     text-decoration: none;
   }
   &:hover {
-    color: #fff;
-    background-color: #8ab6d6;
     transition: 0.5s all ease;
     div {
       svg {
@@ -264,6 +252,7 @@ export const MenuItemLink = styled.a`
     }
   }
   @media screen and (max-width: 960px) {
+    position: relative;
     width: 100%;
     div {
       width: 30%;
@@ -274,6 +263,7 @@ export const MenuItemLink = styled.a`
     }
   }
   @media screen and (max-width: 880px) {
+    position: relative;
     div {
       width: 40%;
       justify-content: left;
@@ -283,6 +273,7 @@ export const MenuItemLink = styled.a`
     }
   }
   @media screen and (max-width: 500px) {
+    position: relative;
     div {
       width: 60%;
       justify-content: left;
@@ -292,6 +283,7 @@ export const MenuItemLink = styled.a`
     }
   }
   @media screen and (max-width: 260px) {
+    position: relative;
     div {
       width: 100%;
       justify-content: left;
