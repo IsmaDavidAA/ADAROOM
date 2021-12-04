@@ -15,8 +15,6 @@ export const MenuEstilo = styled.div`
 export const ImagenEstilo = styled.img`
   width: 258px;
   height: 88px;
-  margin-left: 50px;
-  margin-top: 0px;
 `;
 
 export const InicioEstilo = styled.a`
@@ -95,7 +93,6 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   width: 100%;
-  max-width: 1300px;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -164,6 +161,7 @@ export const AMenuItemCS = styled.li`
   color: #1e3163;
   right: 0px;
   position: absolute;
+  display: none;
   @media screen and (max-width: 960px) {
     position: relative;
     right: 0;
@@ -175,11 +173,20 @@ export const AMenuItemCS = styled.li`
   }
 `;
 
+export const AMenuItemCSDrop = styled.li`
+  left: 455;
+  height: 100%;
+  color: #1e3163;
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+`;
+
 export const AMenuItemIM = styled.li`
   left: 455;
   height: 100%;
   color: #1e3163;
-  right: 137px;
+  right: 52px;
   position: absolute;
   @media screen and (max-width: 960px) {
     position: relative;
@@ -196,7 +203,7 @@ export const AAMenuItemUser = styled.li`
   left: 455;
   height: 100%;
   color: #1e3163;
-  right: 217px;
+  right: 133px;
   position: absolute;
   @media screen and (max-width: 960px) {
     position: relative;
