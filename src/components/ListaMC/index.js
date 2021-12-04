@@ -26,11 +26,22 @@ import { AuthContext } from "../../Context";
 const ListaMC = (props) => {
   const { currentUser } = useContext(AuthContext);
   const cantidad = props.curso[1].cantMaterial;
-  const Nchecks = apiSettings.getCantChecks(props.curso[0], currentUser.uid);
+  //const Nchecks = apiSettings.getCantChecks(props.curso[0], currentUser.uid);
   
+  const [checks, setChecks] = useState([]);
+  
+  useEffect(() => {
+    const fetchChecks = async () => {
+      const Nchecks = await apiSettings.getCantChecks(props.curso[0], currentUser.uid);
+      setChecks(Nchecks);
+    }
+    fetchChecks();
+  }, [currentUser]);
+  
+
   //const string = ""+Nchecks+"";
   //var aux = Number(string);
-  var porcentaje=(Nchecks/cantidad)*100;  
+  //var porcentaje=(checks/cantidad)*100;  
   //console.log(Nchecks);
   return (
     <Recuadro>
@@ -47,7 +58,7 @@ const ListaMC = (props) => {
         <AutorL>{props.curso[1].institucion}</AutorL>
         <CantInsL>{props.curso[1].cantInscritos} ya inscritos </CantInsL>
         <BarraEstado>Mi progreso</BarraEstado> 
-        <Progressbar progress={Math.trunc(cantidad)}/> 
+        <Progressbar progress={Math.trunc((checks/cantidad)*100)}/> 
         <Titulo> EMPEZAR CURSO </Titulo>
       </Texto>
     </Recuadro>

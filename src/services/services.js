@@ -196,13 +196,14 @@ export const apiSettings = {
     let datosJson = [];
     querySnapshot.forEach((doc) => {
       datosJson.push([/*doc.id,*/ doc.data()]);
+      //var aux =0
+      //aux += doc.data().visto;
     });
     if (datosJson === []) {
       datosJson = [{}];
     }
     let tamaño = datosJson.length;
     
-    //var tam = Number(tamaño);
     console.log(tamaño);
     return tamaño;
   },
