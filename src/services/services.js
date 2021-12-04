@@ -20,6 +20,7 @@ const listaTemarios = "temario";
 const listaInscripciones = "inscripcion";
 const estudiante = "estudiante";
 const contenidoSeccion = "contenidoSeccion";
+const checkSeccion ="checkSeccion";
 
 export const apiSettings = {
   getCursos: async () => {
@@ -122,6 +123,22 @@ export const apiSettings = {
     });
     return true;
   },
+ //XDDDDDDDDDDDDDDDDDDDDDDDXXXXXXXDDDDDDDDDDDDD
+ BorrarCheck: async (idCheck) => {
+  await deleteDoc(doc(db, checkSeccion, idCheck));
+  return true;
+},
+posCheck: async (idCurso, idEst, idSec) => {
+  await addDoc(collection(db, checkSeccion), {
+    codCurso: idCurso,
+    codEst: idEst,
+    subSeccion: idSec,
+    visto: 1,
+  });
+  return true;
+},
+
+
 
   getInscrito: async (idCurso, idEst) => {
     let existe = false;
