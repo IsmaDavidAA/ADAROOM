@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+//import React from "react";
 import {
   Recuadro,
   ImagenL,
@@ -17,12 +18,31 @@ import {
   useRouteMatch,
   useParams,
 } from "react-router-dom";
-import Progressbar from '../../components/ProgressBar'
+import Progressbar from '../../components/ProgressBar';
+import { apiSettings } from "../../services/services";
+import { AuthContext } from "../../Context";
+
 
 const ListaMC = (props) => {
+  const { currentUser } = useContext(AuthContext);
   const cantidad = props.curso[1].cantMaterial;
-  var Nchecks; // ultima consulta count de numero de checks de un curso  
-  var porcentaje/*=(Nchecks/cantidad)*100 */ ;    
+  //const Nchecks = apiSettings.getCantChecks(props.curso[0], currentUser.uid);
+  
+  const [checks, setChecks] = useState([]);
+  
+  useEffect(() => {
+    const fetchChecks = async () => {
+      const Nchecks = await apiSettings.getCantChecks(props.curso[0], currentUser.uid);
+      setChecks(Nchecks);
+    }
+    fetchChecks();
+  }, [currentUser]);
+  
+
+  //const string = ""+Nchecks+"";
+  //var aux = Number(string);
+  //var porcentaje=(checks/cantidad)*100;  
+  //console.log(Nchecks);
   return (
     <Recuadro>
       <Link to={`/cursos/${props.curso[0]}`}>
@@ -38,7 +58,7 @@ const ListaMC = (props) => {
         <AutorL>{props.curso[1].institucion}</AutorL>
         <CantInsL>{props.curso[1].cantInscritos} ya inscritos </CantInsL>
         <BarraEstado>Mi progreso</BarraEstado> 
-        <Progressbar progress={cantidad}/> 
+        <Progressbar progress={Math.trunc((checks/cantidad)*100)}/> 
         <Titulo> EMPEZAR CURSO </Titulo>
       </Texto>
     </Recuadro>
