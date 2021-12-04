@@ -127,12 +127,31 @@ export const apiSettings = {
     await deleteDoc(doc(db, checkSeccion, idCheck));
     return true;
   },
-  posCheck: async (idCurso, idEst, idCheck) => {
+  posCheck: async (idCurso, idSeccion, idEst, idCheck) => {
     await setDoc(doc(db, checkSeccion, idCheck), {
       codCurso: idCurso,
+      codSeccion: idSeccion,
       codEst: idEst,
     });
     return true;
+  },
+  getChecks: async (idEst, idCurso, idSeccion) => {
+    const q = query(
+      collection(db, checkSeccion),
+      where("codEst", "==", `${idEst}`),
+      where("codCurso", "==", `${idCurso}`),
+      where("codSeccion", "==", `${idSeccion}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let checksJson = [];
+    querySnapshot.forEach((doc) => {
+      checksJson.push([doc.id]);
+    });
+    if (checksJson === []) {
+      checksJson = [{}];
+    }
+    console.log(checksJson);
+    return await checksJson;
   },
 
   getInscrito: async (idCurso, idEst) => {

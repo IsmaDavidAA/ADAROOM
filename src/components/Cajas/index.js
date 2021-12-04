@@ -7,29 +7,31 @@ import { apiSettings } from "../../services/services";
 const Cajas = (props) => {
   const [checkList, setCheckList] = useState(new Map());
 
-  useEffect(() => {
-    let i = 0;
-    [...props.elements].map((element) => {
-      setCheckList(
-        checkList.set(
-          props.user.uid + element.codCurso + element.codSeccion + i,
-          false
-        )
-      );
-      i++;
+  const getChecks = async () => {
+    const response = await apiSettings.getChecks(
+      props.user.uid,
+      props.elements[0].codCurso,
+      props.elements[0].codSeccion
+    );
+    [...response].map((element) => {
+      setCheckList(checkList.set(element, true));
     });
+    return response;
+  };
+  useEffect(() => {
+    getChecks();
   }, []);
 
   useEffect(() => {
     console.log(checkList);
   }, [checkList]);
 
-  const handleCheck = (event) => {
-    console.log(event.target.checked, event.target.parentNode.id);
+  const handleCheck = (codSeccion, event) => {
     if (event.target.checked) {
       checkList.set(event.target.parentNode.id, true);
       apiSettings.posCheck(
         props.elements[0].codCurso,
+        codSeccion,
         props.user.uid,
         event.target.parentNode.id
       );
@@ -56,13 +58,19 @@ const Cajas = (props) => {
               element.codSeccion +
               [...props.elements].indexOf(element)
             }
+            seccion={element.codSeccion}
           >
             {element.tipoInf === "pdf" ? (
               <Pdf src={pdf} />
             ) : (
               <Video src={video} />
             )}
-            <Check type="checkbox" onChange={handleCheck} />
+            <Check
+              type="checkbox"
+              onChange={(e) => {
+                handleCheck(element.codSeccion, e);
+              }}
+            />
             <Titulo href={element.link}>{element.titulo}</Titulo>
           </EstiloCaja>
         );
