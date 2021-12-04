@@ -135,21 +135,31 @@ export const apiSettings = {
       collection(db, "inscripcion"),
       where("codEst", "==", `${idEst}`)
     );
+    
     const querySnapshot = await getDocs(q);
     let inscripcionesJson = [];  
     querySnapshot.forEach((doc) => {
       inscripcionesJson.push(doc.data().codCurso);
     });  
-    let promise = getCont(doc.id);
+    let promise ;
     let promises = [];
+    let promiseCantCheck;
     inscripcionesJson.forEach( (element) => {
       promise =  getDoc(doc(db, listaCursos, `${element}`));
-      promises.push(promise);
+      
+      
+        /*promiseCantCheck =  getDoc(query(
+        collection(db, "checkSeccion"),
+        where("codCurso", "==", `${element}`),
+        where("codEst", "==", `${idEst}`)
+      ));*/
+      promises.push(promise); 
     });
     let responses = await Promise.all(promises);
     let cursos=[];
     responses.forEach(element=>{
       cursos.push([element.id, element.data()]);
+      console.log(element);
     });
     if (cursos === []) {
       cursos = [{}];
@@ -175,6 +185,45 @@ export const apiSettings = {
     });
     return contenidoJson;
   },
+  
+  getCantChecks: async (idCurso, idEst) => {
+    const q = query(
+      collection(db, "checkSeccion"),
+      where("codCurso", "==", `${idCurso}`),
+      where("codEst", "==", `${idEst}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let datosJson = [];
+    querySnapshot.forEach((doc) => {
+      datosJson.push([/*doc.id,*/ doc.data()]);
+    });
+    if (datosJson === []) {
+      datosJson = [{}];
+    }
+    let tamaño = datosJson.length;
+    
+    //var tam = Number(tamaño);
+    console.log(tamaño);
+    return tamaño;
+  },
+
+
+  getCantChecks2: async (idCurso, idEst) => {
+    const q = query(
+      collection(db, "checkSeccion"),
+      where("codCurso", "==", `${idCurso}`),
+      where("codEst", "==", `${idEst}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let total_count =0;
+    querySnapshot.forEach((doc) => {
+      total_count += doc.data().count;
+    });
+
+    console.log(total_count);
+    return total_count;
+  },
+
 };
 
 const getCont = async(temarioId)=>{
