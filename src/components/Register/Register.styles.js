@@ -115,3 +115,15 @@ font-family: 'Segoe UI';
 background: none;
 border: none;
 `;
+export const colores = {
+	borde: "#0075FF",
+	error: "#F44336",
+	exito: "#268e00",
+};
+
+export const MensajeError = styled.p`
+font-size: 18px;
+font-weight: bold;
+	color: ${colores.error};
+   
+`;
