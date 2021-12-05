@@ -1,24 +1,28 @@
-import React, {useCallback, useContext} from 'react';
+import React, {useCallback, useContext,useState} from 'react';
 
 //import { FirebaseAuth } from "react-firebaseui";
-import { apiSettings } from '../../services/services';
+
 import  {auth} from "../../services/firebase"
 import { AuthContext } from "../../Context";
 import { withRouter, Redirect } from "react-router-dom";
 import {signInWithEmailAndPassword, createUserWithEmailAndPassword} from "@firebase/auth";
 import Index from '../../components/Register/index';
+import {apiSettings} from '../../services/services';
 
-
-const SignIn = ({history}) => {
+const VistaRegistro = ({history}) => {
   //Obtenemos el estado del user en el context
-   const handleLogin = useCallback(
+  const { currentUser } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
+   const handleRegister = useCallback(
     async event => {
       event.preventDefault();
       const { email, password ,username} = event.target.elements;
 
+      console.log(email.value)
+
       try {
-      const newUser =  await createUserWithEmailAndPassword(auth,email.value, password.value);
-          apiSettings.setUser(username.value,email.value,password.value,newUser.user.uid);
+        const Usuario = await createUserWithEmailAndPassword(auth,email.value, password.value);
+        apiSettings.setUser(username.value,email.value,password.value,Usuario.user.uid);
         history.push("/");
         console.log(AuthContext);
         
@@ -28,15 +32,15 @@ const SignIn = ({history}) => {
     },
     [history]
   );
-    const {currentUser} = useContext(AuthContext);
+    
     if (currentUser){
       return <Redirect to ="/" />;
     }
     return (
 
-      <Index handleLogin={handleLogin}/>
+      <Index handleRegister={handleRegister}/>
      
   );
 };
 
-export default SignIn;
+export default VistaRegistro;
