@@ -17,15 +17,18 @@ export const Texto = styled.p`
   font-size: 20px;
   color: var(--blue);
   color: #1e3163;
-  margin-left: 100px;
   font-weight: bold;
+  margin-top: 40px;
+  @media only screen and (max-width: 750px) {
+    padding: 4rem 0rem 0rem 0rem;
 `;
 
 export const Texto2 = styled.p`
   font-size: 20px;
   color: #999999;
-  margin-left: 100px;
   margin-top: 40px;
+  @media only screen and (max-width: 750px) {
+    padding: 4rem 0rem 0rem 0rem;
 `;
 export const SubTitulo = styled.h1`
   padding: 4rem 0rem 0rem 1rem;

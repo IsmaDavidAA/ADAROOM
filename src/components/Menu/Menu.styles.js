@@ -15,8 +15,6 @@ export const MenuEstilo = styled.div`
 export const ImagenEstilo = styled.img`
   width: 258px;
   height: 88px;
-  margin-right: 70px;
-  margin-left: 20px;
 `;
 
 export const InicioEstilo = styled.a`
@@ -184,7 +182,7 @@ export const AMenuItemIM = styled.li`
   left: 455;
   height: 100%;
   color: #1e3163;
-  right: 52px;
+  right: 40px;
   position: absolute;
   @media screen and (max-width: 1110px) {
     position: relative;
@@ -203,7 +201,7 @@ export const AAMenuItemUser = styled.li`
   height: 88px;
   height: 100%;
   color: #1e3163;
-  right: 133px;
+  right: 120px;
   position: absolute;
   @media screen and (max-width: 1110px) {
     position: relative;
