@@ -7,7 +7,7 @@ export const EstiloCaja = styled.div`
 export const Pdf = styled.img`
   width: 45px;
   height: 45px;
-  margin-top: 30px;
+  margin: 30px 0 0 1rem;
 `;
 export const Video = styled.img`
   width: 45px;
