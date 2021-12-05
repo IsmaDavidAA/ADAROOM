@@ -9,6 +9,8 @@ export const PiePagEstilo = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
+  width: 100%;  
+  min-height: 128px;
   @media only screen and (max-width: 850px) {
     flex-direction: column;
   }

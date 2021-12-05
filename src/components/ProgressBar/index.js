@@ -3,14 +3,14 @@ import React from 'react'
 const progressBar = ({progress}) => {
 
     const Parentdiv = {
-		height: '30px',
+		height: '27px',
 		width: '420px',
 		backgroundColor: 'var(--plomoAgua)',
 		borderRadius: 5,
 	}
 	
 	const Childdiv = {
-		height: '30px',
+		height: '27px',
 		width: `${progress}%`,
 		backgroundColor: '#48D1CC',
 	    borderRadius: 5,
