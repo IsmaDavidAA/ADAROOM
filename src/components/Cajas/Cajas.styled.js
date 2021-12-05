@@ -16,8 +16,8 @@ export const Video = styled.img`
 `;
 
 export const Check = styled.input`
-  width: 25px;
-  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
   margin: 2.5rem 1rem 0 -5rem;
 `;
 export const Titulo = styled.a`

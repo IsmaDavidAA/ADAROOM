@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import Chevron from "./Chevron";
 import "./Accordion.css";
 import Cajas from "../Cajas";
-
+import { AccordionSeccionS } from "./SeccionS.styles";
 const Accordion = (props) => {
   const [setActive, setActiveState] = useState("");
   const [setHeight, setHeightState] = useState("0px");
@@ -25,7 +25,7 @@ const Accordion = (props) => {
   }
 
   return (
-    <div className="accordion__section background: black">
+    <AccordionSeccionS>
       <button className={`accordion ${setActive}`} onClick={toggleAccordion}>
         <Chevron className={`${setRotate}`} width={10} fill={"#777"} />
         <p className="accordion__title"> {props.title}</p>
@@ -39,7 +39,7 @@ const Accordion = (props) => {
           {<Cajas elements={props.elementos} user={props.user} />}
         </div>
       </div>
-    </div>
+    </AccordionSeccionS>
   );
 };
 
