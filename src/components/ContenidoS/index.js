@@ -9,10 +9,15 @@ const ContenidosS = (props) => {
       <>
         <Contenido>
           <Title>Contenido del curso</Title>
-          <Recomendacion>Recomendación, una ves que termine una subsección (video o pdf) por favor marque el la casilla, para mostrar su avance del curso en la barra de <br/>estado.</Recomendacion>
+          <Recomendacion>
+            Recomendación, una ves que termine una subsección (video o pdf) por
+            favor marque el la casilla, para mostrar su avance del curso en la
+            barra de <br />
+            estado.
+          </Recomendacion>
         </Contenido>
         <Caja>
-          <SeccionesS datos={props.datos} />
+          <SeccionesS datos={props.datos} user={props.user} />
         </Caja>
       </>
     </div>

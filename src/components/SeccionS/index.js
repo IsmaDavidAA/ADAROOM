@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Chevron from "./Chevron";
 import "./Accordion.css";
 import Cajas from "../Cajas";
@@ -36,7 +36,7 @@ const Accordion = (props) => {
         className="accordion__content"
       >
         <div className="accordion__text">
-          {<Cajas elements={props.elementos} />}
+          {<Cajas elements={props.elementos} user={props.user} />}
         </div>
       </div>
     </div>
