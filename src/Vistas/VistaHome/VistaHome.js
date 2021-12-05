@@ -6,10 +6,7 @@ import {
   MasCursos,
   Caja,
 } from "./VistaHome.styles";
-import {
-  BrowserRouter as Router,
-  Link,
-} from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import Cuerpo from "../../components/Cuerpo";
 import Mosaico from "../../components/Mosaico";
 import { apiSettings } from "../../services/services";
@@ -29,7 +26,6 @@ const VistaHome = () => {
   useEffect(() => {
     fetchCursos();
   }, [cursos]);
-
 
   return (
     <>
