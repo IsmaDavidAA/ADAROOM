@@ -20,6 +20,8 @@ export const Recuadro = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 30px;
+  margin-right: 30px;
   @media only screen and (max-width: 1000px) {
     margin: 0px 3px 10px 3px;
   }

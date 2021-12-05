@@ -49,6 +49,7 @@ export const NombreIL = styled.div`
   font-weight: bold;
   color: #000000;
   text-decoration: none;
+  margin-left: 15px;
   @media only screen and (max-width: 750px) {
     text-align: center;
   }
@@ -56,6 +57,7 @@ export const NombreIL = styled.div`
 export const AutorL = styled.p`
   text-align: left;
   color: var(--plomoAgua);
+  margin-left: 15px;
   @media only screen and (max-width: 750px) {
     text-align: center;
   }
@@ -63,6 +65,7 @@ export const AutorL = styled.p`
 export const CantInsL = styled.div`
   text-align: left;
   font-weight: bold;
+  margin-left: 15px;
   @media only screen and (max-width: 750px) {
     text-align: center;
   }
