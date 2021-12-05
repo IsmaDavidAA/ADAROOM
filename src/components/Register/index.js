@@ -1,11 +1,12 @@
 import  React, {useContext} from 'react'
-import { ContFormulario, Botom, CuadroRegister, FormularioR, InputUser, InputContraseñaR, InputCorreoR, Titulo, Titulo2, Titulo3,  Div, IconUser, IconEmail, IconPasswd } from './Register.styles'
+import { ContFormulario, Botom, CuadroRegister,MensajeError, FormularioR, InputUser, InputContraseñaR, InputCorreoR, Titulo, Titulo2, Titulo3,  Div, IconUser, IconEmail, IconPasswd } from './Register.styles'
 
 import email from  "../../images/email.png";
 import password from "../../images/password.png";
 import user from "../../images/user.png"
 import {AuthContext} from "../../Context";
 import { Redirect } from 'react-router';
+
 
 const Index = (props) => {
    
@@ -35,6 +36,14 @@ const Index = (props) => {
         <IconPasswd src = {password}/>
             <InputContraseñaR name="confirmacionPassword"  type="password" placeholder="Confirmacion de contraseña" required  maxLength="40" />
         </Div>
+        
+        <div className="row">
+      { 
+        (props.errorRegister)
+          ? <MensajeError> Correo ya existente </MensajeError> 
+          : null 
+      }
+    </div>
 
           <Botom type="submit"> Registrarse </Botom>
 
@@ -42,6 +51,7 @@ const Index = (props) => {
         </FormularioR>
         </ContFormulario>
          <Titulo3> Todos los campos son obligatorios </Titulo3>
+         
         </CuadroRegister>
     )
 }
