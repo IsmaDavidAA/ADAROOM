@@ -1,18 +1,22 @@
 import styled from "styled-components";
-import  GlobalStyle  from "../../GlobalStyle";
 export const Contenedor = styled.div`
-  background-color: white;
-  min-height: 400px;
-  margin-top: 200px;
+  min-height: 80vh;
+  padding: 88px 10px 14px 10px;
+  @media only screen and (max-width: 750px) {
+    padding: 88px 0px 14px 0px;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    text-align: center;
+  }
 `;
 export const Texto = styled.p`
   font-size: var(--LetraMediana);
   font-size: 20px;
   color: var(--blue);
-  color: #1E3163;
+  color: #1e3163;
   margin-left: 100px;
   font-weight: bold;
-  
 `;
 
 export const Texto2 = styled.p`
@@ -21,4 +25,12 @@ export const Texto2 = styled.p`
   margin-left: 100px;
   margin-top: 40px;
 `;
-
+export const SubTitulo = styled.h1`
+  padding: 4rem 0rem 0rem 1rem;
+  color: #1e3163;
+  font-size: 24px;
+  font-family: "Segoe UI";
+  @media only screen and (max-width: 750px) {
+    padding: 4rem 0rem 0rem 0rem;
+  }
+`;

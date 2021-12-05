@@ -7,7 +7,7 @@ export const EstiloCaja = styled.div`
 export const Pdf = styled.img`
   width: 45px;
   height: 45px;
-  margin-top: 30px;
+  margin: 30px 0 0 1rem;
 `;
 export const Video = styled.img`
   width: 45px;
@@ -16,8 +16,8 @@ export const Video = styled.img`
 `;
 
 export const Check = styled.input`
-  width: 25px;
-  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
   margin: 2.5rem 1rem 0 -5rem;
 `;
 export const Titulo = styled.a`

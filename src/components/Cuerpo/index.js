@@ -6,6 +6,7 @@ import {
   TituloEstilo,
   TextoEstilo,
   ImagenEstilo,
+  ImageContainer,
 } from "./Cuerpo.styles";
 function Cuerpo() {
   return (
@@ -19,7 +20,9 @@ function Cuerpo() {
           programación y creación de páginas web.
         </TextoEstilo>
       </div>
-      <ImagenEstilo src={imagenPrincipal} />
+      <ImageContainer>
+        <ImagenEstilo src={imagenPrincipal} />
+      </ImageContainer>
     </CuerpoEstilo>
   );
 }
