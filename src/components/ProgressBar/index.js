@@ -1,35 +1,36 @@
-import React from 'react'
+import React from "react";
+import { ParentDiv, ChildDiv, ProgressText } from "./ProgressBar.styles";
+const progressBar = ({ progress }) => {
+  const Parentdiv = {
+    height: "30px",
+    width: "420px",
+    maxWidth: "100%",
+    backgroundColor: "var(--plomoAgua)",
+    borderRadius: 5,
+    alignSelf: "center",
+  };
 
-const progressBar = ({progress}) => {
+  const Childdiv = {
+    height: "30px",
+    width: `${progress}%`,
+    backgroundColor: "#48D1CC",
+    borderRadius: 5,
+    textAlign: "right",
+  };
 
-    const Parentdiv = {
-		height: '30px',
-		width: '420px',
-		backgroundColor: 'var(--plomoAgua)',
-		borderRadius: 5,
-	}
-	
-	const Childdiv = {
-		height: '30px',
-		width: `${progress}%`,
-		backgroundColor: '#48D1CC',
-	    borderRadius: 5,
-		textAlign: 'right',
-	}
+  const progresstext = {
+    fontSize: "18px",
+    color: "black",
+    fontWeight: 700,
+  };
 
-    const progresstext = {
-		fontSize: '18px',
-		color: 'black',
-		fontWeight: 700
-	}
-	
-	return (
-	<div style={Parentdiv}>
-		<div style={Childdiv}>
-			<span style={progresstext}>{`${progress}%`}</span>
-		</div>
-	</div>
-	)
-}
+  return (
+    <ParentDiv>
+      <ChildDiv style={Childdiv}>
+        <ProgressText style={progresstext}>{`${progress}%`}</ProgressText>
+      </ChildDiv>
+    </ParentDiv>
+  );
+};
 
 export default progressBar;
