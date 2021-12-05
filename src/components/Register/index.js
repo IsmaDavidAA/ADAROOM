@@ -1,5 +1,5 @@
 import  React, {useContext} from 'react'
-import { ContFormulario, Botom, CuadroRegister, FormularioR, InputUserR, InputContraseñaR, InputCorreoR, Titulo, Titulo2, Titulo3,  Div, IconUser, IconEmail, IconPasswd } from './Register.styles'
+import { ContFormulario, Botom, CuadroRegister, MensajeError, FormularioR, InputUserR, InputContraseñaR, InputCorreoR, Titulo, Titulo2, Titulo3,  Div, IconUser, IconEmail, IconPasswd } from './Register.styles'
 
 import email from  "../../images/email.png";
 import password from "../../images/password.png";
@@ -35,7 +35,13 @@ const Index = (props) => {
         <IconPasswd src = {password}/>
             <InputContraseñaR name="confirmacionPassword"  type="password" placeholder="Confirmacion de contraseña" required  maxLength="40" />
         </Div>
-
+        <div className="row">
+      { 
+        (props.errorRegister)
+          ? <MensajeError> Correo ya existente </MensajeError> 
+          : null 
+      }
+    </div>
           <Botom type="submit"> Registrarse </Botom>
 
          

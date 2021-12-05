@@ -1,7 +1,5 @@
 import React, {useCallback, useContext,useState} from 'react';
-
 //import { FirebaseAuth } from "react-firebaseui";
-
 import  {auth} from "../../services/firebase"
 import { AuthContext } from "../../Context";
 import { withRouter, Redirect } from "react-router-dom";
@@ -11,6 +9,7 @@ import {apiSettings} from '../../services/services';
 
 const VistaRegistro = ({history}) => {
   //Obtenemos el estado del user en el context
+  const [errorRegister,seterrorRegister] =useState(false)
   const { currentUser } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
    const handleRegister = useCallback(
@@ -21,13 +20,16 @@ const VistaRegistro = ({history}) => {
       console.log(email.value)
 
       try {
+        
         const Usuario = await createUserWithEmailAndPassword(auth,email.value, password.value);
         apiSettings.setUser(username.value,email.value,password.value,Usuario.user.uid);
         history.push("/");
         console.log(AuthContext);
         
       } catch (error) {
-      alert('Acceso inválido. Por favor intente de nuevo');
+        
+    // alert('Acceso inválido. Por favor intente de nuevo');
+        seterrorRegister(true)
         }
     },
     [history]
@@ -38,7 +40,7 @@ const VistaRegistro = ({history}) => {
     }
     return (
 
-      <Index handleRegister={handleRegister}/>
+      <Index handleRegister={handleRegister} errorRegister={errorRegister}/>
      
   );
 };
