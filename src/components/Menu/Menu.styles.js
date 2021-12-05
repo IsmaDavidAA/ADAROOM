@@ -64,11 +64,8 @@ export const MisCuros = styled.a`
 export const Estudiate = styled.p`
   color: #0061a8;
   font-size: var(--letraMediana);
-  top: 33px;
   left: 1070px;
-  text-decoration: none;
   margin: 0px;
-  text-aling: left;
 `;
 export const UsuarioImagen = styled.img`
   width: 55px;
@@ -85,7 +82,6 @@ export const TrianguloEstilo = styled.div`
 
 export const Container = styled.div`
   width: 100%;
-  height: 88px;
   box-shadow: 0px 0px 10px 0 #999999;
   background-color: #f8f8f8f8;
   position: fixed;
@@ -99,7 +95,7 @@ export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1110px) {
     justify-content: space-between;
   }
 `;
@@ -112,7 +108,7 @@ export const Menun = styled.ul`
   height: 88px;
   list-style: none;
   color: #1e3163;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1110px) {
     background-color: #f8f8f8f8;
     position: absolute;
     top: 88px;
@@ -131,7 +127,7 @@ export const MenuItem = styled.li`
   left: 455;
   height: 100%;
   color: #1e3163;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1110px) {
     justify-content: space-between;
     width: 100%;
     height: 70px;
@@ -146,7 +142,7 @@ export const AMenuItem = styled.li`
   color: #1e3163;
   right: 0px;
   position: absolute;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1110px) {
     position: relative;
     right: 0;
     width: 100%;
@@ -164,7 +160,7 @@ export const AMenuItemCS = styled.li`
   right: 0px;
   position: absolute;
   display: none;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1110px) {
     position: relative;
     right: 0;
     width: 100%;
@@ -179,7 +175,7 @@ export const AMenuItemCSDrop = styled.li`
   left: 455;
   height: 100%;
   color: #1e3163;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1110px) {
     display: none;
   }
 `;
@@ -190,7 +186,7 @@ export const AMenuItemIM = styled.li`
   color: #1e3163;
   right: 52px;
   position: absolute;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1110px) {
     position: relative;
     right: 0;
     width: 100%;
@@ -203,15 +199,17 @@ export const AMenuItemIM = styled.li`
 
 export const AAMenuItemUser = styled.li`
   left: 455;
+  width: 300px;
+  height: 88px;
   height: 100%;
   color: #1e3163;
   right: 133px;
   position: absolute;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1110px) {
     position: relative;
     right: 0;
     width: 100%;
-    height: 70px;
+    height: 88px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -223,7 +221,7 @@ export const AAMenuItem = styled.li`
   color: #1e3163;
   right: 159px;
   position: absolute;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1110px) {
     position: relative;
     right: 0;
     width: 100%;
@@ -270,7 +268,7 @@ export const MenuItemLink = styled.a`
       margin-right: 0.5rem;
     }
   }
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1110px) {
     width: 100%;
     div {
       width: 30%;
@@ -311,7 +309,7 @@ export const MenuItemLink = styled.a`
 
 export const MobileIcon = styled.div`
   display: none;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 1110px) {
     display: flex;
     align-items: center;
     cursor: pointer;

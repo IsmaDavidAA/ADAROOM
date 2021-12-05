@@ -1,6 +1,9 @@
 import styled from "styled-components";
 export const Seccions = styled.div`
   display: block;
+  min-height: 76px;
+  max-width: 886px;
+  width: 100%;
   text-align: left;
   padding-left: 0px;
   background: #ebf3ff;
@@ -25,10 +28,11 @@ export const Caja = styled.div`
 `;
 
 export const Seccion = styled.div`
-  min-height: 71px;
+  min-height: 76px;
   display: flex;
+  max-width: 886px;
   width: 100%;
-  align-items: left;
+  align-items: center;
   padding-left: 20px;
   padding-right: 5px;
   @media only screen and (max-width: 700px) {
