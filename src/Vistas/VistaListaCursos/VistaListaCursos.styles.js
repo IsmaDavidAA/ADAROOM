@@ -10,6 +10,7 @@ export const Contenedor = styled.div`
     justify-content: center;
     border: none;
     text-align: center;
+    margin-left: 0px;
   }
 `;
 export const SubTitulo = styled.h1`

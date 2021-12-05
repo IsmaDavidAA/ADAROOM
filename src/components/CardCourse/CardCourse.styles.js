@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledCard = styled.div`
   display: flex;
-  margin: 11rem 0rem 2rem 6rem;
+  margin: 11rem 0rem 2rem 4rem;
   padding: 0rem 2rem 0rem 0rem;
   font-size: var(--letraEstandar);
 
@@ -41,31 +41,31 @@ export const ImageC = styled.img`
   }
 
   @media only screen and (max-width: 550px) {
-    width: 100%;
-    padding: 0rem 0rem 0rem 0rem;
-    max-width: 100%;
-    min-width: 100%;
-    min-height: 280px;
-    max-height: 280px;
+    padding-top: 30px;
+    align-self: center;
   }
 `;
 export const Course = styled.div`
   font-weight: bold;
   padding-bottom: 18px;
+  margin-left: 10px;
 `;
 export const Institution = styled.div`
   color: var(--plomo);
   padding-bottom: 18px;
+  margin-left: 10px;
 `;
 export const Inscribed = styled.div`
   color: var(--black);
   font-weight: bold;
   padding-bottom: 18px;
+  margin-left: 10px;
 `;
 export const InscribedState = styled.div`
   color: var(--blueAgua);
   font-size: var(--letraMediana);
   align-self: flex-end;
+  margin-left: 10px;
 `;
 
 export const WrapperTitle = styled.div`

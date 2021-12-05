@@ -30,6 +30,7 @@ export const Texto = styled.div`
     padding: 0px 0px 0px 0px;
     flex-direction: column;
     border: none;
+    margin-left: 0px;
   }
 `;
 

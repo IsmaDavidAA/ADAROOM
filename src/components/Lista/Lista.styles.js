@@ -52,6 +52,7 @@ export const NombreIL = styled.div`
   margin-left: 15px;
   @media only screen and (max-width: 750px) {
     text-align: center;
+    margin-left: 0px;
   }
 `;
 export const AutorL = styled.p`
@@ -60,6 +61,7 @@ export const AutorL = styled.p`
   margin-left: 15px;
   @media only screen and (max-width: 750px) {
     text-align: center;
+    margin-left: 0px;
   }
 `;
 export const CantInsL = styled.div`
@@ -68,5 +70,6 @@ export const CantInsL = styled.div`
   margin-left: 15px;
   @media only screen and (max-width: 750px) {
     text-align: center;
+    margin-left: 0px;
   }
 `;
