@@ -1,9 +1,9 @@
 import  React, {useContext} from 'react'
-import { ContFormulario, Botom, CuadroRegister, FormularioR, InputUser, InputContraseñaR, InputCorreoR, Titulo, Titulo2, Titulo3,  Div, IconUser, IconEmail, IconPasswd } from './Register.styles'
+import { ContFormulario, Botom, CuadroRegister, FormularioR, InputUserR, InputContraseñaR, InputCorreoR, Titulo, Titulo2, Titulo3,  Div, IconUser, IconEmail, IconPasswd } from './Register.styles'
 
 import email from  "../../images/email.png";
 import password from "../../images/password.png";
-import user from "../../images/user.png"
+import userR from "../../images/IconoUsuario.png";
 import {AuthContext} from "../../Context";
 import { Redirect } from 'react-router';
 
@@ -19,10 +19,10 @@ const Index = (props) => {
          <ContFormulario>
         <FormularioR onSubmit={props.handleRegister}>
         <Div>
-            <IconUser src = {user}/>
-            <InputUser name="username" type= "text" placeholder="Nombre Completo" required maxLength= "40"/>
+            <IconUser src = {userR}/>
+            <InputUserR     name="username" type= "text" placeholder="Nombre Completo" required maxLength= "40"  />
+          </Div>
 
-        </Div>
           <Div>
              <IconEmail src = {email}/> 
              <InputCorreoR   name="email" type="email" placeholder="Correo electrónico" required  maxLength="40"  /> 

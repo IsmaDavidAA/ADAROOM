@@ -77,7 +77,7 @@ justify-self:center;
 padding:0px 0px 0px 10px;
 `;
 export const IconPasswd = styled.img`
-width:16px;
+width: 16px;
 height: 16px;
 align-self:center;
 justify-self:center;
@@ -98,14 +98,14 @@ margin:1rem 0rem 1rem 0rem;
    font-family: 'Segoe UI';
    font-size: 22px;
 `;
-export const IconUser = styled.image`
+export const IconUser = styled.img`
 width:16px;
 height: 16px;
 align-self:center;
 justify-self:center;
 padding:0px 0px 0px 10px;
 `;
-export const InputUser = styled.input`
+export const InputUserR = styled.input`
 padding: 0px 0rem 0rem 15px;
 display: block;
 width: 325px;
