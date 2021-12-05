@@ -15,6 +15,7 @@ export const MenuEstilo = styled.div`
 export const ImagenEstilo = styled.img`
   width: 258px;
   height: 88px;
+  margin-right: 70px;
 `;
 
 export const InicioEstilo = styled.a`
@@ -243,14 +244,12 @@ export const MenuItemLink = styled.a`
   font-size: var(--letraMediana);
   font-weight: bold;
   font-weight: 300;
-  cursor: pointer;
   transition: 0.5s all ease;
   a {
     text-decoration: none;
   }
   &:hover {
     color: #fff;
-    background-color: #8ab6d6;
     transition: 0.5s all ease;
     div {
       svg {
