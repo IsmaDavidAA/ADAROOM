@@ -16,6 +16,7 @@ export const ImagenEstilo = styled.img`
   width: 258px;
   height: 88px;
   margin-right: 70px;
+  margin-left: 20px;
 `;
 
 export const InicioEstilo = styled.a`

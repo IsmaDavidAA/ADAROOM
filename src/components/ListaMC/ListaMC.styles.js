@@ -25,6 +25,7 @@ export const Texto = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 15px;
   @media only screen and (max-width: 750px) {
     padding: 0px 0px 0px 0px;
     flex-direction: column;
@@ -38,7 +39,7 @@ export const ImagenL = styled.img`
   display: block;
   float: left;
   @media only screen and (max-width: 750px) {
-    padding: 0px;
+    padding: 10px;
     align-self: center;
     justify-self: center;
     flex-direction: column;
