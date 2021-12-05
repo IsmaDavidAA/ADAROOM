@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const StyledCard = styled.div`
   display: flex;
-  margin: 11rem 0rem 2rem 4rem;
+  margin: 9rem 0rem 2rem 4rem;
   padding: 0rem 2rem 0rem 0rem;
   font-size: var(--letraEstandar);
+  
 
   @media only screen and (max-width: 700px) and (min-width: 550px) {
     margin: 88px 30px 14px 30px;
@@ -21,6 +22,7 @@ export const CardContainer = styled.div`
   padding: 0px 15px 0px 15px;
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
   @media only screen and (max-width: 700px) {
     padding: 15px 15px 0px 15px;
   }
@@ -30,6 +32,7 @@ export const ImageC = styled.img`
   min-width: 300px;
   min-height: 260px;
   max-height: 260px;
+  margin-top: 30px;
 
   @media only screen and (max-width: 700px) and (min-width: 550px) {
     width: 100%;

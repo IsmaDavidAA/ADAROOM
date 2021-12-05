@@ -3,6 +3,7 @@ export const CuerpoEstilo = styled.div`
   background-color: white;
   padding: 7rem 0rem 5rem 0rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   @media only screen and (max-width: 960px) {
     padding: 2rem 0rem 5rem 0rem;
@@ -38,10 +39,11 @@ export const ImagenEstilo = styled.img`
   border-radius: 50%;
   margin-top: 0px;
   @media only screen and (max-width: 1000px) {
-    min-width: 400px;
+    min-width: 100px;
   }
   @media only screen and (max-width: 800px) {
     min-width: 0px;
+    min-height: 150px;
   }
 `;
 
