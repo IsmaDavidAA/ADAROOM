@@ -10,7 +10,7 @@ import {
   WrapperStateInscripcion,
   WrapperTitle,
   WrapperState,
-} from "./StyleList";
+} from "./CardCourse.styles";
 
 const CardCourse = ({
   codigo,

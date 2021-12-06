@@ -1,12 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import Listas from "../../components/Listas";
 import { AuthContext } from "../../Context";
 import { apiSettings } from "../../services/services";
-import { Contenedor, Texto, Texto2 } from "./VistaMisCursos.styles";
+import { Contenedor, SubTitulo, Texto, Texto2 } from "./VistaMisCursos.styles";
 import { withRouter, Redirect } from "react-router-dom";
-import { useHistory } from "react-router-dom";
 import ListasMC from "../../components/ListasMC";
-
+import VistaHome from "../VistaHome/VistaHome";
 const VistaMisCursos = () => {
   const { currentUser } = useContext(AuthContext);
 
@@ -25,7 +23,7 @@ const VistaMisCursos = () => {
     fetchInscripciones();
     const timeout = setTimeout(() => {
       setLoading(false);
-      document.getElementById("este").click();
+      //document.getElementById("este").click();
     }, 2500);
 
     return () => clearTimeout(timeout);
@@ -34,7 +32,9 @@ const VistaMisCursos = () => {
   if (loading) {
     return <Contenedor></Contenedor>;
   }
-
+  if (!currentUser) {
+    return <Redirect path="/" exact component={VistaHome} />;
+  }
   if (cursos.length === 0) {
     return (
       <Contenedor>
@@ -45,7 +45,7 @@ const VistaMisCursos = () => {
   } else {
     return (
       <Contenedor>
-        <Texto>Todos mis cursos </Texto>
+        <SubTitulo>Todos mis cursos </SubTitulo>
         <ListasMC datos={cursos} />
       </Contenedor>
     );

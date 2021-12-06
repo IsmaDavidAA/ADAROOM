@@ -6,17 +6,7 @@ import {
   MasCursos,
   Caja,
 } from "./VistaHome.styles";
-import { getAuth, signOut } from "firebase/auth";
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams,
-  useHistory,
-} from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import Cuerpo from "../../components/Cuerpo";
 import Mosaico from "../../components/Mosaico";
 import { apiSettings } from "../../services/services";
@@ -24,7 +14,6 @@ import { apiSettings } from "../../services/services";
 const VistaHome = () => {
   const [cursos, setCursos] = useState([]);
   const [state, setState] = useState(false);
-  const history = useHistory();
   const fetchCursos = async () => {
     if (!state) {
       const temp = await apiSettings.getTopCursos();
@@ -37,8 +26,6 @@ const VistaHome = () => {
   useEffect(() => {
     fetchCursos();
   }, [cursos]);
-
-  const auth = getAuth();
 
   return (
     <>

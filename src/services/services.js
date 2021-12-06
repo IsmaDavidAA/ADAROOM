@@ -20,6 +20,7 @@ const listaTemarios = "temario";
 const listaInscripciones = "inscripcion";
 const estudiante = "estudiante";
 const contenidoSeccion = "contenidoSeccion";
+const checkSeccion = "checkSeccion";
 
 export const apiSettings = {
   getCursos: async () => {
@@ -52,12 +53,12 @@ export const apiSettings = {
       promises.push(promise);
     });
 
-    let responses = await Promise.all(promises)
+    let responses = await Promise.all(promises);
     let cont = 0;
-    querySnapshot.forEach((doc)=>{
+    querySnapshot.forEach((doc) => {
       temarioJson.push([doc.id, doc.data(), responses[cont]]);
       cont++;
-    })
+    });
 
     if (temarioJson === []) {
       temarioJson = [{}];
@@ -92,6 +93,16 @@ export const apiSettings = {
     });
     return true;
   },
+  //--------------------------------
+
+  setUser: async (nombre, email, password, uid) => {
+    setDoc(doc(db, estudiante, uid), {
+      contrasenia: password,
+      correo: email,
+      nombreCompleto: nombre,
+    });
+    return true;
+  },
 
   dropOutCourse: async (idIns) => {
     await deleteDoc(doc(db, listaInscripciones, idIns));
@@ -110,6 +121,37 @@ export const apiSettings = {
       cantInscritos: increment(-1),
     });
     return true;
+  },
+
+  deleteCheck: async (idCheck) => {
+    await deleteDoc(doc(db, checkSeccion, idCheck));
+    return true;
+  },
+  posCheck: async (idCurso, idSeccion, idEst, idCheck) => {
+    await setDoc(doc(db, checkSeccion, idCheck), {
+      codCurso: idCurso,
+      codSeccion: idSeccion,
+      codEst: idEst,
+    });
+    return true;
+  },
+  getChecks: async (idEst, idCurso, idSeccion) => {
+    const q = query(
+      collection(db, checkSeccion),
+      where("codEst", "==", `${idEst}`),
+      where("codCurso", "==", `${idCurso}`),
+      where("codSeccion", "==", `${idSeccion}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let checksJson = [];
+    querySnapshot.forEach((doc) => {
+      checksJson.push([doc.id]);
+    });
+    if (checksJson === []) {
+      checksJson = [{}];
+    }
+    console.log(checksJson);
+    return await checksJson;
   },
 
   getInscrito: async (idCurso, idEst) => {
@@ -135,22 +177,35 @@ export const apiSettings = {
       collection(db, "inscripcion"),
       where("codEst", "==", `${idEst}`)
     );
+
     const querySnapshot = await getDocs(q);
     let inscripcionesJson = [];
     querySnapshot.forEach((doc) => {
       inscripcionesJson.push(doc.data().codCurso);
     });
-    let insCompletoJson = [];
-    inscripcionesJson.forEach(async (element) => {
-      const curso = await getDoc(doc(db, listaCursos, `${element}`));
-      insCompletoJson.push([curso.id, curso.data()]);
-    });
+    let promise;
+    let promises = [];
+    let promiseCantCheck;
+    inscripcionesJson.forEach((element) => {
+      promise = getDoc(doc(db, listaCursos, `${element}`));
 
-    if (insCompletoJson === []) {
-      insCompletoJson = [{}];
+      /*promiseCantCheck =  getDoc(query(
+        collection(db, "checkSeccion"),
+        where("codCurso", "==", `${element}`),
+        where("codEst", "==", `${idEst}`)
+      ));*/
+      promises.push(promise);
+    });
+    let responses = await Promise.all(promises);
+    let cursos = [];
+    responses.forEach((element) => {
+      cursos.push([element.id, element.data()]);
+      console.log(element);
+    });
+    if (cursos === []) {
+      cursos = [{}];
     }
-    console.log(insCompletoJson);
-    return await insCompletoJson;
+    return cursos;
   },
 
   getName: async (userId) => {
@@ -171,9 +226,47 @@ export const apiSettings = {
     });
     return contenidoJson;
   },
+
+  getCantChecks: async (idCurso, idEst) => {
+    const q = query(
+      collection(db, "checkSeccion"),
+      where("codCurso", "==", `${idCurso}`),
+      where("codEst", "==", `${idEst}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let datosJson = [];
+    querySnapshot.forEach((doc) => {
+      datosJson.push([/*doc.id,*/ doc.data()]);
+      //var aux =0
+      //aux += doc.data().visto;
+    });
+    if (datosJson === []) {
+      datosJson = [{}];
+    }
+    let tamaño = datosJson.length;
+
+    console.log(tamaño);
+    return tamaño;
+  },
+
+  getCantChecks2: async (idCurso, idEst) => {
+    const q = query(
+      collection(db, "checkSeccion"),
+      where("codCurso", "==", `${idCurso}`),
+      where("codEst", "==", `${idEst}`)
+    );
+    const querySnapshot = await getDocs(q);
+    let total_count = 0;
+    querySnapshot.forEach((doc) => {
+      total_count += doc.data().count;
+    });
+
+    console.log(total_count);
+    return total_count;
+  },
 };
 
-const getCont = async(temarioId)=>{
+const getCont = async (temarioId) => {
   const q = query(
     collection(db, contenidoSeccion),
     where("codSeccion", "==", `${temarioId}`)
@@ -184,4 +277,4 @@ const getCont = async(temarioId)=>{
     contenidoJson.push(doc.data());
   });
   return contenidoJson;
-}
+};

@@ -1,84 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
 
-       @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap");
+/* Style the accordion section */
 
-       /* Style the accordion section */
+.accordion__section {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  width: 886px;
+}
 
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #ebf3ff;
+  color: black;
+  cursor: pointer;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  border: none;
+  outline: none;
+  transition: background-color 0.6s ease;
+  align-content: flex-start;
+  border: 1px solid #8ab6d6;
+  height: 76px;
+}
 
-       .accordion__section {
-         display: flex;
-         flex-direction: column;
-  
-         cursor: pointer;
-         width: 886px;
-         
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.accordion:hover,
+.active {
+  background: #ebf3ff;
+}
 
-        
-      
-       }
-       
-       /* Style the buttons that are used to open and close the accordion panel */
-       .accordion {
-         background-color:#EBF3FF;
-         color: black;
-         cursor: pointer;
-         padding: 15px;
-         display: flex;
-         align-items: center;
-         border: none;
-         outline: none;
-         transition: background-color 0.6s ease;
-         align-content: flex-start;
-         border: 1px solid #8ab6d6;
-         height: 73px;
-        
-       }
-       
-       /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-       .accordion:hover,
-       .active {
-         
-         background: #ebf3ff;
-        
-       }
-       
-       /* Style the accordion content title */
-       .accordion__title {
-         font-family: 'Segoe UI';
-         font-weight: bold;
-         font-size: 22px;
-         text-align: left;
-         padding-left: 12px;
-         
-         
-         
-       }
-       
-       /* Style the accordion chevron icon */
-       .accordion__icon {
-         margin-left: auto;
-         transition: transform 0.6s ease;
-         
-       
-       }
-       
-       /* Style to rotate icon when state is active */
-       .rotate {
-         transform: rotate(90deg);
-         
-       }
-       
-       /* Style the accordion content panel. Note: hidden by default */
-       .accordion__content {
-         background-color: none;
-         overflow: auto;
-         transition: max-height 0.6s ease;
-         
-       }
-       
-       /* Style the accordion content text */
-       .accordion__text {
-         font-weight: 400;
-         font-size: 22px;
-         padding: 0px 0px 25px 22px;
-                }
-                
+/* Style the accordion content title */
+.accordion__title {
+  font-family: "Segoe UI";
+  font-weight: bold;
+  font-size: 22px;
+  text-align: left;
+  padding-left: 12px;
+}
+
+/* Style the accordion chevron icon */
+.accordion__icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+
+/* Style to rotate icon when state is active */
+.rotate {
+  transform: rotate(90deg);
+}
+
+/* Style the accordion content panel. Note: hidden by default */
+.accordion__content {
+  background-color: none;
+  overflow: auto;
+  transition: max-height 0.6s ease;
+}
+
+/* Style the accordion content text */
+.accordion__text {
+  font-weight: 400;
+  font-size: 22px;
+  padding: 0px 0px 25px 22px;
+}
