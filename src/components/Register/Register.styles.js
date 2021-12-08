@@ -74,7 +74,8 @@ width:16px;
 height: 16px;
 align-self:center;
 justify-self:center;
-padding:0px 0px 0px 10px;
+margin: 10px;
+padding:0px 0px 0px 0px;
 `;
 export const IconPasswd = styled.img`
 width: 16px;
@@ -89,8 +90,8 @@ width: 16px;
 height: 16px;
 align-self:center;
 justify-self:center;
-margin: 10px;
-padding:0px 0px 0px 0px;
+margin: 5px;
+padding:0px 10px 0px 0px;
 `;
 export const Div = styled.div`
 margin: 1rem 0rem 2rem 0rem;
@@ -112,7 +113,8 @@ width:16px;
 height: 16px;
 align-self:center;
 justify-self:center;
-padding:0px 0px 0px 10px;
+margin: 10px;
+padding:0px 0px 0px 0px;
 `;
 export const InputUserR = styled.input`
 padding: 0px 0rem 0rem 15px;
@@ -124,15 +126,9 @@ font-family: 'Segoe UI';
 background: none;
 border: none;
 `;
-export const colores = {
-	borde: "#0075FF",
-	error: "#F44336",
-	exito: "#268e00",
-};
 
 export const MensajeError = styled.p`
 font-size: 18px;
 font-weight: bold;
-	color: ${colores.error};
-   
+color: "#F44336"
 `;
