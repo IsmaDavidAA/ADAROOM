@@ -10,7 +10,7 @@ const ContenidosS = (props) => {
         <Contenido>
           <Title>Contenido del curso</Title>
           <Recomendacion>
-            Recomendación, una vez que termine una subsección (video o pdf) por
+            Recomendación, una vez que termine una subsección (video o PDF) por
             favor marque la casilla, para mostrar su avance del curso en la
             barra de estado.
           </Recomendacion>
