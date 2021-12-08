@@ -24,8 +24,7 @@ const Index = (props) => {
         <FormularioR onSubmit={props.handleRegister}>
         <Div>
             <IconUser src = {userR}/>
-            <InputUserR name="username" type= "text" placeholder="Nombre Completo" required minlength="5" maxlength="20" required
-           pattern="[Aa-Zz]" />
+            <InputUserR name="username" type= "text" placeholder="Nombre Completo" required />
           </Div>
 
           <Div>

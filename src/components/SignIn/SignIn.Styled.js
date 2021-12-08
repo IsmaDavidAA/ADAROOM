@@ -72,14 +72,24 @@ export const IconEmail = styled.img`
   height: 16px;
   align-self: center;
   justify-self: center;
-  padding: 0px 0px 0px 10px;
+  margin: 10px;
+  padding:0px 0px 0px 0px;
 `;
 export const IconPasswd = styled.img`
   width: 16px;
   height: 16px;
   align-self: center;
   justify-self: center;
-  padding: 0px 0px 0px 10px;
+  margin: 10px;
+  padding:0px 0px 0px 0px;
+`;
+export const IconEyes = styled.img`
+  width: 16px;
+  height: 16px;
+  align-self:center;
+  justify-self:center;
+  margin: 10px;
+  padding:0px 0px 0px 0px;
 `;
 export const Div = styled.div`
   width: 350px;

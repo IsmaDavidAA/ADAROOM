@@ -59,8 +59,6 @@ border: none;
 `;
 export const Botom = styled.button`
 text-align: center;
-
-margin: 0px 0rem 0rem 0rem;
 width: 360px;
 height: 55px;
 background: #0061A8;
@@ -90,8 +88,8 @@ width: 16px;
 height: 16px;
 align-self:center;
 justify-self:center;
-margin: 5px;
-padding:0px 10px 0px 0px;
+margin: 10px;
+padding:0px 0px 0px 0px;
 `;
 export const Div = styled.div`
 margin: 1rem 0rem 2rem 0rem;
@@ -115,6 +113,7 @@ align-self:center;
 justify-self:center;
 margin: 10px;
 padding:0px 0px 0px 0px;
+
 `;
 export const InputUserR = styled.input`
 padding: 0px 0rem 0rem 15px;
@@ -126,9 +125,15 @@ font-family: 'Segoe UI';
 background: none;
 border: none;
 `;
+export const colores = {
+	borde: "#0075FF",
+	error: "#F44336",
+	exito: "#268e00",
+};
 
 export const MensajeError = styled.p`
 font-size: 18px;
 font-weight: bold;
-color: "#F44336"
+	color: ${colores.error};
+   
 `;
