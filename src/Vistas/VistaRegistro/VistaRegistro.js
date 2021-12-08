@@ -20,7 +20,7 @@ const VistaRegistro = ({history}) => {
       console.log(email.value)
 
       try {
-        
+        seterrorRegister(false)
         const Usuario = await createUserWithEmailAndPassword(auth,email.value, password.value);
         apiSettings.setUser(username.value,email.value,password.value,Usuario.user.uid);
         history.push("/");

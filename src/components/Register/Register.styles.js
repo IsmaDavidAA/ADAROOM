@@ -59,8 +59,6 @@ border: none;
 `;
 export const Botom = styled.button`
 text-align: center;
-
-margin: 0px 0rem 0rem 0rem;
 width: 360px;
 height: 55px;
 background: #0061A8;
@@ -74,14 +72,24 @@ width:16px;
 height: 16px;
 align-self:center;
 justify-self:center;
-padding:0px 0px 0px 10px;
+margin: 10px;
+padding:0px 0px 0px 0px;
 `;
 export const IconPasswd = styled.img`
 width: 16px;
 height: 16px;
 align-self:center;
 justify-self:center;
-padding:0px 0px 0px 10px;
+margin: 10px;
+padding:0px 0px 0px 0px;
+`;
+export const IconEyes = styled.img`
+width: 16px;
+height: 16px;
+align-self:center;
+justify-self:center;
+margin: 10px;
+padding:0px 0px 0px 0px;
 `;
 export const Div = styled.div`
 margin: 1rem 0rem 2rem 0rem;
@@ -103,7 +111,9 @@ width:16px;
 height: 16px;
 align-self:center;
 justify-self:center;
-padding:0px 0px 0px 10px;
+margin: 10px;
+padding:0px 0px 0px 0px;
+
 `;
 export const InputUserR = styled.input`
 padding: 0px 0rem 0rem 15px;
