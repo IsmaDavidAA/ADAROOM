@@ -81,7 +81,16 @@ width: 16px;
 height: 16px;
 align-self:center;
 justify-self:center;
-padding:0px 0px 0px 10px;
+margin: 10px;
+padding:0px 0px 0px 0px;
+`;
+export const IconEyes = styled.img`
+width: 16px;
+height: 16px;
+align-self:center;
+justify-self:center;
+margin: 10px;
+padding:0px 0px 0px 0px;
 `;
 export const Div = styled.div`
 margin: 1rem 0rem 2rem 0rem;
