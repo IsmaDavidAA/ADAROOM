@@ -128,7 +128,7 @@ function Menu() {
                         signOut(auth)
                           .then(() => {
                             window.location.reload();
-                            // history.push("/");
+                            //history.push("/");
                           })
                           .catch((error) => {
                             // An error happened.
@@ -141,24 +141,25 @@ function Menu() {
                   </Link>
                 </MenuItemLink>                
               </AMenuItemCS>
-              <AMenuItemCSDrop>
+              <AMenuItemCSDrop>              
                 <div className="menu-container">
                   <button onClick={onClick} className="menu-trigger">
                     {" "}
                     ▼{" "}
-                  </button>
+                  </button>                  
                   <nav
                     ref={dropdownRef}
                     className={`menu ${isActive ? "active" : "inactive"}`}
-                  >
+                  >                    
                     <li>
+                    <Link to={`/`}>
                       <a
                         href="#"
                         onClick={() => {
                           signOut(auth)
                             .then(() => {
                               window.location.reload();
-                              // history.push("/");
+                              //history.push("/");
                             })
                             .catch((error) => {
                               // An error happened.
@@ -167,9 +168,10 @@ function Menu() {
                       >
                         Cerrar sesión
                       </a>
-                    </li>
-                  </nav>
-                </div>
+                      </Link>
+                    </li>                    
+                  </nav>                  
+                </div>                
               </AMenuItemCSDrop>
             </Menun>
           </IconContext.Provider>
