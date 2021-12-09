@@ -8,6 +8,7 @@ import userR from "../../images/IconoUsuario.png";
 import {AuthContext} from "../../Context";
 import { Redirect } from 'react-router';
 
+
 const Index = (props) => {
   const [shown, setShown] = React.useState(false);
   const [shown2, setShown2] = React.useState(false);
