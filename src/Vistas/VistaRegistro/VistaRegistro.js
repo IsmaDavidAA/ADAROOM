@@ -1,4 +1,4 @@
-import React, {useCallback, useContext,useState} from 'react';
+import React, {useCallback, useContext, useState} from 'react';
 //import { FirebaseAuth } from "react-firebaseui";
 import  {auth} from "../../services/firebase"
 import { AuthContext } from "../../Context";
@@ -16,11 +16,11 @@ const VistaRegistro = ({history}) => {
     async event => {
       event.preventDefault();
       const { email, password ,username} = event.target.elements;
-
+      console.log('hola')
       console.log(email.value)
-
+      
       try {
-        seterrorRegister(false)
+        console.log('holaew4')
         const Usuario = await createUserWithEmailAndPassword(auth,email.value, password.value);
         apiSettings.setUser(username.value,email.value,password.value,Usuario.user.uid);
         history.push("/");
@@ -29,7 +29,7 @@ const VistaRegistro = ({history}) => {
       } catch (error) {
         
     // alert('Acceso inválido. Por favor intente de nuevo');
-        seterrorRegister(true)
+        seterrorRegister(false)
         }
     },
     [history]
