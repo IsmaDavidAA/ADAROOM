@@ -1,5 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
+const colores = {
+  borde: "#0075FF",
+  error: "#bb2929",
+  exito: "#1ed12d",
+};
 
 const Formulario = styled.form`
   display: grid;
@@ -143,23 +148,25 @@ const MensajeError = styled.p`
 
 export const CuadroRegister = styled.div`
   text-align: left;
-  padding: 10rem 0rem 0rem 0rem;
+  padding: 10rem 0rem 10rem 0rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 `;
-export const Titulo = styled.h2`
+export const Titulo = styled.p`
   color: #1e3163;
   text-align: center;
-  font-weight: 600;
+  font-weight: bold;
   font-family: "Segoe UI";
   font-size: 22px;
+  
 `;
 export const Titulo2 = styled.p`
   text-align: center;
   font-family: "Segoe UI";
   font-size: 22px;
+  color: #000000;
 `;
 export const ContFormulario = styled.div`
   top: 20rem;
@@ -245,6 +252,7 @@ export const Titulo3 = styled.p`
   color: #f44336;
   text-align: left;
   font-size: 17px;
+  
 `;
 export const IconUser = styled.img`
   width: 16px;
@@ -265,6 +273,12 @@ export const InputUserR = styled.input`
   background: none;
   border: none;
 `;
+export const MensajeErrorEmail = styled.p`
+font-size: 18px;
+font-weight: bold;
+	color: ${colores.error};
+   
+`;
 
 export {
   Formulario,
@@ -278,16 +292,3 @@ export {
   MensajeExito,
   MensajeError,
 };
-
-export const colores = {
-	borde: "#0075FF",
-	error: "#F44336",
-	exito: "#268e00",
-};
-
-export const MensajeError = styled.p`
-font-size: 18px;
-font-weight: bold;
-	color: ${colores.error};
-   
-`;
