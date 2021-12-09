@@ -5,6 +5,7 @@ const ComponenteInput = ({
   estado,
   cambiarEstado,
   tipo,
+  label,
   placeholder,
   name,
   leyendaError,
