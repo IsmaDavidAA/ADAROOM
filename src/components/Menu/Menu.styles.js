@@ -81,10 +81,11 @@ export const TrianguloEstilo = styled.div`
 export const Container = styled.div`
   width: 100%;
   box-shadow: 0px 0px 10px 0 #999999;
-  background-color: #f8f8f8f8;
+  background-color: #f8f8f8;
   position: fixed;
-  top: 0;
-  z-index: 10;
+  top: 0px;
+  left: 0px;
+  z-index: 1010;
 `;
 
 export const Wrapper = styled.div`
