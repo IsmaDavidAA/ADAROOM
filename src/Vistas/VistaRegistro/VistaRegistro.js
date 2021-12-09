@@ -1,4 +1,4 @@
-import React, {useCallback, useContext,useState} from 'react';
+import React, {useCallback, useContext, useState} from 'react';
 //import { FirebaseAuth } from "react-firebaseui";
 import  {auth} from "../../services/firebase"
 import { AuthContext } from "../../Context";
@@ -16,9 +16,12 @@ const VistaRegistro = ({history}) => {
     async event => {
       event.preventDefault();
       const { email, password ,username} = event.target.elements;
-
+      console.log('hola')
       console.log(email.value)
-
+      console.log(password.value)
+      console.log(username.value)
+      console.log(password.value)
+      
       try {
         seterrorRegister(false)
         const Usuario = await createUserWithEmailAndPassword(auth,email.value, password.value);
