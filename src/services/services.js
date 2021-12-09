@@ -249,6 +249,19 @@ export const apiSettings = {
     return tamaño;
   },
 
+  DeleteChecksBaja: async (idCurso, idEst) => {
+    const q = query(
+      collection(db, "checkSeccion"),
+      where("codCurso", "==", `${idCurso}`),
+      where("codEst", "==", `${idEst}`)
+    );
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+    apiSettings.deleteCheck(doc.id);
+    });
+    return true;
+  },
+
 };
 
 const getCont = async (temarioId) => {
