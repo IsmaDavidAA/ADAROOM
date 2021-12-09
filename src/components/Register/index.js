@@ -1,4 +1,5 @@
 
+
 import React, { useState,useContext } from "react";
 import {AuthContext} from "../../Context";
 import { Redirect } from 'react-router';
@@ -7,6 +8,7 @@ import {
   ContenedorBotonCentrado,
   MensajeExito,
   MensajeError,
+
   Botom,
   Div,
   Titulo,
@@ -42,9 +44,9 @@ export default function Index(props) {
   const [formularioValido, cambiarFormularioValido] = useState(null);
 
   const expresiones = {
-    username: /^[a-zA-Z ]{12,40}$/, 
-    password: /^[a-zA-Z0-9]{6,15}$/, 
-    email: /^[a-zA-Z0-9_-]+@[a-z]+\.[a-z.]+$/,
+    username: /^[a-zA-Z ]{12,40}$/, // Letras, numeros, guion y guion_bajo
+    password: /^[a-zA-Z0-9]{6,15}$/, // 4 a 12 digitos.
+    email: /^[a-zA-Z0-9_+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
   };
 
   const validarPassword2 = () => {
@@ -88,7 +90,7 @@ export default function Index(props) {
       <Titulo2>Por favor llene el siguiente formulario</Titulo2>
       <Titulo3>Todos los campos son obligatorios</Titulo3>
       <ContFormulario>
-        <FormularioR action="" onSubmit={props.handleRegister}>
+        <FormularioR action='' onSubmit={props.handleRegister} >
           <Div>
             <IconUser src={userR} />
             <Input
@@ -115,7 +117,7 @@ export default function Index(props) {
             
           </Div>
           <div className="row">
-              {props.errorRegister ? (
+              {props.errorCorreo ? (
                 <MensajeErrorEmail> Correo ya existente </MensajeErrorEmail>
               ) : null}
             </div>
@@ -126,7 +128,7 @@ export default function Index(props) {
               cambiarEstado={cambiarPassword}
               tipo={shown ? "text" : "password"}
               placeholder="Contraseña"
-              name="password1"
+              name="password"
               leyendaError="La contraseña  permite caracteres de Aa-Zz, números y debe tener entre 6 y 15 caracteres."
               expresionRegular={expresiones.password}
             />
@@ -149,15 +151,15 @@ export default function Index(props) {
               <IconEyes src={eyes} onClick={switchShown2} />
             </Div2>
           </Div>
-          {formularioValido === false && (
+          {props.errorRegister ? (
             <MensajeError>
               <p>
-                <b>Error:</b> Por favor rellena el formulario correctamente.
+                <b>Error:</b> Por favor completa el formulario correctamente.
               </p>
             </MensajeError>
-          )}
+          ):null}
           <ContenedorBotonCentrado>
-            <Botom type="submit">Registrarse</Botom>
+            <Botom  type="submit">Registrarse</Botom>
             {formularioValido === true && (
               <MensajeExito>Formulario enviado exitosamente!</MensajeExito>
             )}
