@@ -188,12 +188,6 @@ export const apiSettings = {
     let promiseCantCheck;
     inscripcionesJson.forEach((element) => {
       promise = getDoc(doc(db, listaCursos, `${element}`));
-
-      /*promiseCantCheck =  getDoc(query(
-        collection(db, "checkSeccion"),
-        where("codCurso", "==", `${element}`),
-        where("codEst", "==", `${idEst}`)
-      ));*/
       promises.push(promise);
     });
     let responses = await Promise.all(promises);
@@ -237,8 +231,6 @@ export const apiSettings = {
     let datosJson = [];
     querySnapshot.forEach((doc) => {
       datosJson.push([/*doc.id,*/ doc.data()]);
-      //var aux =0
-      //aux += doc.data().visto;
     });
     if (datosJson === []) {
       datosJson = [{}];
