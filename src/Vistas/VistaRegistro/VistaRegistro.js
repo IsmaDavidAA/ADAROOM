@@ -1,4 +1,4 @@
-import React, {useCallback, useContext, useState} from 'react';
+import React, {useCallback, useContext,useState} from 'react';
 //import { FirebaseAuth } from "react-firebaseui";
 import  {auth} from "../../services/firebase"
 import { AuthContext } from "../../Context";
@@ -15,21 +15,24 @@ const VistaRegistro = ({history}) => {
    const handleRegister = useCallback(
     async event => {
       event.preventDefault();
-      const { email, password ,username} = event.target.elements;
-      console.log('hola')
+      const { email, password1 ,password2,username} = event.target.elements;
+
       console.log(email.value)
-      
+
       try {
-        console.log('holaew4')
-        const Usuario = await createUserWithEmailAndPassword(auth,email.value, password.value);
-        apiSettings.setUser(username.value,email.value,password.value,Usuario.user.uid);
+        if(password1.value === password2.value){
+        const Usuario = await createUserWithEmailAndPassword(auth,email.value, password1.value);
+        apiSettings.setUser(username.value,email.value,password1.value,Usuario.user.uid);
         history.push("/");
         console.log(AuthContext);
-        
+        }
+        else{
+          console.log("no da distin")
+        }
       } catch (error) {
         
     // alert('Acceso inválido. Por favor intente de nuevo');
-        seterrorRegister(false)
+        seterrorRegister(true)
         }
     },
     [history]
