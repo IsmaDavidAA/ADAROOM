@@ -188,12 +188,6 @@ export const apiSettings = {
     let promiseCantCheck;
     inscripcionesJson.forEach((element) => {
       promise = getDoc(doc(db, listaCursos, `${element}`));
-
-      /*promiseCantCheck =  getDoc(query(
-        collection(db, "checkSeccion"),
-        where("codCurso", "==", `${element}`),
-        where("codEst", "==", `${idEst}`)
-      ));*/
       promises.push(promise);
     });
     let responses = await Promise.all(promises);
@@ -237,8 +231,6 @@ export const apiSettings = {
     let datosJson = [];
     querySnapshot.forEach((doc) => {
       datosJson.push([/*doc.id,*/ doc.data()]);
-      //var aux =0
-      //aux += doc.data().visto;
     });
     if (datosJson === []) {
       datosJson = [{}];
@@ -249,21 +241,19 @@ export const apiSettings = {
     return tamaño;
   },
 
-  getCantChecks2: async (idCurso, idEst) => {
+  DeleteChecksBaja: async (idCurso, idEst) => {
     const q = query(
       collection(db, "checkSeccion"),
       where("codCurso", "==", `${idCurso}`),
       where("codEst", "==", `${idEst}`)
     );
     const querySnapshot = await getDocs(q);
-    let total_count = 0;
     querySnapshot.forEach((doc) => {
-      total_count += doc.data().count;
+    apiSettings.deleteCheck(doc.id);
     });
-
-    console.log(total_count);
-    return total_count;
+    return true;
   },
+
 };
 
 const getCont = async (temarioId) => {

@@ -35,6 +35,8 @@ const InscritoLink = ({
           modActionFirst();
           const donePut = await apiSettings.updateCourse(idCurso);
           const donePost = await apiSettings.dropOutCourse(idIns);
+          //Consulta para borrar checks de un curso despues de darse de baja
+          const posBaja = await apiSettings.DeleteChecksBaja(idCurso, idEst);
           modACtionNext();
           window.location.reload();
         }}
