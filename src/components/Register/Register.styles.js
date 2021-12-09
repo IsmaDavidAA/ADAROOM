@@ -68,7 +68,7 @@ const LeyendaError = styled.p`
   font-size: 12px;
   margin-bottom: 0;
   margin-top: 0;
-  margin-left: -35px;
+  margin-left: -30px;
   color: ${colores.error};
   display: none;
 
@@ -148,7 +148,7 @@ const MensajeError = styled.p`
 
 export const CuadroRegister = styled.div`
   text-align: left;
-  padding: 10rem 0rem 10rem 0rem;
+  padding: 8.5rem 0rem 10rem 0rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -160,13 +160,14 @@ export const Titulo = styled.p`
   font-weight: bold;
   font-family: "Segoe UI";
   font-size: 22px;
-  
+  margin: 0px;
 `;
 export const Titulo2 = styled.p`
   text-align: center;
   font-family: "Segoe UI";
   font-size: 22px;
   color: #000000;
+  margin: 15px;
 `;
 export const ContFormulario = styled.div`
   top: 20rem;
@@ -200,20 +201,22 @@ export const InputContraseñaR = styled.input`
 `;
 export const Botom = styled.button`
   text-align: center;
-  width: 407px;
+  width: 360px;
   height: 55px;
   background: #0061a8;
   display: block;
   color: #ffffff;
   font-size: 20px;
-  border: none;
+  border: none;  
+  padding: 0px 0px 0px 0px;
+  cursor: pointer;
 `;
 export const IconEmail = styled.img`
   width: 16px;
   height: 16px;
   align-self: center;
   justify-self: center;
-  margin: 10px;
+  margin: 7px;
   padding: 0px 0px 0px 0px;
 `;
 export const IconPasswd = styled.img`
@@ -221,7 +224,7 @@ export const IconPasswd = styled.img`
   height: 16px;
   align-self: center;
   justify-self: center;
-  margin: 10px;
+  margin: 7px;
   padding: 0px 0px 0px 0px;
 `;
 export const IconEyes = styled.img`
@@ -229,29 +232,28 @@ export const IconEyes = styled.img`
   height: 16px;
   align-self: center;
   justify-self: center;
-  margin: 10px;
+  margin: 1px;
   padding: 0px 0px 0px 0px;
 `;
 export const Div = styled.div`
   margin: 1rem 0rem 2rem 0rem;
-  width: 400px;
+  width: 360px;
   height: 55px;
   border: 1px solid #aaa;
   display: flex;
 `;
 export const Div2 = styled.div`
-  margin-top: -1px;
-  width: 400px;
+  margin: 0px;
+  width: 360px;
   height: 55px;
-  border: 1px solid #aaa;
+  border: 0px;
   display: flex;
 `;
 export const Titulo3 = styled.p`
   margin: 0rem 0rem 0rem 0rem;
-  margin-left: -140px;
   color: #f44336;
   text-align: left;
-  font-size: 17px;
+  font-size: 16px;
   
 `;
 export const IconUser = styled.img`
@@ -259,14 +261,14 @@ export const IconUser = styled.img`
   height: 16px;
   align-self: center;
   justify-self: center;
-  margin: 10px;
+  margin: 7px;
   padding: 0px 0px 0px 0px;
 `;
 export const InputUserR = styled.input`
-  padding: 0px 0rem 0rem 5px;
-  margin-right: 0px;
+  padding: 0px 0rem 0rem 10px;
+  margin: 0px;
   display: block;
-  width: 363px;
+  width: 301px;
   height: 55px;
   font-size: 20px;
   font-family: "Segoe UI";
