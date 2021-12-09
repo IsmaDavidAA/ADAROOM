@@ -249,21 +249,6 @@ export const apiSettings = {
     return tamaño;
   },
 
-  getCantChecks2: async (idCurso, idEst) => {
-    const q = query(
-      collection(db, "checkSeccion"),
-      where("codCurso", "==", `${idCurso}`),
-      where("codEst", "==", `${idEst}`)
-    );
-    const querySnapshot = await getDocs(q);
-    let total_count = 0;
-    querySnapshot.forEach((doc) => {
-      total_count += doc.data().count;
-    });
-
-    console.log(total_count);
-    return total_count;
-  },
 };
 
 const getCont = async (temarioId) => {
