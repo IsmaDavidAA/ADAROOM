@@ -42,9 +42,9 @@ export default function Index(props) {
   const [formularioValido, cambiarFormularioValido] = useState(null);
 
   const expresiones = {
-    username: /^[a-zA-Z ]{12,40}$/, // Letras, numeros, guion y guion_bajo
-    password: /^[a-zA-Z0-9]{6,15}$/, // 4 a 12 digitos.
-    email: /^[a-zA-Z0-9_+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    username: /^[a-zA-Z ]{12,40}$/, 
+    password: /^[a-zA-Z0-9]{6,15}$/, 
+    email: /^[a-zA-Z0-9_-]+@[a-z]+\.[a-z.]+$/,
   };
 
   const validarPassword2 = () => {
@@ -88,7 +88,7 @@ export default function Index(props) {
       <Titulo2>Por favor llene el siguiente formulario</Titulo2>
       <Titulo3>Todos los campos son obligatorios</Titulo3>
       <ContFormulario>
-        <FormularioR onSubmit={props.handleRegister}>
+        <FormularioR action="" onSubmit={props.handleRegister}>
           <Div>
             <IconUser src={userR} />
             <Input

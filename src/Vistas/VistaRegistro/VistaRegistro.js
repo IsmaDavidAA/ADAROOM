@@ -18,12 +18,9 @@ const VistaRegistro = ({history}) => {
       const { email, password ,username} = event.target.elements;
       console.log('hola')
       console.log(email.value)
-      console.log(password.value)
-      console.log(username.value)
-      console.log(password.value)
       
       try {
-        seterrorRegister(false)
+        console.log('holaew4')
         const Usuario = await createUserWithEmailAndPassword(auth,email.value, password.value);
         apiSettings.setUser(username.value,email.value,password.value,Usuario.user.uid);
         history.push("/");
@@ -32,7 +29,7 @@ const VistaRegistro = ({history}) => {
       } catch (error) {
         
     // alert('Acceso inválido. Por favor intente de nuevo');
-        seterrorRegister(true)
+        seterrorRegister(false)
         }
     },
     [history]
