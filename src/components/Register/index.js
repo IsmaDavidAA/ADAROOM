@@ -1,4 +1,5 @@
 
+
 import React, { useState,useContext } from "react";
 import {AuthContext} from "../../Context";
 import { Redirect } from 'react-router';
@@ -7,6 +8,7 @@ import {
   ContenedorBotonCentrado,
   MensajeExito,
   MensajeError,
+
   Botom,
   Div,
   Titulo,
@@ -45,7 +47,7 @@ const Index = (props) => {
   const expresiones = {
     username: /^[a-zA-Z]{12,40}$/, 
     password: /^[a-zA-Z0-9]{6,15}$/, 
-    email: /^[a-zA-Z0-9_ ]+@[a-z]+\.[a-z.]+$/,
+    email: /^[a-zA-Z0-9_]+@[a-z]+\.[a-z.]+$/,
   };
 
 
@@ -117,7 +119,7 @@ console.log(password.valido)
       <Titulo2>Por favor llene el siguiente formulario</Titulo2>
       <Titulo3>Todos los campos son obligatorios</Titulo3>
       <ContFormulario>
-        <FormularioR action="" onSubmit={props.handleRegister}>
+        <FormularioR action='' onSubmit={props.handleRegister} >
           <Div>
             <IconUser src={userR} />
             <Input
@@ -144,6 +146,7 @@ console.log(password.valido)
             />
             
           </Div>
+
 
           <Div>
             <IconPasswd src={pass} />
