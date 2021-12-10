@@ -19,6 +19,7 @@ import password from "../../images/password.png";
 import eyes from "../../images/ojo.png";
 
 const Index = (props) => {
+  console.log(props);
   const [shown, setShown] = React.useState(false);
   const switchShown = () => setShown(!shown);
   return (

@@ -12,26 +12,27 @@ const VistaRegistro = ({history}) => {
   const [errorRegister,seterrorRegister] =useState(false)
   const { currentUser } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
+
+  console.log("estamos")
    const handleRegister = useCallback(
     async event => {
       event.preventDefault();
-      const { email, password1 ,password2,username} = event.target.elements;
+      const { email, password,username} = event.target.elements;
 
+      console.log("estamos")
       console.log(email.value)
+      console.log(password.value)
+     
+
 
       try {
-        if(password1.value === password2.value){
-        const Usuario = await createUserWithEmailAndPassword(auth,email.value, password1.value);
-        apiSettings.setUser(username.value,email.value,password1.value,Usuario.user.uid);
+        const Usuario = await createUserWithEmailAndPassword(auth,email.value, password.value);
+        apiSettings.setUser(username.value,email.value,password.value,Usuario.user.uid);
         history.push("/");
         console.log(AuthContext);
-        }
-        else{
-          console.log("no da distin")
-        }
       } catch (error) {
         
-    // alert('Acceso inválido. Por favor intente de nuevo');
+      //alert('El correo ya existe');
         seterrorRegister(true)
         }
     },
