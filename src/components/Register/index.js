@@ -1,14 +1,10 @@
-
-
 import React, { useState,useContext } from "react";
 import {AuthContext} from "../../Context";
 import { Redirect } from 'react-router';
 
 import {
   ContenedorBotonCentrado,
-  MensajeExito,
   MensajeError,
-
   Botom,
   Div,
   Titulo,
@@ -22,7 +18,6 @@ import {
   IconEmail,
   Div2,
   Titulo3,
-  MensajeErrorEmail,
 } from "./Register.styles";
 
 import Input from "./Input";
@@ -30,7 +25,7 @@ import correo from  "../../images/email.png";
 import pass from "../../images/password.png";
 import eyes from "../../images/ojo.png";
 import userR from "../../images/IconoUsuario.png";
-
+import Input2 from "./Input2"
 const Index = (props) => {
   
   const [shown, setShown] = React.useState(false);
@@ -40,40 +35,30 @@ const Index = (props) => {
 
   const [username, cambiarUsuario] = useState({ campo: "", valido: null });
   const [password, cambiarPassword] = useState({ campo: "", valido: null });
+  const [password2, cambiarPassword2] = useState({ campo: "", valido: null });
   const [email, cambiarCorreo] = useState({ campo: "", valido: null });
   const [formularioValido, cambiarFormularioValido] = useState(null);
 
   console.log(props);
   const expresiones = {
-    username: /^[a-zA-Z]{12,40}$/, 
+    username: /^[a-zA-Z ]{12,40}$/, 
     password: /^[a-zA-Z0-9]{6,15}$/, 
     email: /^[a-zA-Z0-9_]+@[a-z]+\.[a-z.]+$/,
   };
 
-
-  const validarNombre =() => {
-    if (username.campo.length > 11 && username.campo.length < 41 ) {
-      cambiarUsuario((prevState) => {
-        return { ...prevState, valido: "true" };
-      });
-    } else {
-      cambiarUsuario((prevState) => {
-        return { ...prevState, valido: "false" };
-    });
-  }
-};
-
-const validarPassword =() => {
-  if (password.campo.length > 5 && password.campo.length < 16 ) {
-    cambiarPassword((prevState) => {
-      return { ...prevState, valido: "true" };
-    });
-  } else {
-    cambiarPassword((prevState) => {
-      return { ...prevState, valido: "false" };
-  });
-}
-};
+  const validarPassword2 = () => {
+    if (password.campo.length > 0) {
+      if (password.campo !== password2.campo) {
+        cambiarPassword2((prevState) => {
+          return { ...prevState, valido: "false" };
+        });
+      } else {
+        cambiarPassword2((prevState) => {
+          return { ...prevState, valido: "true" };
+        });
+      }
+    }
+  };
 
 console.log("name")
 console.log(username.campo)
@@ -82,7 +67,6 @@ console.log("correo")
 console.log(email.valido)
 console.log("contra")
 console.log(password.valido)
-
 
    const handleRegister = (e) => {
     e.preventDefault();
@@ -95,9 +79,7 @@ console.log(password.valido)
 
     ) {
       cambiarFormularioValido(true);
-      cambiarUsuario({ campo: "", valido: "" });    
-      cambiarPassword({ campo: "", valido: ""});        
-      cambiarCorreo({ campo: "", valido: "" });
+     
       
       // ...
     } else {
@@ -106,24 +88,18 @@ console.log(password.valido)
     }
   };
 
-
-  let nombrer = username.campo
-  let correor = email.campo
-  let contrasenia = password.campo
-
-
-
   return (
     <CuadroRegister>
       <Titulo>¡Regístrate y comienza a aprender!</Titulo>
       <Titulo2>Por favor llene el siguiente formulario</Titulo2>
       <Titulo3>Todos los campos son obligatorios</Titulo3>
       <ContFormulario>
-        <FormularioR action='' onSubmit={props.handleRegister} >
+        <FormularioR action='' onSubmit={ username.valido === "true" &&
+      password.valido === "true" &&
+      email.valido === "true" && password.campo== password2.campo?props.handleRegister:handleRegister } >
           <Div>
             <IconUser src={userR} />
             <Input
-              funcion={validarNombre}
               estado={username}
               cambiarEstado={cambiarUsuario}
               tipo="text"
@@ -138,19 +114,16 @@ console.log(password.valido)
             <Input
               estado={email}
               cambiarEstado={cambiarCorreo}
-              tipo="email"
               placeholder="Correo electrónico"
               name="email"
               leyendaError="El correo solo puede contener letras, numeros, barra baja, @ y puntos en el dominio."
               expresionRegular={expresiones.email}
             />
-            
           </Div>
-
 
           <Div>
             <IconPasswd src={pass} />
-            <Input
+            <Input2
               estado={password}
               cambiarEstado={cambiarPassword}
               tipo={shown ? "text" : "password"}
@@ -158,20 +131,33 @@ console.log(password.valido)
               name="password"
               leyendaError="La contraseña  permite caracteres de Aa-Zz, números y debe tener entre 6 y 15 caracteres."
               expresionRegular={expresiones.password}
-              funcion={validarPassword}
-
+              funcion={validarPassword2}
             />
             <Div2>
               <IconEyes src={eyes} onClick={switchShown} />
             </Div2>
           </Div>
-                    
+          <Div>
+            <IconPasswd src={pass} />
+            <Input2
+              estado={password2}
+              cambiarEstado={cambiarPassword2}
+              tipo={shown2 ? "text" : "password"}
+              placeholder="Confirmar Contraseña"
+              name="password2"
+              leyendaError="Ambas contraseñas deben ser iguales."
+              funcion={validarPassword2}
+            />
+            <Div2>
+              <IconEyes src={eyes} onClick={switchShown2} />
+            </Div2>
+          </Div>     
 
           <div className="row">
               {props.errorRegister ? (
                 <MensajeError>
                 <p>  
-                  Por favor rellena el formulario correctamente.
+                 Correo ya existente
                 </p>
               </MensajeError>
               ) : null}
@@ -181,14 +167,11 @@ console.log(password.valido)
           {formularioValido === false && (
               <MensajeError>
               <p>  
-                Por favor rellena el formulario correctamente ERROR.
+                Por favor completa el formulario correctamente.
               </p>
             </MensajeError>
             )}
-            {formularioValido === true && (
-              <MensajeExito>Enviando formulario a la DB</MensajeExito>
-            )}
-
+            
             <Botom type="submit">Registrarse</Botom>
           </ContenedorBotonCentrado>
         </FormularioR>

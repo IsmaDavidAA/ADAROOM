@@ -24,8 +24,6 @@ const VistaRegistro = ({history}) => {
       console.log(email.value)
       console.log(password.value)
      
-
-
       try {
         const Usuario = await createUserWithEmailAndPassword(auth,email.value, password.value);
         apiSettings.setUser(username.value,email.value,password.value,Usuario.user.uid);
