@@ -131,11 +131,15 @@ const MensajeExito = styled.p`
 `;
 
 const MensajeError = styled.p`
-  height: 45px;
-  line-height: 45px;
-  background: #e5be01;
-  padding: 0px 15px;
+  height: 20px;
+  width: 360px;
   border-radius: 3px;
+  font-size: 13px;
+  color: #f44336;
+  text-align: center;
+  padding-bottom:10px;
+  padding-top: 10px;
+  margin:0px;
   grid-column: span 2;
   p {
     margin: 0;
