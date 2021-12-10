@@ -4,9 +4,7 @@ import { Redirect } from 'react-router';
 
 import {
   ContenedorBotonCentrado,
-  MensajeExito,
   MensajeError,
-
   Botom,
   Div,
   Titulo,
@@ -20,7 +18,6 @@ import {
   IconEmail,
   Div2,
   Titulo3,
-  MensajeErrorEmail,
 } from "./Register.styles";
 
 import Input from "./Input";
@@ -63,31 +60,6 @@ const Index = (props) => {
     }
   };
 
-  const validarNombre =() => {
-    if (username.campo.length > 11 && username.campo.length < 41 ) {
-      cambiarUsuario((prevState) => {
-        return { ...prevState, valido: "true" };
-      });
-    } else {
-      cambiarUsuario((prevState) => {
-        return { ...prevState, valido: "false" };
-    });
-  }
-};
-
-const validarPassword =() => {
-  if (password.campo.length > 5 && password.campo.length < 16 ) {
-    cambiarPassword((prevState) => {
-      return { ...prevState, valido: "true" };
-    });
-  } else {
-    cambiarPassword((prevState) => {
-      return { ...prevState, valido: "false" };
-  });
-}
-};
-
-
 console.log("name")
 console.log(username.campo)
 console.log(username.valido)
@@ -95,7 +67,6 @@ console.log("correo")
 console.log(email.valido)
 console.log("contra")
 console.log(password.valido)
-
 
    const handleRegister = (e) => {
     e.preventDefault();
@@ -117,13 +88,6 @@ console.log(password.valido)
     }
   };
 
-
-  let nombrer = username.campo
-  let correor = email.campo
-  let contrasenia = password.campo
-
-
-
   return (
     <CuadroRegister>
       <Titulo>¡Regístrate y comienza a aprender!</Titulo>
@@ -136,7 +100,6 @@ console.log(password.valido)
           <Div>
             <IconUser src={userR} />
             <Input
-               //funcion={validarNombre}
               estado={username}
               cambiarEstado={cambiarUsuario}
               tipo="text"
@@ -151,15 +114,12 @@ console.log(password.valido)
             <Input
               estado={email}
               cambiarEstado={cambiarCorreo}
-              tipo="email"
               placeholder="Correo electrónico"
               name="email"
               leyendaError="El correo solo puede contener letras, numeros, barra baja, @ y puntos en el dominio."
               expresionRegular={expresiones.email}
             />
-            
           </Div>
-
 
           <Div>
             <IconPasswd src={pass} />
@@ -172,7 +132,6 @@ console.log(password.valido)
               leyendaError="La contraseña  permite caracteres de Aa-Zz, números y debe tener entre 6 y 15 caracteres."
               expresionRegular={expresiones.password}
               funcion={validarPassword2}
-
             />
             <Div2>
               <IconEyes src={eyes} onClick={switchShown} />
