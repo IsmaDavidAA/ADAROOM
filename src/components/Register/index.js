@@ -117,7 +117,7 @@ console.log(password.valido)
       <Titulo2>Por favor llene el siguiente formulario</Titulo2>
       <Titulo3>Todos los campos son obligatorios</Titulo3>
       <ContFormulario>
-        <FormularioR action="" onSubmit={handleRegister}>
+        <FormularioR action="" onSubmit={props.handleRegister}>
           <Div>
             <IconUser src={userR} />
             <Input
