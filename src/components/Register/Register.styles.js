@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const colores = {
   borde: "#0075FF",
-  error: "#bb2929",
+  error: "#f44336",
   exito: "#1ed12d",
 };
 
