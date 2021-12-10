@@ -126,7 +126,7 @@ console.log(password.valido)
               funcion={validarNombre}
               estado={username}
               cambiarEstado={cambiarUsuario}
-              type="text"
+              tipo="text"
               placeholder="Nombre Completo"
               name="username"
               leyendaError="El campo Nombre completo permite caracteres de Aa-Zz y debe tener entre 12 y 40 caracteres. "
@@ -138,7 +138,7 @@ console.log(password.valido)
             <Input
               estado={email}
               cambiarEstado={cambiarCorreo}
-              type="email"
+              tipo="email"
               placeholder="Correo electrónico"
               name="email"
               leyendaError="El correo solo puede contener letras, numeros, barra baja, @ y puntos en el dominio."
@@ -153,7 +153,7 @@ console.log(password.valido)
             <Input
               estado={password}
               cambiarEstado={cambiarPassword}
-              type={shown ? "text" : "password"}
+              tipo={shown ? "text" : "password"}
               placeholder="Contraseña"
               name="password"
               leyendaError="La contraseña  permite caracteres de Aa-Zz, números y debe tener entre 6 y 15 caracteres."
