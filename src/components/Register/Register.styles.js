@@ -135,7 +135,7 @@ const MensajeError = styled.p`
   width: 360px;
   border-radius: 3px;
   font-size: 13px;
-  color: #f44336;
+  color: ${colores.error};
   text-align: center;
   padding-bottom:10px;
   padding-top: 10px;
@@ -194,14 +194,15 @@ export const InputCorreoR = styled.input`
   font-family: "Segoe UI";
 `;
 export const InputContraseñaR = styled.input`
-  padding: 0px 0rem 0rem 15px;
-  display: block;
-  width: 325px;
-  height: 55px;
-  font-size: 20px;
-  font-family: "Segoe UI";
-  background: none;
-  border: none;
+padding: 0px 0rem 0rem 10px;
+margin-right: 6px;
+display: block;
+width:290px;
+height: 55px;
+font-size: 20px;
+font-family: "Segoe UI";
+background: none;
+border: none;
 `;
 export const Botom = styled.button`
   text-align: center;
@@ -269,15 +270,14 @@ export const IconUser = styled.img`
   padding: 0px 0px 0px 0px;
 `;
 export const InputUserR = styled.input`
-  padding: 0px 0rem 0rem 10px;
-  margin: 0px;
-  display: block;
-  width: 301px;
-  height: 55px;
-  font-size: 20px;
-  font-family: "Segoe UI";
-  background: none;
-  border: none;
+background: none;
+display: block;
+border: none;
+width: 315px;
+height: 55px;
+padding: 0px 0rem 0rem 15px;
+font-size: 20px;
+font-family: "Segoe UI";
 `;
 export const MensajeErrorEmail = styled.p`
 font-size: 18px;

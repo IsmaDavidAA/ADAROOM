@@ -1,7 +1,7 @@
 import React from "react";
-import { GrupoInput, LeyendaError, InputUserR } from "./Register.styles";
+import { GrupoInput, LeyendaError, InputUserR, InputContraseñaR } from "./Register.styles";
 
-const ComponenteInput = ({
+const ComponenteInput2 = ({
   estado,
   cambiarEstado,
   tipo,
@@ -32,7 +32,7 @@ const ComponenteInput = ({
   return (
     <div>
       <GrupoInput>
-        <InputUserR
+        <InputContraseñaR
           type={tipo}
           placeholder={placeholder}
           id={name}
@@ -52,4 +52,4 @@ const ComponenteInput = ({
   );
 };
 
-export default ComponenteInput;
+export default ComponenteInput2;

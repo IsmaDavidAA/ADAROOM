@@ -25,7 +25,7 @@ import correo from  "../../images/email.png";
 import pass from "../../images/password.png";
 import eyes from "../../images/ojo.png";
 import userR from "../../images/IconoUsuario.png";
-
+import Input2 from "./Input2"
 const Index = (props) => {
   
   const [shown, setShown] = React.useState(false);
@@ -123,7 +123,7 @@ console.log(password.valido)
 
           <Div>
             <IconPasswd src={pass} />
-            <Input
+            <Input2
               estado={password}
               cambiarEstado={cambiarPassword}
               tipo={shown ? "text" : "password"}
@@ -139,7 +139,7 @@ console.log(password.valido)
           </Div>
           <Div>
             <IconPasswd src={pass} />
-            <Input
+            <Input2
               estado={password2}
               cambiarEstado={cambiarPassword2}
               tipo={shown2 ? "text" : "password"}
