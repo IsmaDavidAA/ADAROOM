@@ -43,7 +43,7 @@ const Index = (props) => {
   const expresiones = {
     username: /^[a-zA-Z ]{12,40}$/, 
     password: /^[a-zA-Z0-9]{6,15}$/, 
-    email: /^[a-zA-Z0-9_]+@[a-z]+\.[a-z.]+$/,
+    email: /^[a-zA-Z0-9_]+@[a-zA-Z]+\.[a-zA-Z.]+$/,
   };
 
   const validarPassword2 = () => {
