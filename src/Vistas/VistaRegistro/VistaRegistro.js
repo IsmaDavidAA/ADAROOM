@@ -20,9 +20,6 @@ const VistaRegistro = ({history}) => {
     async event => {
       event.preventDefault();
       const { email, password,username} = event.target.elements;
-      console.log("estamos")
-      console.log(email.value)
-      console.log(password.value)
      
       try {
         const Usuario = await createUserWithEmailAndPassword(auth,email.value, password.value);

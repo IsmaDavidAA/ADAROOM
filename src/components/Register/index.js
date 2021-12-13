@@ -41,9 +41,9 @@ const Index = (props) => {
 
   console.log(props);
   const expresiones = {
-    username: /^[a-zA-Z ]{12,40}$/, 
+    username: /^[a-zA-ZáéíóúñÁÉÍÓÚÑ ]{12,40}$/, 
     password: /^[a-zA-Z0-9]{6,15}$/,
-    email: /^([a-zA-Z0-9_]([\.]?[a-zA-Z0-9_])+@[a-zA-Z0-9]([^ @]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{1,4}([\.][a-zA-Z]{2})?)+$/,
+    email: /^(([A-Za-z0-9_])+(@[a-zA-Z]+[a-zA-Z][\.]){1,2}[a-zA-Z]{2,4}([\.][a-zA-Z]{2})?)$/,
   };
 
   const validarPassword2 = () => {
@@ -59,14 +59,6 @@ const Index = (props) => {
       }
     }
   };
-
-console.log("name")
-console.log(username.campo)
-console.log(username.valido)
-console.log("correo")
-console.log(email.valido)
-console.log("contra")
-console.log(password.valido)
 
    const handleRegister = (e) => {
     e.preventDefault();

@@ -1,17 +1,14 @@
-import React, {useCallback, useContext} from 'react';
-
-//import { FirebaseAuth } from "react-firebaseui";
-
+import React, {useCallback, useContext, useState} from 'react';
 import  {auth} from "../../services/firebase"
 import { AuthContext } from "../../Context";
 import { withRouter, Redirect } from "react-router-dom";
 import {signInWithEmailAndPassword} from "@firebase/auth";
-import Index from '../../components/SignIn/Index';
+import Index from '../../components/Login/index';
 
 
 const SignIn = ({history}) => {
-  //Obtenemos el estado del user en el context
-   const handleLogin = useCallback(
+  const [errorLoginn,seterrorLoginn] =useState(false);
+  const handleLoginn = useCallback(
     async event => {
       event.preventDefault();
       const { email, password } = event.target.elements;
@@ -25,7 +22,7 @@ const SignIn = ({history}) => {
         console.log(AuthContext);
         
       } catch (error) {
-      alert('Acceso inválido. Por favor intente de nuevo');
+        seterrorLoginn(true);
         }
     },
     [history]
@@ -36,7 +33,7 @@ const SignIn = ({history}) => {
     }
     return (
 
-      <Index handleLogin={handleLogin}/>
+      <Index handleLoginn={handleLoginn} errorLoginn={errorLoginn}/>
      
   );
 };
