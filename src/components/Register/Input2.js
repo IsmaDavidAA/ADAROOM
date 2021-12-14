@@ -1,5 +1,5 @@
 import React from "react";
-import { GrupoInput, LeyendaError, InputUserR, InputContraseñaR } from "./Register.styles";
+import { GrupoInput, LeyendaError, InputContraseñaR } from "./Register.styles";
 
 const ComponenteInput2 = ({
   estado,
