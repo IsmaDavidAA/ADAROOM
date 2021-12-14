@@ -129,7 +129,7 @@ export const IconEyes = styled.img`
   padding: 0px 0px 0px 0px;
 `;
 export const Div = styled.div`
-  margin: 1rem 0rem 2rem 0rem;
+  margin: 1rem 0rem 2.4rem 0rem;
   width: 360px;
   height: 55px;
   border: 1px solid #aaa;
