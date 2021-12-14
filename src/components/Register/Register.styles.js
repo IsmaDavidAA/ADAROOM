@@ -13,7 +13,7 @@ const GrupoInput = styled.div`
 const LeyendaError = styled.p`
   font-size: 12px;
   margin-bottom: 0;
-  margin-top:0;
+  margin-top:4px;
   margin-left: -30px;
   color: ${colores.error};
   display: none;
