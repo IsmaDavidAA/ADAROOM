@@ -37,7 +37,7 @@ export const ImagenEstilo = styled.img`
   min-height: 511px;
   max-height: 100%;
   border-radius: 50%;
-  margin-top: 0px;
+  margin-top: 3.5rem;
   @media only screen and (max-width: 1000px) {
     min-width: 100px;
   }
