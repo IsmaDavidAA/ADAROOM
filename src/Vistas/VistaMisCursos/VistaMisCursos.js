@@ -5,6 +5,7 @@ import { Contenedor, SubTitulo, Texto, Texto2 } from "./VistaMisCursos.styles";
 import { withRouter, Redirect } from "react-router-dom";
 import ListasMC from "../../components/ListasMC";
 import VistaHome from "../VistaHome/VistaHome";
+import SignIn from "../VistaLogin/Login";
 const VistaMisCursos = () => {
   const { currentUser } = useContext(AuthContext);
 
@@ -33,7 +34,7 @@ const VistaMisCursos = () => {
     return <Contenedor></Contenedor>;
   }
   if (!currentUser) {
-    return <Redirect path="/" exact component={VistaHome} />;
+    return <Redirect to="/login" exact component={SignIn} />;
   }
   if (cursos.length === 0) {
     return (
